@@ -1,0 +1,206 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| User Interface Routes
+|--------------------------------------------------------------------------
+*/
+
+// this route for midtrans bank transaction
+Route::get('/midtrans/bank/notify', 'MidtransBankNotifyController@onlineBankNotify')->name('midtrans.bank_notify');
+Route::get('/midtrans/cancel', 'MidtransBankNotifyController@cancel')->name('midtrans.cancel');
+Route::get('/check-payment', 'CronJobController@checkPayment')->name('cron.check_payment');
+
+Route::post('/push-notification/store-endpoint', 'FrontEnd\PushNotificationController@store');
+
+
+  //update
+    Route::prefix('update')->group(function () {
+        Route::get('/version', 'UpdateController@upversion')->name('update.version');
+    });
+// MyFatoorah
+Route::get('myfatoorah/callback', 'MyFatoorahController@myfatoorah_callback')->name('myfatoorah_callback');
+Route::get('myfatoorah/cancel', 'MyFatoorahController@myfatoorah_cancel')->name('myfatoorah_cancel');
+
+//now payment
+Route::prefix('nowpayment')->group(function (){
+  Route::get('/payment/success', 'Payment\NowpaymentController@paymentSuccess')->name('nowpayment.payment.success');
+  Route::get('/payment/cancel', 'Payment\NowpaymentController@paymentCancel')->name('nowpayment.payment.cancel');
+});
+
+
+// cron job for sending expiry mail
+Route::get('/subcheck', 'CronJobController@expired')->name('cron.expired');
+
+Route::get('/change-language', 'FrontEnd\MiscellaneousController@changeLanguage')->name('change_language');
+
+Route::post('/store-subscriber', 'FrontEnd\MiscellaneousController@storeSubscriber')->name('store_subscriber');
+
+Route::get('/offline', 'FrontEnd\HomeController@offline')->middleware('change.lang');
+
+Route::middleware('change.lang')->group(function () {
+    Route::get('/', 'FrontEnd\HomeController@index')->name('index');
+    Route::prefix('vendors')->group(function () {
+        Route::get('/', 'FrontEnd\VendorController@index')->name('frontend.vendors');
+        Route::post('contact/message', 'FrontEnd\VendorController@contact')->name('vendor.contact.message');
+    });
+
+    // Properties route
+    Route::get('/properties', 'FrontEnd\PropertyController@index')->name('frontend.properties');
+    Route::get('/state-cities', 'FrontEnd\PropertyController@getStateCities')->name('frontend.get_state_cities');
+    Route::get('/cities', 'FrontEnd\PropertyController@getCities')->name('frontend.get_cities');
+    Route::get('/categories', 'FrontEnd\PropertyController@getCategories')->name('frontend.get_categories');
+    Route::get('/property/{slug}', 'FrontEnd\PropertyController@details')->name('frontend.property.details');
+    Route::post('/property-contact', 'FrontEnd\PropertyController@contact')->name('property_contact');
+    Route::post('/contact-mail', 'FrontEnd\PropertyController@contactUser')->name('contact_user');
+    // Properties route
+    Route::get('/projects', 'FrontEnd\ProjectController@index')->name('frontend.projects');
+    Route::get('/project/{slug}', 'FrontEnd\ProjectController@details')->name('frontend.projects.details');
+    // property wishlist
+    Route::get('addto/wishlist/{id}', 'FrontEnd\UserController@add_to_wishlist')->name('addto.wishlist');
+    Route::get('remove/wishlist/{id}', 'FrontEnd\UserController@remove_wishlist')->name('remove.wishlist');
+
+    Route::get('vendor/{username}', 'FrontEnd\VendorController@details')->name('frontend.vendor.details');
+    Route::get('agent/{username}', 'FrontEnd\AgentController@details')->name('frontend.agent.details');
+
+    Route::prefix('/blog')->group(function () {
+        Route::get('', 'FrontEnd\BlogController@index')->name('blog');
+
+        Route::get('/{slug}', 'FrontEnd\BlogController@show')->name('blog_details');
+    });
+
+    Route::get('/faq', 'FrontEnd\FaqController@faq')->name('faq');
+    Route::get('/about-us', 'FrontEnd\HomeController@about')->name('about_us');
+    Route::get('/pricing', 'FrontEnd\HomeController@pricing')->name('pricing');
+
+    Route::prefix('/contact')->group(function () {
+        Route::get('', 'FrontEnd\ContactController@contact')->name('contact');
+
+        Route::post('/send-mail', 'FrontEnd\ContactController@sendMail')->name('contact.send_mail')->withoutMiddleware('change.lang');
+    });
+});
+
+Route::post('/advertisement/{id}/count-view', 'FrontEnd\MiscellaneousController@countAdView');
+
+Route::prefix('login')
+    ->middleware(['guest:web', 'change.lang'])
+    ->group(function () {
+        // user login via facebook route
+        Route::prefix('/user/facebook')->group(function () {
+            Route::get('', 'FrontEnd\UserController@redirectToFacebook')->name('user.login.facebook');
+
+            Route::get('/callback', 'FrontEnd\UserController@handleFacebookCallback');
+        });
+
+        // user login via google route
+        Route::prefix('/google')->group(function () {
+            Route::get('', 'FrontEnd\UserController@redirectToGoogle')->name('user.login.google');
+
+            Route::get('/callback', 'FrontEnd\UserController@handleGoogleCallback');
+        });
+    });
+
+Route::prefix('/user')
+    ->middleware(['guest:web', 'change.lang'])
+    ->group(function () {
+        Route::prefix('/login')->group(function () {
+            // user redirect to login page route
+            Route::get('', 'FrontEnd\UserController@login')->name('user.login');
+        });
+        // user login submit route
+        Route::post('/login-submit', 'FrontEnd\UserController@loginSubmit')->name('user.login_submit')->withoutMiddleware('change.lang');
+
+        // user forget password route
+        Route::get('/forget-password', 'FrontEnd\UserController@forgetPassword')->name('user.forget_password');
+
+        // send mail to user for forget password route
+        Route::post('/send-forget-password-mail', 'FrontEnd\UserController@forgetPasswordMail')->name('user.send_forget_password_mail')->withoutMiddleware('change.lang');
+
+        // reset password route
+        Route::get('/reset-password', 'FrontEnd\UserController@resetPassword');
+
+        // user reset password submit route
+        Route::post('/reset-password-submit', 'FrontEnd\UserController@resetPasswordSubmit')->name('user.reset_password_submit')->withoutMiddleware('change.lang');
+
+        // user redirect to signup page route
+        Route::get('/signup', 'FrontEnd\UserController@signup')->name('user.signup');
+
+        // user signup submit route
+        Route::post('/signup-submit', 'FrontEnd\UserController@signupSubmit')->name('user.signup_submit')->withoutMiddleware('change.lang');
+
+        // signup verify route
+        Route::get('/signup-verify/{token}', 'FrontEnd\UserController@signupVerify')->withoutMiddleware('change.lang');
+    });
+
+Route::prefix('/user')
+    ->middleware(['auth:web', 'account.status', 'change.lang'])
+    ->group(function () {
+        // user redirect to dashboard route
+        Route::get('/dashboard', 'FrontEnd\UserController@redirectToDashboard')->name('user.dashboard');
+        Route::get('/wishlist', 'FrontEnd\UserController@wishlist')->name('user.wishlist');
+
+        // edit profile route
+        Route::get('/edit-profile', 'FrontEnd\UserController@editProfile')->name('user.edit_profile');
+
+        // update profile route
+        Route::post('/update-profile', 'FrontEnd\UserController@updateProfile')->name('user.update_profile')->withoutMiddleware('change.lang');
+
+        // change password route
+        Route::get('/change-password', 'FrontEnd\UserController@changePassword')->name('user.change_password');
+
+        // update password route
+        Route::post('/update-password', 'FrontEnd\UserController@updatePassword')->name('user.update_password')->withoutMiddleware('change.lang');
+
+        Route::prefix('support-ticket')->group(function () {
+            Route::get('/', 'FrontEnd\SupportTicketController@index')->name('user.support_ticket');
+            Route::get('/create', 'FrontEnd\SupportTicketController@create')->name('user.support_ticket.create');
+            Route::post('store', 'FrontEnd\SupportTicketController@store')->name('user.support_ticket.store');
+            Route::get('message/{id}', 'FrontEnd\SupportTicketController@message')->name('user.support_ticket.message');
+            Route::post('reply/{id}', 'FrontEnd\SupportTicketController@reply')->name('user.support_ticket.reply');
+        });
+
+        // user logout attempt route
+        Route::get('/logout', 'FrontEnd\UserController@logoutSubmit')->name('user.logout')->withoutMiddleware('change.lang');
+    });
+
+// service unavailable route
+Route::get('/service-unavailable', 'FrontEnd\MiscellaneousController@serviceUnavailable')->name('service_unavailable')->middleware('exists.down');
+
+/*
+|--------------------------------------------------------------------------
+| admin frontend route
+|--------------------------------------------------------------------------
+*/
+
+Route::prefix('/admin')
+    ->middleware('guest:admin')
+    ->group(function () {
+        // admin redirect to login page route
+        Route::get('/', 'BackEnd\AdminController@login')->name('admin.login');
+
+        // admin login attempt route
+        Route::post('/auth', 'BackEnd\AdminController@authentication')->name('admin.auth');
+
+        // admin forget password route
+        Route::get('/forget-password', 'BackEnd\AdminController@forgetPassword')->name('admin.forget_password');
+
+        // send mail to admin for forget password route
+        Route::post('/mail-for-forget-password', 'BackEnd\AdminController@forgetPasswordMail')->name('admin.mail_for_forget_password');
+    });
+
+Route::post('/property/video-img-rmv', 'BackEnd\Property\PropertyController@videoImgrmv')->name('property.videoImgrmv');
+Route::post('/property/floor-img-rmv', 'BackEnd\Property\PropertyController@floorImgrmv')->name('property.floorImgrmv');
+
+/*
+|--------------------------------------------------------------------------
+| Custom Page Route For UI
+|--------------------------------------------------------------------------
+*/
+Route::get('/{slug}', 'FrontEnd\PageController@page')->name('dynamic_page')->middleware('change.lang');
+
+// fallback route
+Route::fallback(function () {
+    return view('errors.404');
+})->middleware('change.lang');
