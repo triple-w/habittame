@@ -1,0 +1,68 @@
+/*
+
+    * This file contains the styling for the Home Variation One, this
+    is the file you need to edit to change the look of the
+    template.
+
+******************************************************
+*****************************************************/
+/* -----------------------------------------
+	Home Banner CSS
+----------------------------------------- */
+.home-banner.home-banner-1 {
+  padding-top: 200px;
+  padding-bottom: 150px;
+  background-position: top !important;
+}
+.home-banner.home-banner-1 .content {
+  max-width: 600px;
+}
+.home-banner.home-banner-1 .content .title {
+  margin-bottom: 25px;
+}
+.home-banner.home-banner-1 .banner-filter-form .nav {
+  gap: 0;
+  border-radius: 10px 10px 0 0;
+  background: rgba(var(--color-primary-rgb), 0.13);
+}
+.home-banner.home-banner-1 .banner-filter-form .nav .nav-link {
+  position: relative;
+  border-radius: 10px 10px 0 0;
+  color: var(--color-dark);
+  font-weight: var(--font-medium);
+  font-weight: var(--font-bold);
+  padding: 8px 20px;
+  margin-bottom: -2px;
+  margin-inline: 0;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+.home-banner.home-banner-1 .banner-filter-form .nav .nav-link::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin-inline-start: auto;
+  margin-inline-end: 0;
+  height: 100%;
+  width: 2px;
+  background: var(--border-color);
+}
+.home-banner.home-banner-1 .banner-filter-form .nav .nav-link:is(.active, :hover) {
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  border-color: var(--color-secondary);
+  border-bottom-color: var(--color-white);
+}
+.home-banner.home-banner-1 .banner-filter-form .tab-content, .home-banner.home-banner-1 .banner-filter-form .form-wrapper {
+  border-radius: 10px;
+  border-start-start-radius: 0;
+  border-color: var(--color-secondary);
+}
+.home-banner.home-banner-1 .banner-filter-form .btn-primary {
+  background: var(--color-secondary);
+}
+.home-banner.home-banner-1 .banner-filter-form .grid .grid-item{
+  flex: 1;
+  width: unset;
+}

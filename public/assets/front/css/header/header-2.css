@@ -1,0 +1,45 @@
+/* -----------------------------------------
+	Header 2 CSS
+----------------------------------------- */
+.header-area.header-2 .nice-select li {
+    color: var(--color-dark);
+}
+
+.header-area.header-2 :is(.btn-primary) {
+    background: var(--color-primary);
+}
+
+@media (min-width: 1200px) {
+    .header-area.header-2:not(.header-static, .is-sticky) .header-top {
+        background: rgba(var(--color-primary-rgb), 0.8);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+
+    .header-area.header-2:not(.header-static, .is-sticky) .header-top a,
+    .header-area.header-2:not(.header-static, .is-sticky) .header-top span {
+        color: var(--text-white);
+    }
+
+    .header-area.header-2:not(.header-static, .is-sticky) :is(.nav-link:not(:is(.active, .menu-dropdown .nav-link)), .wishlist-btn, .nice-select, .nice-select::after) {
+        color: var(--color-white);
+        font-weight: var(--font-medium);
+    }
+
+    .header-area.header-2:not(.header-static, .is-sticky) .nice-select::after {
+        color: var(--color-white);
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .header-area.header-2:not(.is-sticky) {
+        background: transparent;
+        box-shadow: unset;
+        -webkit-backdrop-filter: unset;
+        backdrop-filter: unset;
+    }
+
+    .header-area.header-2 .menu-toggler span {
+        background: var(--color-white);
+    }
+}

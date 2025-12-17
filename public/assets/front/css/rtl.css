@@ -1,0 +1,309 @@
+body {
+  direction: rtl;
+  text-align: right;
+}
+
+.ml-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+.me-2 {
+  margin-right: unset !important;
+  margin-left: 0.5rem !important;
+}
+
+.ms-2 {
+  margin-left: unset !important;
+  margin-right: 0.5rem !important;
+}
+
+.ms-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+.nice-select {
+  text-align: right !important;
+}
+
+.nice-select:after {
+  left: 0;
+  right: unset;
+}
+
+.form-control.nice-select:after {
+  left: 12px;
+  right: unset;
+}
+
+.nice-select .option {
+  padding-right: 18px;
+  padding-left: 29px;
+  text-align: right;
+}
+
+.nice-select .list {
+  left: unset;
+  right: 0;
+}
+
+.list-unstyled, ul {
+  padding-inline-start: 0;
+}
+
+.mfp-iframe-holder .mfp-close {
+  text-align: left;
+}
+
+.input-group > :not(:first-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+}
+
+.input-group > :not(:last-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+}
+
+.header-area .main-navbar .menu-dropdown {
+  left: unset;
+  right: 0;
+}
+.header-area .main-navbar .menu-dropdown .nav-link.toggle i {
+  right: unset;
+  left: 20px;
+}
+.header-area .main-navbar .menu-dropdown::before {
+  left: unset;
+  right: 25px;
+}
+.header-area .main-navbar .navbar-nav .nav-item .menu-dropdown li .menu-dropdown {
+  left: unset;
+  right: 230px;
+}
+.header-area .main-navbar .navbar-nav .nav-item .menu-dropdown li .menu-dropdown li .menu-dropdown {
+  left: unset;
+  right: 230px;
+}
+.header-area .main-navbar .navbar-nav .nav-item .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown {
+  left: unset;
+  right: 230px;
+}
+.header-area .main-navbar .navbar-nav .nav-item .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown {
+  left: unset;
+  right: 230px;
+}
+.header-area .main-navbar .navbar-nav .nav-item .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown {
+  left: unset;
+  right: 230px;
+}
+.header-area .main-navbar .navbar-nav .nav-item .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown {
+  left: unset;
+  right: 230px;
+}
+.header-area .nice-select::after {
+  left: unset;
+  right: 0;
+}
+
+.mobile-menu .nav-link.toggle i {
+  right: unset;
+  left: 0;
+}
+
+@media (max-width: 1199px) {
+  .mobile-menu {
+    left: unset;
+    right: -100%;
+  }
+  .mobile-menu-active .mobile-menu {
+    visibility: visible;
+    right: 0;
+  }
+}
+.ratings .rating-icon {
+  margin-inline-start: auto;
+}
+
+.noUi-txt-dir-rtl.noUi-horizontal .noUi-handle {
+  left: -8px;
+  right: auto;
+}
+
+.sidebar-widget-area .widget-categories .list-item > a::before {
+  left: unset;
+  right: 0;
+}
+.sidebar-widget-area .widget-categories .list-item > a::after {
+  left: unset;
+  right: 2px;
+}
+.sidebar-widget-area .widget .qty {
+  float: left;
+}
+
+.custom-radio .form-radio-label::before {
+  left: unset;
+  right: 0;
+}
+.custom-radio input[type=radio] + .form-radio-label::after {
+  left: unset;
+  right: 2px;
+}
+
+.product-single .product-single-gallery .slider-btn.slider-btn-prev {
+  right: unset;
+  left: 0;
+}
+
+.sidebar-widget-area .widget-form .nice-select::after {
+  left: 10px;
+  right: unset;
+}
+
+i {
+  display: inline-block;
+}
+
+.product-sort-area .product-sort-list .nice-select::after {
+  right: unset;
+  left: 0;
+}
+
+table.dataTable thead th {
+  text-align: right;
+}
+table.dataTable thead td {
+  text-align: right;
+}
+table.dataTable thead > tr > th.sorting:before {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > th.sorting:after {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > th.sorting_asc:before {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > th.sorting_asc:after {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > th.sorting_desc:before {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > th.sorting_desc:after {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > th.sorting_asc_disabled:before {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > th.sorting_asc_disabled:after {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > th.sorting_desc_disabled:before {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > th.sorting_desc_disabled:after {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > td.sorting:before {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > td.sorting:after {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > td.sorting_asc:before {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > td.sorting_asc:after {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > td.sorting_desc:before {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > td.sorting_desc:after {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > td.sorting_asc_disabled:before {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > td.sorting_asc_disabled:after {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > td.sorting_desc_disabled:before {
+  right: unset;
+  left: 10px;
+}
+table.dataTable thead > tr > td.sorting_desc_disabled:after {
+  right: unset;
+  left: 10px;
+}
+table.dataTable tfoot th {
+  text-align: right;
+}
+table.dataTable tfoot td {
+  text-align: right;
+}
+
+div.table-responsive > div.dataTables_wrapper > div.row > div[class^=col-]:last-child {
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+  margin-left: unset;
+  margin-right: 0.5em;
+}
+
+.custom-checkbox .form-check-label::before {
+  left: unset;
+  right: 0;
+}
+
+.custom-checkbox input[type=checkbox] + .form-check-label::after {
+  left: unset;
+  right: 2px;
+}
+
+.authentication-area .link.go-signup {
+  text-align: left;
+}
+
+@media (min-width: 576px) {
+  .text-sm-end {
+    text-align: left !important;
+  }
+}
+@media (min-width: 768px) {
+  .text-md-end {
+    text-align: left !important;
+  }
+}
+@media (min-width: 992px) {
+  .text-lg-end {
+    text-align: left !important;
+  }
+}

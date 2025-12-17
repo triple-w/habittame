@@ -1,0 +1,121 @@
+/*
+
+    * This file contains the styling for the Home Variation Three, this
+    is the file you need to edit to change the look of the
+    template.
+
+******************************************************
+*****************************************************/
+/* -----------------------------------------
+	Home Banner CSS
+----------------------------------------- */
+.home-banner.home-banner-3 {
+    padding-top: 200px;
+    padding-bottom: 110px;
+}
+
+.home-banner.home-banner-3::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-dark);
+    border-radius: 0px 0px 50px 50px;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.home-banner.home-banner-3.with-radius {
+    border-radius: 0px 0px 50px 50px;
+}
+
+.home-banner.home-banner-3 .content {
+    max-width: 600px;
+}
+
+.home-banner.home-banner-3 .content .title {
+    margin-bottom: 25px;
+}
+
+.home-banner.home-banner-3 .filter-form {
+    padding: 0;
+    border: unset;
+    background: transparent;
+}
+
+.home-banner.home-banner-3 .filter-form .nav {
+    border-radius: 10px 10px 0 0;
+    background: linear-gradient(152.21deg, rgba(255, 255, 255, 0.5) 0.24%, rgba(255, 255, 255, 0.2) 98.61%);
+}
+
+.home-banner.home-banner-3 .filter-form .nav .nav-link {
+    position: relative;
+    border-radius: 10px 10px 0 0;
+    color: var(--color-dark);
+    font-weight: var(--font-medium);
+    font-weight: var(--font-bold);
+    padding: 8px 20px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    margin-inline: 0;
+}
+
+.home-banner.home-banner-3 .filter-form .nav .nav-link::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 2px;
+    background: var(--color-white);
+}
+
+.home-banner.home-banner-3 .filter-form .nav .nav-link:is(.active) {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.home-banner.home-banner-3 .filter-form .tab-content,
+.home-banner.home-banner-3 .filter-form .form-wrapper {
+    padding: 30px;
+    border-radius: 10px;
+    border-start-start-radius: 0;
+    border-color: var(--color-white);
+    background: linear-gradient(152.21deg, rgba(255, 255, 255, 0.5) 0.24%, rgba(255, 255, 255, 0.2) 98.61%);
+    margin-inline-start: auto;
+}
+
+.home-banner.home-banner-3 .filter-form .price-slider {
+    padding-inline: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.home-banner.home-banner-3 .filter-form .form-control,
+.home-banner.home-banner-3 .filter-form .nice-select {
+    padding-inline-start: 18px;
+}
+
+.home-banner.home-banner-3 .filter-form .price-slider>div {
+    width: 40%;
+    margin-inline-end: 10px;
+}
+
+.home-banner.home-banner-3 .select2-container .select2-selection--single .select2-selection__rendered {
+    border-radius: 5px;
+    height: 55px;
+    line-height: 55px;
+    padding: 0;
+    padding-inline-start: 18px;
+    padding-inline-end: 10px;
+    font-size: 16px;
+    background-color: var(--color-white);
+    color: var(--color-medium);
+}
+.home-banner.home-banner-3 .select2-container--default .select2-selection--single .select2-selection__arrow{
+  height: 55px;
+}
