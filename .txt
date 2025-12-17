@@ -1,0 +1,7 @@
+1. Primary Color Issue Resolved
+2. Country Module Bug Fixed
+3. State Module Error Resolved
+4. Newsletter Form Submission Fix
+5. Admin Properties Hidden from Featured Request Section
+6. Multilingual Language Handling Fixed
+7. Number Formatting Fix
