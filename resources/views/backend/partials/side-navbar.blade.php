@@ -77,7 +77,7 @@
                 <li class="nav-item @if (request()->routeIs('admin.dashboard')) active @endif">
                     <a href="{{ route('admin.dashboard') }}">
                         <i class="la flaticon-paint-palette"></i>
-                        <p>{{ 'Dashboard' }}</p>
+                        <p>{{ 'Tablero' }}</p>
                     </a>
                 </li>
 
@@ -92,7 +92,7 @@
               @elseif (request()->routeIs('admin.property_specification.cities')) active  @endif">
                         <a data-toggle="collapse" href="#propertySpecification">
                             <i class="far fa-file-alt"></i>
-                            <p>{{ __('Property Specifications') }}</p>
+                            <p>{{ __('Especificaciones de propiedad') }}</p>
                             <span class="caret"></span>
                         </a>
 
@@ -109,14 +109,14 @@
                                 <li
                                     class="{{ request()->routeIs('admin.property_specification.settings') ? 'active' : '' }}">
                                     <a href="{{ route('admin.property_specification.settings') }}">
-                                        <span class="sub-item">{{ __('Settings') }}</span>
+                                        <span class="sub-item">{{ __('Configuracion') }}</span>
                                     </a>
                                 </li>
                                 <li
                                     class="{{ request()->routeIs('admin.property_specification.categories') ? 'active' : '' }}">
                                     <a
                                         href="{{ route('admin.property_specification.categories', ['language' => $defaultLang->code]) }}">
-                                        <span class="sub-item">{{ __('Categories') }}</span>
+                                        <span class="sub-item">{{ __('Categorias') }}</span>
                                     </a>
                                 </li>
 
@@ -125,7 +125,7 @@
                                     class="{{ request()->routeIs('admin.property_specification.amenities') ? 'active' : '' }}">
                                     <a
                                         href="{{ route('admin.property_specification.amenities', ['language' => $defaultLang->code]) }}">
-                                        <span class="sub-item">{{ __('Amenities') }}</span>
+                                        <span class="sub-item">{{ __('Amenidades') }}</span>
                                     </a>
                                 </li>
                                 @if ($settings->property_country_status == 1)
