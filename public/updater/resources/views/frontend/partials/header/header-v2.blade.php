@@ -115,7 +115,7 @@
                                             href="{{ route('user.signup') }}">{{ __('Signup') }}</a></li>
                                 @else
                                     <li><a class="dropdown-item"
-                                            href="{{ route('user.dashboard') }}">{{ __('Dashboard') }}</a></li>
+                                            href="{{ route('user.dashboard') }}">{{ __('Tablero') }}</a></li>
                                     <li><a class="dropdown-item"
                                             href="{{ route('user.logout') }}">{{ __('Logout') }}</a></li>
                                 @endif
@@ -140,7 +140,7 @@
                                             href="{{ route('vendor.signup') }}">{{ __('Signup') }}</a></li>
                                 @else
                                     <li><a class="dropdown-item"
-                                            href="{{ route('vendor.dashboard') }}">{{ __('Dashboard') }}</a></li>
+                                            href="{{ route('vendor.dashboard') }}">{{ __('Tablero') }}</a></li>
 
                                     <li><a class="dropdown-item"
                                             href="{{ route('vendor.logout') }}">{{ __('Logout') }}</a></li>

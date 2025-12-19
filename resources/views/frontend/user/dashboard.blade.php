@@ -3,15 +3,15 @@
 @endphp
 @extends("frontend.layouts.layout-v$version")
 @section('pageHeading')
-    {{ __('Dashboard') }}
+    {{ __('Tablero') }}
 @endsection
 
 
 @section('content')
     @includeIf('frontend.partials.breadcrumb', [
         'breadcrumb' => !empty($bgImg) ? $bgImg->breadcrumb : '',
-        'title' => !empty($pageHeading) ? $pageHeading->dashboard_page_title : __('Dashboard'),
-        'subtitle' => __('Dashboard'),
+        'title' => !empty($pageHeading) ? $pageHeading->dashboard_page_title : __('Tablero'),
+        'subtitle' => __('Tablero'),
     ])
 
 

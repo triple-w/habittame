@@ -66,7 +66,7 @@
                 <li class="nav-item @if (request()->routeIs('agent.dashboard')) active @endif">
                     <a href="{{ route('agent.dashboard') }}">
                         <i class="la flaticon-paint-palette"></i>
-                        <p>{{ __('Dashboard') }}</p>
+                        <p>{{ __('Tablero') }}</p>
                     </a>
                 </li>
                 @if ($userCurrentPackage)

@@ -66,7 +66,7 @@
                 <li class="nav-item @if (request()->routeIs('vendor.dashboard')) active @endif">
                     <a href="{{ route('vendor.dashboard') }}">
                         <i class="la flaticon-paint-palette"></i>
-                        <p>{{ __('Dashboard') }}</p>
+                        <p>{{ __('Tablero') }}</p>
                     </a>
                 </li>
 
