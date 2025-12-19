@@ -82,7 +82,7 @@
 
                                             <div class="mt-3">
                                                 <div role="button" class="btn btn-primary btn-sm upload-btn">
-                                                    {{ __('Choose Image') }}
+                                                    {{ __('Elegir Imagen') }}
                                                     <input type="file" class="img-input" name="featured_image">
                                                 </div>
                                             </div>
@@ -100,7 +100,7 @@
 
                                             <div class="mt-3">
                                                 <div role="button" class="btn btn-primary btn-sm upload-btn">
-                                                    {{ __('Choose Image') }}
+                                                    {{ __('Elegir Imagen') }}
                                                     <input type="file" class="img-input2" name="floor_planning_image">
                                                 </div>
                                             </div>
@@ -117,7 +117,7 @@
 
                                             <div class="mt-3">
                                                 <div role="button" class="btn btn-primary btn-sm upload-btn">
-                                                    {{ __('Choose Image') }}
+                                                    {{ __('Elegir Imagen') }}
                                                     <input type="file" class="img-input3" name="video_image">
                                                 </div>
                                             </div>

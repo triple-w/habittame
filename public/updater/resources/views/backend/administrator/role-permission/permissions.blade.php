@@ -144,7 +144,7 @@
                                         <label class="selectgroup-item">
                                             <input type="checkbox" class="selectgroup-input" name="permissions[]"
                                                 value="Support Tickets" @if (is_array($rolePermissions) && in_array('Support Tickets', $rolePermissions)) checked @endif>
-                                            <span class="selectgroup-button">{{ __('Support Tickets') }}</span>
+                                            <span class="selectgroup-button">{{ __('Tickets de Soporte') }}</span>
                                         </label>
 
                                         <label class="selectgroup-item">

@@ -504,7 +504,7 @@
                                 <ul class="nav nav-tabs">
                                     <li class="nav-item">
                                         <button class="nav-link active btn-md rounded-pill" data-bs-toggle="tab"
-                                            data-bs-target="#forAll1" type="button">{{ __('Monthly') }}</button>
+                                            data-bs-target="#forAll1" type="button">{{ __('Mensual') }}</button>
                                     </li>
                                     <li class="nav-item">
                                         <button class="nav-link btn-md rounded-pill" data-bs-toggle="tab"
@@ -512,7 +512,7 @@
                                     </li>
                                     <li class="nav-item">
                                         <button class="nav-link btn-md rounded-pill" data-bs-toggle="tab"
-                                            data-bs-target="#forSell1" type="button">{{ __('Lifetime') }}</button>
+                                            data-bs-target="#forSell1" type="button">{{ __('Para Siempre') }}</button>
                                     </li>
                                 </ul>
                             </div>
@@ -548,9 +548,9 @@
                                                             <li><i class="fal fa-check"></i>
 
                                                                 @if ($package->number_of_agent == 999999)
-                                                                    {{ __('Unlimited') }} {{ __('Agents') }}
+                                                                    {{ __('Unlimited') }} {{ __('Agentes') }}
                                                                 @elseif ($package->number_of_agent > 1)
-                                                                    {{ $package->number_of_agent }} {{ __('Agents') }}
+                                                                    {{ $package->number_of_agent }} {{ __('Agentes') }}
                                                                 @else
                                                                     {{ $package->number_of_agent }} {{ __('Agent') }}
                                                                 @endif
@@ -721,9 +721,9 @@
                                                             <li><i class="fal fa-check"></i>
 
                                                                 @if ($package->number_of_agent == 999999)
-                                                                    {{ __('Unlimited') }} {{ __('Agents') }}
+                                                                    {{ __('Unlimited') }} {{ __('Agentes') }}
                                                                 @elseif ($package->number_of_agent > 1)
-                                                                    {{ $package->number_of_agent }} {{ __('Agents') }}
+                                                                    {{ $package->number_of_agent }} {{ __('Agentes') }}
                                                                 @else
                                                                     {{ $package->number_of_agent }} {{ __('Agent') }}
                                                                 @endif
@@ -891,9 +891,9 @@
                                                             <li><i class="fal fa-check"></i>
 
                                                                 @if ($package->number_of_agent == 999999)
-                                                                    {{ __('Unlimited') }} {{ __('Agents') }}
+                                                                    {{ __('Unlimited') }} {{ __('Agentes') }}
                                                                 @elseif ($package->number_of_agent > 1)
-                                                                    {{ $package->number_of_agent }} {{ __('Agents') }}
+                                                                    {{ $package->number_of_agent }} {{ __('Agentes') }}
                                                                 @else
                                                                     {{ $package->number_of_agent }} {{ __('Agent') }}
                                                                 @endif

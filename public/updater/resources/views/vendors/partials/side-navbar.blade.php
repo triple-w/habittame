@@ -167,7 +167,7 @@
                     <li class="nav-item  @if (request()->routeIs('vendor.agent_management.index')) active @endif">
                         <a href="{{ route('vendor.agent_management.index') }}">
                             <i class="fal fa-users-cog"></i>
-                            <p>{{ __('Agents') }}</p>
+                            <p>{{ __('Agentes') }}</p>
                         </a>
                     </li>
                     @php
@@ -181,7 +181,7 @@
             @elseif (request()->routeIs('vendor.support_ticket.create')) active @endif">
                             <a data-toggle="collapse" href="#support_ticket">
                                 <i class="la flaticon-web-1"></i>
-                                <p>{{ __('Support Tickets') }}</p>
+                                <p>{{ __('Tickets de Soporte') }}</p>
                                 <span class="caret"></span>
                             </a>
 
@@ -195,13 +195,13 @@
                                     <li
                                         class="{{ request()->routeIs('vendor.support_tickets') && empty(request()->input('status')) ? 'active' : '' }}">
                                         <a href="{{ route('vendor.support_tickets') }}">
-                                            <span class="sub-item">{{ __('All Tickets') }}</span>
+                                            <span class="sub-item">{{ __('Ver Tickets') }}</span>
                                         </a>
                                     </li>
                                     <li
                                         class="{{ request()->routeIs('vendor.support_ticket.create') ? 'active' : '' }}">
                                         <a href="{{ route('vendor.support_ticket.create') }}">
-                                            <span class="sub-item">{{ __('Add a Ticket') }}</span>
+                                            <span class="sub-item">{{ __('Agregar Ticket') }}</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -218,14 +218,14 @@
         @elseif (request()->routeIs('vendor.plan.extend.checkout')) active @endif">
                     <a href="{{ route('vendor.plan.extend.index') }}">
                         <i class="fal fa-lightbulb-dollar"></i>
-                        <p>{{ __('Buy Plan') }}</p>
+                        <p>{{ __('Comprar Plan') }}</p>
                     </a>
                 </li>
 
                 <li class="nav-item @if (request()->routeIs('vendor.payment_log')) active @endif">
                     <a href="{{ route('vendor.payment_log') }}">
                         <i class="fas fa-list-ol"></i>
-                        <p>{{ __('Payment Logs') }}</p>
+                        <p>{{ __('Log de Pagos') }}</p>
                     </a>
                 </li>
                 <li class="nav-item @if (request()->routeIs('vendor.edit.profile')) active @endif">

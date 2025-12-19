@@ -79,7 +79,7 @@
           <tr class="gry-color info-titles">
             <th width="20%">{{ __('Package Title') }}</th>
             <th width="20%">{{ __('Start Date') }}</th>
-            <th width="20%">{{ __('Expire Date') }}</th>
+            <th width="20%">{{ __('Fecha Expiracion') }}</th>
             <th width="20%">{{ __('Currency') }}</th>
             <th width="20%">{{ __('Total') }}</th>
           </tr>

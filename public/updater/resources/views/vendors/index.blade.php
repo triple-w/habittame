@@ -57,14 +57,14 @@
                         @endif
                     @endif
 
-                    <strong>{{ __('Current Package') . ':' }} </strong> {{ $current_package->title }}
+                    <strong>{{ __('Paquete Actual') . ':' }} </strong> {{ $current_package->title }}
                     <span class="badge badge-secondary">{{ $current_package->term }}</span>
                     @if ($current_membership->is_trial == 1)
-                        ({{ __('Expire Date') . ':' }}
+                        ({{ __('Fecha Expiracion') . ':' }}
                         {{ Carbon\Carbon::parse($current_membership->expire_date)->format('M-d-Y') }})
                         <span class="badge badge-primary">{{ __('Trial') }}</span>
                     @else
-                        ({{ __('Expire Date') . ':' }}
+                        ({{ __('Fecha Expiracion') . ':' }}
                         {{ $current_package->term === 'lifetime' ? 'Lifetime' : Carbon\Carbon::parse($current_membership->expire_date)->format('M-d-Y') }})
                     @endif
 
@@ -76,7 +76,7 @@
                                 (
                                 {{ __('Activation Date') . ':' }}
                                 {{ Carbon\Carbon::parse($next_membership->start_date)->format('M-d-Y') }},
-                                {{ __('Expire Date') . ':' }}
+                                {{ __('Fecha Expiracion') . ':' }}
                                 {{ $next_package->term === 'lifetime' ? 'Lifetime' : Carbon\Carbon::parse($next_membership->expire_date)->format('M-d-Y') }})
                             @endif
                             @if ($next_membership->status == 0)
@@ -104,7 +104,7 @@
 
                             <div class="col-7 col-stats">
                                 <div class="numbers">
-                                    <p class="card-category">{{ __('Agents') }}</p>
+                                    <p class="card-category">{{ __('Agentes') }}</p>
                                     <h4 class="card-title">{{ $totalAgents }}</h4>
                                 </div>
                             </div>
@@ -171,7 +171,7 @@
 
                                 <div class="col-7 col-stats">
                                     <div class="numbers">
-                                        <p class="card-category">{{ __('Support Tickets') }}</p>
+                                        <p class="card-category">{{ __('Tickets de Soporte') }}</p>
                                         <h4 class="card-title">{{ $total_support_tickets }}</h4>
                                     </div>
                                 </div>
@@ -195,7 +195,7 @@
 
                                 <div class="col-7 col-stats">
                                     <div class="numbers">
-                                        <p class="card-category">{{ __('Payment Logs') }}</p>
+                                        <p class="card-category">{{ __('Log de Pagos') }}</p>
                                         <h4 class="card-title">{{ $payment_logs }}</h4>
                                     </div>
                                 </div>

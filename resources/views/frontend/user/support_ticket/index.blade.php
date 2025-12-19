@@ -3,15 +3,15 @@
 @endphp
 @extends("frontend.layouts.layout-v$version")
 @section('pageHeading')
-    {{ __('Support Tickets') }}
+    {{ __('Tickets de Soporte') }}
 @endsection
 
 
 @section('content')
     @includeIf('frontend.partials.breadcrumb', [
         'breadcrumb' => $bgImg->breadcrumb,
-        'title' => !empty($pageHeading) ? $pageHeading->support_ticket_page_title : __('Support Tickets'),
-        'subtitle' => __('Support Tickets'),
+        'title' => !empty($pageHeading) ? $pageHeading->support_ticket_page_title : __('Tickets de Soporte'),
+        'subtitle' => __('Tickets de Soporte'),
     ])
 
     <!--====== Start Dashboard Section ======-->
@@ -22,7 +22,7 @@
                 <div class="col-lg-9">
                     <div class="account-info radius-md mb-40">
                         <div class="title d-flex flex-wrap gap-3 justify-content-between align-items-center">
-                            <h4 class="mb-0">{{ __('Support Tickets') }}</h4>
+                            <h4 class="mb-0">{{ __('Tickets de Soporte') }}</h4>
                             <a href="{{ route('user.support_ticket.create') }}" target="_self"
                                 class="btn btn-md btn-primary">{{ __('Submit a Ticket') }}</a>
                         </div>

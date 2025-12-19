@@ -54,7 +54,7 @@
                                     <i class="fas fa-exclamation-triangle text-danger"></i>
                                 @endif
                             @endif
-                            {{ __('Check Limit') }}
+                            {{ __('Limites') }}
 
                         </button>
                     </li>

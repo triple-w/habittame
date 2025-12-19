@@ -47,7 +47,7 @@
                         <input type="checkbox" {{ $setting->vendor_admin_approval == 1 ? 'checked' : '' }}
                           name="vendor_admin_approval" class="custom-control-input" id="vendor_admin_approval">
                         <label class="custom-control-label"
-                          for="vendor_admin_approval">{{ __('Needs Admin Approval') }}</label>
+                          for="vendor_admin_approval">{{ __('Necestia Aprovacion del Admin') }}</label>
                       </div>
                     </div>
                   </div>

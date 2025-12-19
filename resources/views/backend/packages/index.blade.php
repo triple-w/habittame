@@ -76,12 +76,12 @@
                                                     <td>
                                                         <strong>{{ strlen($package->title) > 30 ? mb_substr($package->title, 0, 30, 'UTF-8') . '...' : $package->title }}</strong>
                                                         @if ($package->term == 'monthly')
-                                                            <small class="badge badge-primary">{{ __('Monthly') }}</small>
+                                                            <small class="badge badge-primary">{{ __('Mensual') }}</small>
                                                         @elseif ($package->term == 'yearly')
                                                             <small class="badge badge-info">{{ __('Yearly') }}</small>
                                                         @elseif ($package->term == 'lifetime')
                                                             <small
-                                                                class="badge badge-secondary">{{ __('Lifetime') }}</small>
+                                                                class="badge badge-secondary">{{ __('Para Siempre') }}</small>
                                                         @endif
 
 
@@ -232,9 +232,9 @@
                             <label for="term">{{ __('Package term') }}*</label>
                             <select id="term" name="term" class="form-control" required>
                                 <option value="" selected disabled>{{ __('Choose a Package term') }}</option>
-                                <option value="monthly">{{ __('monthly') }}</option>
+                                <option value="monthly">{{ __('Mensual') }}</option>
                                 <option value="yearly">{{ __('yearly') }}</option>
-                                <option value="lifetime">{{ __('lifetime') }}</option>
+                                <option value="lifetime">{{ __('Para Siempre') }}</option>
                             </select>
                             <p id="err_term" class="mb-0 text-danger em"></p>
                         </div>

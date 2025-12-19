@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="page-header">
-    <h4 class="page-title">{{ __('Support Tickets') }}</h4>
+    <h4 class="page-title">{{ __('Tickets de Soporte') }}</h4>
     <ul class="breadcrumbs">
       <li class="nav-home">
         <a href="{{ route('admin.dashboard') }}">
@@ -13,7 +13,7 @@
         <i class="flaticon-right-arrow"></i>
       </li>
       <li class="nav-item">
-        <a href="#">{{ __('Support Tickets') }}</a>
+        <a href="#">{{ __('Tickets de Soporte') }}</a>
       </li>
       <li class="separator">
         <i class="flaticon-right-arrow"></i>
@@ -21,7 +21,7 @@
       <li class="nav-item">
         <a href="#">
           @if (!request()->filled('status'))
-            {{ __('All Tickets') }}
+            {{ __('Ver Tickets') }}
           @elseif (request()->filled('status') && request()->input('status') == 1)
             {{ __('Pending Tickets') }}
           @elseif (request()->filled('status') && request()->input('status') == 2)
@@ -41,7 +41,7 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="card-title d-inline-block">
-                {{ __('Support Tickets') }}
+                {{ __('Tickets de Soporte') }}
               </div>
             </div>
             <div class="col-lg-6">

@@ -59,7 +59,7 @@
                 @endif
               </li>
               <li>
-                <span class="name-specification">{{ __('Expire Date') }}</span>
+                <span class="name-specification">{{ __('Fecha Expiracion') }}</span>
                 <span class="status-specification">
                   @if ($package->term == 'monthly')
                     @if (
@@ -74,7 +74,7 @@
                         value="{{ \Illuminate\Support\Carbon::parse($membership->expire_date ?? now())->addMonth()->format('d-m-Y') }}">
                     @endif
                   @elseif($package->term == 'lifetime')
-                    {{ __('Lifetime') }}
+                    {{ __('Para Siempre') }}
                     <input type="hidden" name="expire_date"
                       value="{{ \Illuminate\Support\Carbon::maxValue()->format('d-m-Y') }}">
                   @else

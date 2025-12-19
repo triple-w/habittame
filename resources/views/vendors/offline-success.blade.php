@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="page-header">
-        <h4 class="page-title">{{ __('Payment') }}</h4>
+        <h4 class="page-title">{{ __('Pago') }}</h4>
         <ul class="breadcrumbs">
             <li class="nav-home">
                 <a href="{{ route('vendor.dashboard') }}">
@@ -13,7 +13,7 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="#">{{ __('Payment') }}</a>
+                <a href="#">{{ __('Pago') }}</a>
             </li>
         </ul>
     </div>
@@ -25,7 +25,7 @@
                     <div class="row">
                         <div class="col-lg-5">
                             <div class="card-title d-inline-block">
-                                {{ __('Payment') }}
+                                {{ __('Pago') }}
                             </div>
                         </div>
                     </div>

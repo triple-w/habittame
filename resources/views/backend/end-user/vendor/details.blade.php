@@ -84,11 +84,11 @@
 
                                             <p class="mb-0">
                                                 @if ($currMemb->is_trial == 1)
-                                                    ({{ __('Expire Date') . ':' }}
+                                                    ({{ __('Fecha Expiracion') . ':' }}
                                                     {{ Carbon\Carbon::parse($currMemb->expire_date)->format('M-d-Y') }})
                                                     <span class="badge badge-primary">{{ __('Trial') }}</span>
                                                 @else
-                                                    ({{ __('Expire Date') . ':' }}
+                                                    ({{ __('Fecha Expiracion') . ':' }}
                                                     {{ $currPackage->term === 'lifetime' ? 'Lifetime' : Carbon\Carbon::parse($currMemb->expire_date)->format('M-d-Y') }})
                                                 @endif
                                                 @if ($currMemb->status == 0)

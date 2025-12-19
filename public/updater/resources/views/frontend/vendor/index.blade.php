@@ -71,7 +71,7 @@
                                     <span class="color-primary font-sm">{{ $adminProperties }}
                                         {{ __('Propiedades') }}</span> |
                                     <span class="color-primary font-sm">{{ $adminAgents }}
-                                        {{ __('Agents') }}</span> |
+                                        {{ __('Agentes') }}</span> |
                                     <span class="color-primary font-sm">{{ $adminProjects }}
                                         {{ __('Proyectos') }}</span>
 
@@ -136,7 +136,7 @@
                                             class="color-primary font-sm">{{ count($vendor->properties->where('approve_status', 1)) }}
                                             {{ __('Propiedades') }}</span> |
                                         <span class="color-primary font-sm">{{ count($vendor->agents) }}
-                                            {{ __('Agents') }}</span> |
+                                            {{ __('Agentes') }}</span> |
                                         <span
                                             class="color-primary font-sm">{{ count($vendor->projects->where('approve_status', 1)) }}
                                             {{ __('Proyectos') }}</span>

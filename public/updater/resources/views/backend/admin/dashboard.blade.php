@@ -27,7 +27,7 @@
 
                                 <div class="col-7 col-stats">
                                     <div class="numbers">
-                                        <p class="card-category">{{ __('Payment Logs') }}</p>
+                                        <p class="card-category">{{ __('Log de Pagos') }}</p>
                                         <h4 class="card-title">{{ $payment_log }}
                                         </h4>
                                     </div>

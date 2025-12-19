@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="page-header">
-    <h4 class="page-title">{{ __('Payment Logs') }}</h4>
+    <h4 class="page-title">{{ __('Log de Pagos') }}</h4>
     <ul class="breadcrumbs">
       <li class="nav-home">
         <a href="{{ route('vendor.dashboard') }}">
@@ -13,13 +13,13 @@
         <i class="flaticon-right-arrow"></i>
       </li>
       <li class="nav-item">
-        <a href="#">{{ __('Payment') }}</a>
+        <a href="#">{{ __('Pago') }}</a>
       </li>
       <li class="separator">
         <i class="flaticon-right-arrow"></i>
       </li>
       <li class="nav-item">
-        <a href="#">{{ __('Payment Logs') }}</a>
+        <a href="#">{{ __('Log de Pagos') }}</a>
       </li>
     </ul>
   </div>
@@ -166,7 +166,7 @@
                                     {{ \Illuminate\Support\Carbon::parse($membership->start_date)->format('M-d-Y') }}
                                   @endif
                                 </p>
-                                <p><strong>{{ __('Expire Date') }}: </strong>
+                                <p><strong>{{ __('Fecha Expiracion') }}: </strong>
 
                                   @if (\Illuminate\Support\Carbon::parse($membership->start_date)->format('Y') == '9999')
                                     -

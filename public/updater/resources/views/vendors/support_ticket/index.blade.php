@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="page-header">
-    <h4 class="page-title">{{ __('Support Tickets') }}</h4>
+    <h4 class="page-title">{{ __('Tickets de Soporte') }}</h4>
     <ul class="breadcrumbs">
       <li class="nav-home">
         <a href="{{ route('vendor.dashboard') }}">
@@ -13,7 +13,7 @@
         <i class="flaticon-right-arrow"></i>
       </li>
       <li class="nav-item">
-        <a href="#">{{ __('Support Tickets') }}</a>
+        <a href="#">{{ __('Tickets de Soporte') }}</a>
       </li>
     </ul>
   </div>
@@ -25,7 +25,7 @@
           <div class="row">
             <div class="col-lg-4">
               <div class="card-title d-inline-block">
-                {{ __('Support Tickets') }}
+                {{ __('Tickets de Soporte') }}
               </div>
             </div>
           </div>
