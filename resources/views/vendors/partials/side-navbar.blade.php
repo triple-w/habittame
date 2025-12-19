@@ -17,7 +17,7 @@
                     <a data-toggle="collapse" href="#adminProfileMenu" aria-expanded="true">
                         <span>
                             {{ Auth::guard('vendor')->user()->username }}
-                            <span class="user-level">{{ __('Vendor') }}</span>
+                            <span class="user-level">{{ __('Agencia') }}</span>
                             <span class="caret"></span>
                         </span>
                     </a>

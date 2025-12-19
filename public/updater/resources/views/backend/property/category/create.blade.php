@@ -24,7 +24,7 @@
 
                         <div class="mt-3">
                             <div role="button" class="btn btn-primary btn-sm upload-btn">
-                                {{ __('Choose Image') }}
+                                {{ __('Elegir Imagen') }}
                                 <input type="file" class="img-input" name="image">
                             </div>
                         </div>

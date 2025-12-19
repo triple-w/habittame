@@ -123,7 +123,7 @@
                                                             <a
                                                                 href="{{ route('frontend.agent.details', ['username' => @$property->agent->username]) }}">{{ @$property->agent->username }}</a>
                                                         @else
-                                                            <span class="badge badge-success">{{ __('Vendor') }}</span>
+                                                            <span class="badge badge-success">{{ __('Agencia') }}</span>
                                                         @endif
                                                     </td>
                                                     <td>

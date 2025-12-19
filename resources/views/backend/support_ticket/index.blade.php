@@ -93,7 +93,7 @@
                           </td>
                           <td>
                             @if ($item->user_type == 'vendor')
-                              <span class="badge badge-success">{{ __('Vendor') }}</span>
+                              <span class="badge badge-success">{{ __('Agencia') }}</span>
                             @else
                               <span class="badge badge-primary">{{ __('Customer') }}</span>
                             @endif

@@ -149,7 +149,7 @@
                                             </div>
                                             <div class="mt-3">
                                                 <div role="button" class="btn btn-primary btn-sm upload-btn">
-                                                    {{ __('Choose Image') }}
+                                                    {{ __('Elegir Imagen') }}
                                                     <input type="file" class="img-input" name="featured_image">
                                                 </div>
                                             </div>
@@ -222,7 +222,7 @@
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label for="">{{ __('Vendor') }}</label>
+                                            <label for="">{{ __('Agencia') }}</label>
                                             <select name="vendor_id" class="form-control vendor js-example-basic-single1">
                                                 <option value="0" selected >{{ __('Please Select') }}
                                                 </option>

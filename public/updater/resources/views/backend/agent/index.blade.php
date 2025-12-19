@@ -26,7 +26,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-lg-6">
-                            <div class="card-title d-inline-block">{{ __('All Agents') }}</div>
+                            <div class="card-title d-inline-block">{{ __('Todos los Agentes') }}</div>
                             <span>{{ '(Login Url:' }} <a target="_blank"
                                     href="{{ route('agent.login') }}">{{ route('agent.login') }}</a>)</span>
                         </div>

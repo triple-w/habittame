@@ -11,7 +11,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   {{-- title --}}
-  <title>{{ __('Vendor') . ' | ' . $websiteInfo->website_title }}</title>
+  <title>{{ __('Agencia') . ' | ' . $websiteInfo->website_title }}</title>
 
   {{-- fav icon --}}
   <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/' . $websiteInfo->favicon) }}">

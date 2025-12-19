@@ -59,7 +59,7 @@
 
                                     <div class="mt-3">
                                         <div role="button" class="btn btn-primary btn-sm upload-btn">
-                                            {{ __('Choose Image') }}
+                                            {{ __('Elegir Imagen') }}
                                             <input type="file" class="img-input" name="why_choose_us_section_img1">
                                         </div>
                                     </div>
@@ -83,7 +83,7 @@
 
                                     <div class="mt-3">
                                         <div role="button" class="btn btn-primary btn-sm upload-btn">
-                                            {{ __('Choose Image') }}
+                                            {{ __('Elegir Imagen') }}
                                             <input type="file" class="img-input2" name="why_choose_us_section_img2">
                                         </div>
                                     </div>

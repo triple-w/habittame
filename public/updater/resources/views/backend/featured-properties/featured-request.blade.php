@@ -137,7 +137,7 @@
 
                                             <th scope="col">{{ __('Transation No') }}</th>
                                             <th scope="col">{{ __('Property Title') }}</th>
-                                            <th scope="col">{{ __('Vendor') }}</th>
+                                            <th scope="col">{{ __('Agencia') }}</th>
                                             <th scope="col">{{ __('Pay Via') }}</th>
                                             <th scope="col">{{ __('Payment Status') }}</th>
                                             <th scope="col">{{ __('Attachment/Receipt') }}</th>

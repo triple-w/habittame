@@ -119,7 +119,7 @@
                       </div>
                       <div class="info-user ml-3">
                         <div class="username">{{ $vendor->username }} </div>
-                        <div class="status">{{ __('Vendor') }}</div>
+                        <div class="status">{{ __('Agencia') }}</div>
                         <p>{!! $reply->reply !!}</p>
                         @if ($reply->file)
                           <a href="{{ asset('assets/admin/img/support-ticket/' . $reply->file) }}"
