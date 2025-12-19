@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="page-header">
-        <h4 class="page-title">{{ __('Add Poperty') }}</h4>
+        <h4 class="page-title">{{ __('Agregar Propiedad') }}</h4>
         <ul class="breadcrumbs">
             <li class="nav-home">
                 <a href="{{ route('admin.dashboard') }}">
@@ -19,7 +19,7 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="#">{{ __('Add Porperty') }}@if (request('type') == 'residential')
+                <a href="#">{{ __('Agregar Propiedad') }}@if (request('type') == 'residential')
                        {{"(Residential)"}}
                     @else
                         {{ "(Commercial)" }}
@@ -33,7 +33,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title d-inline-block">{{ __('Add Porperty') }}</div>
+                    <div class="card-title d-inline-block">{{ __('Agregar Propiedad') }}</div>
                 </div>
 
                 <div class="card-body">
