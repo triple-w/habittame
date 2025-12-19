@@ -91,7 +91,7 @@
                                             <input type="checkbox" class="selectgroup-input" name="permissions[]"
                                                 value="Property Management"
                                                 @if (is_array($rolePermissions) && in_array('Property Management', $rolePermissions)) checked @endif>
-                                            <span class="selectgroup-button">{{ __('Property Management') }}</span>
+                                            <span class="selectgroup-button">{{ __('Manejar Propiedades') }}</span>
                                         </label>
 
                                         <label class="selectgroup-item">

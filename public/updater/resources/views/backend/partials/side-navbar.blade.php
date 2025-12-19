@@ -109,7 +109,7 @@
                                 <li
                                     class="{{ request()->routeIs('admin.property_specification.settings') ? 'active' : '' }}">
                                     <a href="{{ route('admin.property_specification.settings') }}">
-                                        <span class="sub-item">{{ __('Settings') }}</span>
+                                        <span class="sub-item">{{ __('Configuracion') }}</span>
                                     </a>
                                 </li>
                                 <li
@@ -172,7 +172,7 @@
                       @elseif(request()->routeIs('admin.property_management.type')) active @endif">
                         <a data-toggle="collapse" href="#carManagement">
                             <i class="far fa-home"></i>
-                            <p>{{ __('Property Management') }}</p>
+                            <p>{{ __('Manejar Propiedades') }}</p>
                             <span class="caret"></span>
                         </a>
 
@@ -188,7 +188,7 @@
                                 <li
                                     class="{{ request()->routeIs('admin.property_management.settings') ? 'active' : '' }}">
                                     <a href="{{ route('admin.property_management.settings') }}">
-                                        <span class="sub-item">{{ __('Settings') }}</span>
+                                        <span class="sub-item">{{ __('Configuracion') }}</span>
                                     </a>
                                 </li>
                                 <li
@@ -307,7 +307,7 @@
                                 <li
                                     class="{{ request()->routeIs('admin.project_management.settings') ? 'active' : '' }}">
                                     <a href="{{ route('admin.project_management.settings') }}">
-                                        <span class="sub-item">{{ __('Settings') }}</span>
+                                        <span class="sub-item">{{ __('Configuracion') }}</span>
                                     </a>
                                 </li>
 

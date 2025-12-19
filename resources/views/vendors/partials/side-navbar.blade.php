@@ -81,7 +81,7 @@
                       @elseif(request()->routeIs('vendor.property_management.edit')) active @endif">
                         <a data-toggle="collapse" href="#propertyManagement">
                             <i class="fas fa-home"></i>
-                            <p>{{ __('Property Management') }}</p>
+                            <p>{{ __('Manejar Propiedades') }}</p>
                             <span class="caret"></span>
                         </a>
 

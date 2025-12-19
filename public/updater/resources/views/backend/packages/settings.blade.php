@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="page-header">
-    <h4 class="page-title">{{ __('Settings') }}</h4>
+    <h4 class="page-title">{{ __('Configuracion') }}</h4>
     <ul class="breadcrumbs">
       <li class="nav-home">
         <a href="{{ route('admin.dashboard') }}">
@@ -19,7 +19,7 @@
         <i class="flaticon-right-arrow"></i>
       </li>
       <li class="nav-item">
-        <a href="#">{{ __('Settings') }}</a>
+        <a href="#">{{ __('Configuracion') }}</a>
       </li>
     </ul>
   </div>
@@ -28,7 +28,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <div class="card-title d-inline-block">{{ __('Settings') }}</div>
+          <div class="card-title d-inline-block">{{ __('Configuracion') }}</div>
 
         </div>
         <div class="card-body pt-5 pb-5">

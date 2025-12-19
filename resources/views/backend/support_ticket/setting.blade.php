@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="page-header">
-    <h4 class="page-title">{{ __('Setting') }}</h4>
+    <h4 class="page-title">{{ __('Configuracion') }}</h4>
     <ul class="breadcrumbs">
       <li class="nav-home">
         <a href="{{ route('admin.dashboard') }}">
@@ -20,7 +20,7 @@
         <i class="flaticon-right-arrow"></i>
       </li>
       <li class="nav-item">
-        <a href="#">{{ __('Setting') }}</a>
+        <a href="#">{{ __('Configuracion') }}</a>
       </li>
     </ul>
   </div>
@@ -31,7 +31,7 @@
         <form action="{{ route('admin.support_ticket.update_setting') }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="card-header">
-            <div class="card-title d-inline-block">{{ __('Setting') }}</div>
+            <div class="card-title d-inline-block">{{ __('Configuracion') }}</div>
 
           </div>
 
