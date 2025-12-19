@@ -3,15 +3,15 @@
 @endphp
 @extends("frontend.layouts.layout-v$version")
 @section('pageHeading')
-    {{ __('Edit Profile') }}
+    {{ __('Editar Perfil') }}
 @endsection
 
 
 @section('content')
     @includeIf('frontend.partials.breadcrumb', [
         'breadcrumb' => $bgImg->breadcrumb,
-        'title' => !empty($pageHeading) ? $pageHeading->edit_profile_page_title : __('Edit Profile'),
-        'subtitle' => __('Edit Profile'),
+        'title' => !empty($pageHeading) ? $pageHeading->edit_profile_page_title : __('Editar Perfil'),
+        'subtitle' => __('Editar Perfil'),
     ])
 
 
@@ -24,7 +24,7 @@
                     <div class="user-profile-details mb-40">
                         <div class="account-info radius-md">
                             <div class="title">
-                                <h4>{{ __('Edit Profile') }}</h4>
+                                <h4>{{ __('Editar Perfil') }}</h4>
                             </div>
                             <div class="edit-info-area">
                                 @if (Session::has('success'))

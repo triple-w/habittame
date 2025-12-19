@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="page-header">
-        <h4 class="page-title">{{ __('Property Messages') }}</h4>
+        <h4 class="page-title">{{ __('Mensajes') }}</h4>
         <ul class="breadcrumbs">
             <li class="nav-home">
                 <a href="{{ route('vendor.dashboard') }}">
@@ -15,7 +15,7 @@
 
 
             <li class="nav-item">
-                <a href="#">{{ __('Property Messages') }}</a>
+                <a href="#">{{ __('Mensajes') }}</a>
             </li>
         </ul>
     </div>

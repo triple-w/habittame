@@ -13,7 +13,7 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="#">{{ __('Project Management') }}</a>
+                <a href="#">{{ __('Manejar Proyecto') }}</a>
             </li>
 
             <li class="separator">

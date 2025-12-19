@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="page-header">
-        <h4 class="page-title">{{ __('Properties') }}</h4>
+        <h4 class="page-title">{{ __('Propiedades') }}</h4>
         <ul class="breadcrumbs">
             <li class="nav-home">
                 <a href="{{ route('admin.dashboard') }}">
@@ -21,7 +21,7 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="#">{{ __('Properties') }}</a>
+                <a href="#">{{ __('Propiedades') }}</a>
             </li>
         </ul>
     </div>
@@ -32,7 +32,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-lg-3">
-                            <div class="card-title d-inline-block">{{ __('Properties') }}</div>
+                            <div class="card-title d-inline-block">{{ __('Propiedades') }}</div>
                         </div>
 
                         <div class="col-lg-3">
@@ -57,7 +57,7 @@
                         <div class="col-lg-3 mt-2 mt-lg-0">
                             <a href="{{ route('agent.property_management.type') }}"
                                 class="btn btn-primary btn-sm float-lg-right"><i class="fas fa-plus"></i>
-                                {{ __('Add Property') }}</a>
+                                {{ __('agregar propiedad') }}</a>
 
                             <button class="btn btn-danger btn-sm float-lg-right mr-2 d-none bulk-delete"
                                 data-href="{{ route('agent.property_management.bulk_delete_property') }}"><i

@@ -52,7 +52,7 @@
                                                     </h2>
                                                     <p class="card-category"><strong>{{ __('Total') }}:</strong>
                                                         {{ $commertialCount }}
-                                                        {{ __('Properties') }}
+                                                        {{ __('Propiedades') }}
                                                     </p>
                                                 </div>
                                             </div>
@@ -80,7 +80,7 @@
                                                     </h2>
                                                     <p class="card-category"><strong>{{ __('Total') }}:</strong>
                                                         {{ $residentialCount }}
-                                                        {{ __('Properties') }}
+                                                        {{ __('Propiedades') }}
                                                     </p>
                                                 </div>
                                             </div>

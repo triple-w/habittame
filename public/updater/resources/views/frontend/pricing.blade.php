@@ -95,10 +95,10 @@
 
 
                                                             @if ($package->number_of_property == 999999)
-                                                                {{ __('Unlimited') }} {{ __('Properties') }}
+                                                                {{ __('Unlimited') }} {{ __('Propiedades') }}
                                                             @elseif ($package->number_of_property > 1)
                                                                 {{ $package->number_of_property }}
-                                                                {{ __('Properties') }}
+                                                                {{ __('Propiedades') }}
                                                             @else
                                                                 {{ $package->number_of_property }}
                                                                 {{ __('Property') }}
@@ -151,12 +151,12 @@
                                                                 {{ __('Projects') }}
                                                             @else
                                                                 {{ $package->number_of_projects }}
-                                                                {{ __('Project') }}
+                                                                {{ __('Proyecto') }}
                                                             @endif
                                                         </li>
                                                     @else
                                                         <li class="disabled"><i class="fal fa-times"></i>
-                                                            {{ __('Project') }}
+                                                            {{ __('Proyecto') }}
                                                         </li>
                                                     @endif
 
@@ -267,10 +267,10 @@
 
 
                                                             @if ($package->number_of_property == 999999)
-                                                                {{ __('Unlimited') }} {{ __('Properties') }}
+                                                                {{ __('Unlimited') }} {{ __('Propiedades') }}
                                                             @elseif ($package->number_of_property > 1)
                                                                 {{ $package->number_of_property }}
-                                                                {{ __('Properties') }}
+                                                                {{ __('Propiedades') }}
                                                             @else
                                                                 {{ $package->number_of_property }}
                                                                 {{ __('Property') }}
@@ -322,12 +322,12 @@
                                                                 {{ __('Projects') }}
                                                             @else
                                                                 {{ $package->number_of_projects }}
-                                                                {{ __('Project') }}
+                                                                {{ __('Proyecto') }}
                                                             @endif
                                                         </li>
                                                     @else
                                                         <li class="disabled"><i class="fal fa-times"></i>
-                                                            {{ __('Project') }}
+                                                            {{ __('Proyecto') }}
                                                         </li>
                                                     @endif
 
@@ -436,10 +436,10 @@
 
 
                                                             @if ($package->number_of_property == 999999)
-                                                                {{ __('Unlimited') }} {{ __('Properties') }}
+                                                                {{ __('Unlimited') }} {{ __('Propiedades') }}
                                                             @elseif ($package->number_of_property > 1)
                                                                 {{ $package->number_of_property }}
-                                                                {{ __('Properties') }}
+                                                                {{ __('Propiedades') }}
                                                             @else
                                                                 {{ $package->number_of_property }}
                                                                 {{ __('Property') }}
@@ -492,12 +492,12 @@
                                                                 {{ __('Projects') }}
                                                             @else
                                                                 {{ $package->number_of_projects }}
-                                                                {{ __('Project') }}
+                                                                {{ __('Proyecto') }}
                                                             @endif
                                                         </li>
                                                     @else
                                                         <li class="disabled"><i class="fal fa-times"></i>
-                                                            {{ __('Project') }}
+                                                            {{ __('Proyecto') }}
                                                         </li>
                                                     @endif
 

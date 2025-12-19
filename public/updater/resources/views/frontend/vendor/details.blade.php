@@ -344,7 +344,7 @@
                                                     <div class="agent-details text-center">
                                                         <span
                                                             class="color-primary font-sm">{{ count($agent->properties->where('approve_status', 1)) }}
-                                                            {{ __('Properties') }}</span> |
+                                                            {{ __('Propiedades') }}</span> |
 
                                                         <span
                                                             class="color-primary font-sm">{{ count($agent->projects->where('approve_status', 1)) }}

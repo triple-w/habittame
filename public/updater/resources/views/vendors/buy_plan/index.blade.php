@@ -110,7 +110,7 @@
 
                     <ul class="pricing-content">
                         <li>{{ __('Agents') . ' :' }} {{ $package->number_of_agent }}</li>
-                        <li>{{ __('Properties') . ' : ' }} {{ $package->number_of_property }}</li>
+                        <li>{{ __('Propiedades') . ' : ' }} {{ $package->number_of_property }}</li>
                         <li>{{ __('Gallery Images (per property)') . ' : ' }}
                             {{ $package->number_of_property_gallery_images }}</li>
                         <li>{{ __('Additional Feature (per property)') . ' : ' }}

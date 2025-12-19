@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="page-header">
-        <h4 class="page-title">{{ __('Project') }}</h4>
+        <h4 class="page-title">{{ __('Proyecto') }}</h4>
         <ul class="breadcrumbs">
             <li class="nav-home">
                 <a href="{{ route('admin.dashboard') }}">
@@ -16,7 +16,7 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="#">{{ __('Project Management') }}</a>
+                <a href="#">{{ __('Manejar Proyecto') }}</a>
             </li>
             <li class="separator">
                 <i class="flaticon-right-arrow"></i>
@@ -72,7 +72,7 @@
                         <div class="col-lg-2 mt-2 mt-lg-0">
                             <a href="{{ route('admin.project_management.create_project') }}"
                                 class="btn btn-primary btn-sm mt-lg-3 float-lg-right"><i class="fas fa-plus"></i>
-                                {{ __('Add Project') }}</a>
+                                {{ __('Agregar Proyecto') }}</a>
 
                             <button class="btn btn-danger btn-sm float-right mt-lg-3 mr-2 d-none bulk-delete"
                                 data-href="{{ route('admin.project_management.bulk_delete_project') }}"><i

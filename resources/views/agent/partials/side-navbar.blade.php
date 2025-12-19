@@ -28,19 +28,19 @@
                         <ul class="nav">
                             <li>
                                 <a href="{{ route('agent.edit.profile') }}">
-                                    <span class="link-collapse">{{ __('Edit Profile') }}</span>
+                                    <span class="link-collapse">{{ __('Editar Perfil') }}</span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="{{ route('agent.change_password') }}">
-                                    <span class="link-collapse">{{ __('Change Password') }}</span>
+                                    <span class="link-collapse">{{ __('Cambiar Contraseña') }}</span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="{{ route('agent.logout') }}">
-                                    <span class="link-collapse">{{ __('Logout') }}</span>
+                                    <span class="link-collapse">{{ __('Salir') }}</span>
                                 </a>
                             </li>
                         </ul>
@@ -94,7 +94,7 @@
                                 <li
                                     class="{{ request()->routeIs('agent.property_management.create_property') || request()->routeIs('agent.property_management.type') ? 'active' : '' }}">
                                     <a href="{{ route('agent.property_management.type') }}">
-                                        <span class="sub-item">{{ __('Add Property') }}</span>
+                                        <span class="sub-item">{{ __('agregar propiedad') }}</span>
                                     </a>
                                 </li>
 
@@ -103,7 +103,7 @@
             @elseif (request()->routeIs('agent.property_management.edit')) active @endif">
                                     <a
                                         href="{{ route('agent.property_management.properties', ['language' => $defaultLang->code]) }}">
-                                        <span class="sub-item">{{ __('Manage Properties') }}</span>
+                                        <span class="sub-item">{{ __('Manejar Propiedad') }}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -113,7 +113,7 @@
                     <li class="nav-item  @if (request()->routeIs('agent.property_message.index')) active @endif">
                         <a href="{{ route('agent.property_message.index') }}">
                             <i class="fas fa-comment"></i>
-                            <p>{{ __('Property Messages') }}</p>
+                            <p>{{ __('Mensajes') }}</p>
                         </a>
                     </li>
 
@@ -126,7 +126,7 @@
                      @elseif (request()->routeIs('agent.project_management.edit')) active  @elseif(request()->routeIs('agent.project_management.project_types')) active @endif">
                         <a data-toggle="collapse" href="#projectManagement">
                             <i class="fal fa-city"></i>
-                            <p>{{ __('Project Management') }}</p>
+                            <p>{{ __('Manejar Proyecto') }}</p>
                             <span class="caret"></span>
                         </a>
 
@@ -142,7 +142,7 @@
                                 <li
                                     class="{{ request()->routeIs('agent.project_management.create_project') ? 'active' : '' }}">
                                     <a href="{{ route('agent.project_management.create_project') }}">
-                                        <span class="sub-item">{{ __('Add Project') }}</span>
+                                        <span class="sub-item">{{ __('Agregar Proyecto') }}</span>
                                     </a>
                                 </li>
 
@@ -154,7 +154,7 @@
                                         : '' }}">
                                     <a
                                         href="{{ route('agent.project_management.projects', ['language' => $defaultLang->code]) }}">
-                                        <span class="sub-item">{{ __('Manage Projects') }}</span>
+                                        <span class="sub-item">{{ __('Editar Proyecto') }}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -166,20 +166,20 @@
                 <li class="nav-item @if (request()->routeIs('agent.edit.profile')) active @endif">
                     <a href="{{ route('agent.edit.profile') }}">
                         <i class="fal fa-user-edit"></i>
-                        <p>{{ __('Edit Profile') }}</p>
+                        <p>{{ __('Editar Perfil') }}</p>
                     </a>
                 </li>
                 <li class="nav-item @if (request()->routeIs('agent.change_password')) active @endif">
                     <a href="{{ route('agent.change_password') }}">
                         <i class="fal fa-key"></i>
-                        <p>{{ __('Change Password') }}</p>
+                        <p>{{ __('Cambiar Contraseña') }}</p>
                     </a>
                 </li>
 
                 <li class="nav-item @if (request()->routeIs('agent.logout')) active @endif">
                     <a href="{{ route('agent.logout') }}">
                         <i class="fal fa-sign-out"></i>
-                        <p>{{ __('Logout') }}</p>
+                        <p>{{ __('Salir') }}</p>
                     </a>
                 </li>
             </ul>

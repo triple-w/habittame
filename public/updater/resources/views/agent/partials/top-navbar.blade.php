@@ -132,17 +132,17 @@
                             <li>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('agent.edit.profile') }}">
-                                    {{ __('Edit Profile') }}
+                                    {{ __('Editar Perfil') }}
                                 </a>
 
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('agent.change_password') }}">
-                                    {{ __('Change Password') }}
+                                    {{ __('Cambiar Contraseña') }}
                                 </a>
 
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('agent.logout') }}">
-                                    {{ __('Logout') }}
+                                    {{ __('Salir') }}
                                 </a>
                             </li>
                         </div>

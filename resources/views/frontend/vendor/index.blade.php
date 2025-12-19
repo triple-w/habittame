@@ -69,7 +69,7 @@
 
                                     @endphp
                                     <span class="color-primary font-sm">{{ $adminProperties }}
-                                        {{ __('Properties') }}</span> |
+                                        {{ __('Propiedades') }}</span> |
                                     <span class="color-primary font-sm">{{ $adminAgents }}
                                         {{ __('Agents') }}</span> |
                                     <span class="color-primary font-sm">{{ $adminProjects }}
@@ -134,7 +134,7 @@
                                         @endphp
                                         <span
                                             class="color-primary font-sm">{{ count($vendor->properties->where('approve_status', 1)) }}
-                                            {{ __('Properties') }}</span> |
+                                            {{ __('Propiedades') }}</span> |
                                         <span class="color-primary font-sm">{{ count($vendor->agents) }}
                                             {{ __('Agents') }}</span> |
                                         <span

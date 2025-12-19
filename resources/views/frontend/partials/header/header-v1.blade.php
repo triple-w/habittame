@@ -121,7 +121,7 @@
                                     <li><a class="dropdown-item"
                                             href="{{ route('user.dashboard') }}">{{ __('Tablero') }}</a></li>
                                     <li><a class="dropdown-item"
-                                            href="{{ route('user.logout') }}">{{ __('Logout') }}</a></li>
+                                            href="{{ route('user.logout') }}">{{ __('Salir') }}</a></li>
                                 @endif
                             </ul>
                         </div>
@@ -147,7 +147,7 @@
                                             href="{{ route('vendor.dashboard') }}">{{ __('Tablero') }}</a></li>
 
                                     <li><a class="dropdown-item"
-                                            href="{{ route('vendor.logout') }}">{{ __('Logout') }}</a></li>
+                                            href="{{ route('vendor.logout') }}">{{ __('Salir') }}</a></li>
                                 @endif
                             </ul>
                         </div>

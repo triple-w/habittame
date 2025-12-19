@@ -194,7 +194,7 @@
                                 <li
                                     class="{{ request()->routeIs('admin.property_management.create_property') || request()->routeIs('admin.property_management.type') ? 'active' : '' }}">
                                     <a href="{{ route('admin.property_management.type') }}">
-                                        <span class="sub-item">{{ __('Add Property') }}</span>
+                                        <span class="sub-item">{{ __('agregar propiedad') }}</span>
                                     </a>
                                 </li>
 
@@ -205,7 +205,7 @@
                                         : '' }}">
                                     <a
                                         href="{{ route('admin.property_management.properties', ['language' => $defaultLang->code]) }}">
-                                        <span class="sub-item">{{ __('Manage Properties') }}</span>
+                                        <span class="sub-item">{{ __('Manejar Propiedad') }}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -273,7 +273,7 @@
                     <li class="nav-item  @if (request()->routeIs('admin.property_message.index')) active @endif">
                         <a href="{{ route('admin.property_message.index') }}">
                             <i class="fas fa-comment"></i>
-                            <p>{{ __('Property Messages') }}</p>
+                            <p>{{ __('Mensajes') }}</p>
                         </a>
                     </li>
                 @endif
@@ -290,7 +290,7 @@
                      @elseif (request()->routeIs('admin.project_management.edit')) active @endif">
                         <a data-toggle="collapse" href="#projectManagement">
                             <i class="fal fa-building"></i>
-                            <p>{{ __('Project Management') }}</p>
+                            <p>{{ __('Manejar Proyecto') }}</p>
                             <span class="caret"></span>
                         </a>
 
@@ -314,7 +314,7 @@
                                 <li
                                     class="{{ request()->routeIs('admin.project_management.create_project') ? 'active' : '' }}">
                                     <a href="{{ route('admin.project_management.create_project') }}">
-                                        <span class="sub-item">{{ __('Add Project') }}</span>
+                                        <span class="sub-item">{{ __('Agregar Proyecto') }}</span>
                                     </a>
                                 </li>
 
@@ -326,7 +326,7 @@
                                         : '' }}">
                                     <a
                                         href="{{ route('admin.project_management.projects', ['language' => $defaultLang->code]) }}">
-                                        <span class="sub-item">{{ __('Manage Projects') }}</span>
+                                        <span class="sub-item">{{ __('Editar Proyecto') }}</span>
                                     </a>
                                 </li>
                             </ul>

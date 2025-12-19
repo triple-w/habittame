@@ -134,7 +134,7 @@
 
                                 <a href="{{ route('admin.vendor_management.vendor.change_password', ['id' => $vendor->id]) }}"
                                   class="dropdown-item">
-                                  {{ __('Change Password') }}
+                                  {{ __('Cambiar Contraseña') }}
                                 </a>
 
                                 <form class="deleteForm d-block"

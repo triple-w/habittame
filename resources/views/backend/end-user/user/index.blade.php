@@ -129,7 +129,7 @@
                                 </a>
                                 <a href="{{ route('admin.user_management.user.change_password', ['id' => $user->id]) }}"
                                   class="dropdown-item">
-                                  {{ __('Change Password') }}
+                                  {{ __('Cambiar Contraseña') }}
                                 </a>
 
                                 <form class="deleteForm d-block"

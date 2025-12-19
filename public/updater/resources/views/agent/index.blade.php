@@ -20,7 +20,7 @@
 
                             <div class="col-7 col-stats">
                                 <div class="numbers">
-                                    <p class="card-category">{{ __('Properties') }}</p>
+                                    <p class="card-category">{{ __('Propiedades') }}</p>
                                     <h4 class="card-title">{{ $totalProperties }}</h4>
                                 </div>
                             </div>

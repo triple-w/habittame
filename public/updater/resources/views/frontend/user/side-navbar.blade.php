@@ -13,13 +13,13 @@
                     </a></li>
 
                 <li><a href="{{ route('user.change_password') }}"
-                        class="{{ request()->routeIs('user.change_password') ? 'active' : '' }}">{{ __('Change Password') }}
+                        class="{{ request()->routeIs('user.change_password') ? 'active' : '' }}">{{ __('Cambiar Contraseña') }}
                     </a>
                 </li>
                 <li><a href="{{ route('user.edit_profile') }}"
-                        class="{{ request()->routeIs('user.edit_profile') ? 'active' : '' }}">{{ __('Edit Profile') }}
+                        class="{{ request()->routeIs('user.edit_profile') ? 'active' : '' }}">{{ __('Editar Perfil') }}
                     </a></li>
-                <li><a href="{{ route('user.logout') }}">{{ __('Logout') }} </a></li>
+                <li><a href="{{ route('user.logout') }}">{{ __('Salir') }} </a></li>
             </ul>
         </div>
     </div>

@@ -128,17 +128,17 @@
                             <li>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('vendor.edit.profile') }}">
-                                    {{ __('Edit Profile') }}
+                                    {{ __('Editar Perfil') }}
                                 </a>
 
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('vendor.change_password') }}">
-                                    {{ __('Change Password') }}
+                                    {{ __('Cambiar Contraseña') }}
                                 </a>
 
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('vendor.logout') }}">
-                                    {{ __('Logout') }}
+                                    {{ __('Salir') }}
                                 </a>
                             </li>
                         </div>

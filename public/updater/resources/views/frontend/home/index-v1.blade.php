@@ -495,7 +495,7 @@
 
                                                 @endphp
                                                 <span class="color-primary font-sm">{{ count($vendor->properties) }}
-                                                    {{ __('Properties') }}</span> |
+                                                    {{ __('Propiedades') }}</span> |
                                                 <span class="color-primary font-sm">{{ count($vendor->agents) }}
                                                     {{ __('Agents') }}</span> |
                                                 <span class="color-primary font-sm">{{ count($vendor->projects) }}
@@ -579,7 +579,7 @@
                                                 <h5 class="card-title color-white mb-0">{{ $city->name }}</h5>
                                                 <span class="font-sm color-white">{{ $city->propertyCount }}
                                                     @if ($city->propertyCount > 0)
-                                                        {{ __('Properties') }}
+                                                        {{ __('Propiedades') }}
                                                     @else
                                                         {{ __('Property') }}
                                                     @endif

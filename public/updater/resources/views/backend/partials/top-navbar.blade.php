@@ -85,17 +85,17 @@
               <li>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ route('admin.edit_profile') }}">
-                  {{ __('Edit Profile') }}
+                  {{ __('Editar Perfil') }}
                 </a>
 
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ route('admin.change_password') }}">
-                  {{ __('Change Password') }}
+                  {{ __('Cambiar Contraseña') }}
                 </a>
 
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ route('admin.logout') }}">
-                  {{ __('Logout') }}
+                  {{ __('Salir') }}
                 </a>
               </li>
             </div>

@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="page-header">
-        <h4 class="page-title">{{ __('Add Project') }}</h4>
+        <h4 class="page-title">{{ __('Agregar Proyecto') }}</h4>
         <ul class="breadcrumbs">
             <li class="nav-home">
                 <a href="{{ route('vendor.dashboard') }}">
@@ -14,13 +14,13 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="#">{{ __('Project Management') }}</a>
+                <a href="#">{{ __('Manejar Proyecto') }}</a>
             </li>
             <li class="separator">
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="#">{{ __('Add Project') }}</a>
+                <a href="#">{{ __('Agregar Proyecto') }}</a>
             </li>
         </ul>
     </div>
@@ -29,7 +29,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title d-inline-block">{{ __('Add Project') }}</div>
+                    <div class="card-title d-inline-block">{{ __('Agregar Proyecto') }}</div>
                 </div>
 
                 <div class="card-body">

@@ -3,15 +3,15 @@
 @endphp
 @extends("frontend.layouts.layout-v$version")
 @section('pageHeading')
-    {{ __('Change Password') }}
+    {{ __('Cambiar Contraseña') }}
 @endsection
 
 
 @section('content')
     @includeIf('frontend.partials.breadcrumb', [
         'breadcrumb' => $bgImg->breadcrumb,
-        'title' => !empty($pageHeading) ? $pageHeading->change_password_page_title : __('Change Password'),
-        'subtitle' => __('Change Password'),
+        'title' => !empty($pageHeading) ? $pageHeading->change_password_page_title : __('Cambiar Contraseña'),
+        'subtitle' => __('Cambiar Contraseña'),
     ])
 
 
@@ -24,7 +24,7 @@
                     <div class="user-profile-details mb-40">
                         <div class="account-info radius-md">
                             <div class="title">
-                                <h4>{{ __('Change Password') }}</h4>
+                                <h4>{{ __('Cambiar Contraseña') }}</h4>
                             </div>
                             <div class="edit-info-area mt-30">
                                 @if (Session::has('success'))

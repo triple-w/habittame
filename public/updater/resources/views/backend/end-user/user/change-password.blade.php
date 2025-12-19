@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="page-header">
-    <h4 class="page-title">{{ __('Change Password') }}</h4>
+    <h4 class="page-title">{{ __('Cambiar Contraseña') }}</h4>
     <ul class="breadcrumbs">
       <li class="nav-home">
         <a href="{{ route('admin.dashboard') }}">
@@ -25,7 +25,7 @@
         <i class="flaticon-right-arrow"></i>
       </li>
       <li class="nav-item">
-        <a href="#">{{ __('Change Password') }}</a>
+        <a href="#">{{ __('Cambiar Contraseña') }}</a>
       </li>
     </ul>
   </div>
@@ -36,7 +36,7 @@
         <div class="card-header">
           <div class="row">
             <div class="col-lg-8">
-              <div class="card-title">{{ __('Change Password') }}</div>
+              <div class="card-title">{{ __('Cambiar Contraseña') }}</div>
             </div>
             <div class="col-lg-4">
               <a class="btn btn-info btn-sm float-right d-inline-block"

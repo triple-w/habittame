@@ -104,13 +104,13 @@
                                         <label class="selectgroup-item">
                                             <input type="checkbox" class="selectgroup-input" name="permissions[]"
                                                 value="Property Messages" @if (is_array($rolePermissions) && in_array('Property Messages', $rolePermissions)) checked @endif>
-                                            <span class="selectgroup-button">{{ __('Property Messages') }}</span>
+                                            <span class="selectgroup-button">{{ __('Mensajes') }}</span>
                                         </label>
 
                                         <label class="selectgroup-item">
                                             <input type="checkbox" class="selectgroup-input" name="permissions[]"
                                                 value="Project Management" @if (is_array($rolePermissions) && in_array('Project Management', $rolePermissions)) checked @endif>
-                                            <span class="selectgroup-button">{{ __('Project Management') }}</span>
+                                            <span class="selectgroup-button">{{ __('Manejar Proyecto') }}</span>
                                         </label>
 
                                         <label class="selectgroup-item">
