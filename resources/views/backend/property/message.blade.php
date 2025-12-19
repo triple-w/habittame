@@ -26,7 +26,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-lg-4">
-                            <div class="card-title d-inline-block">{{ __('All Message') }}</div>
+                            <div class="card-title d-inline-block">{{ __('Todos los Mensajes') }}</div>
                         </div>
 
                     </div>
@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             @if (count($messages) == 0)
-                                <h3 class="text-center mt-2">{{ __('NO MESSAGE FOUND') . '!' }}</h3>
+                                <h3 class="text-center mt-2">{{ __('No hay mensajes encontrados') . '!' }}</h3>
                             @else
                                 <div class="table-responsive">
                                     <table class="table table-striped mt-3" id="basic-datatables">

@@ -22,7 +22,7 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="#">{{ __('Projects') }}</a>
+                <a href="#">{{ __('Proyectos') }}</a>
             </li>
         </ul>
     </div>
@@ -33,7 +33,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-lg-3">
-                            <div class="card-title pt-lg-3 d-inline-block justify-item-center">{{ __('Projects') }}</div>
+                            <div class="card-title pt-lg-3 d-inline-block justify-item-center">{{ __('Proyectos') }}</div>
                         </div>
 
                         <div class="col-lg-4">

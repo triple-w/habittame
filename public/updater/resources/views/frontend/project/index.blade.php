@@ -4,7 +4,7 @@
 @extends("frontend.layouts.layout-v$version")
 
 @section('pageHeading')
-    {{ !empty($pageHeading) ? $pageHeading->project_page_title : __('Projects') }}
+    {{ !empty($pageHeading) ? $pageHeading->project_page_title : __('Proyectos') }}
 @endsection
 
 @section('metaKeywords')
@@ -22,8 +22,8 @@
 @section('content')
     @includeIf('frontend.partials.breadcrumb', [
         'breadcrumb' => $bgImg->breadcrumb,
-        'title' => !empty($pageHeading) ? $pageHeading->project_page_title : __('Projects'),
-        'subtitle' => __('Projects'),
+        'title' => !empty($pageHeading) ? $pageHeading->project_page_title : __('Proyectos'),
+        'subtitle' => __('Proyectos'),
     ])
     <div class="projects-area pt-100 pb-70">
         <div class="container">

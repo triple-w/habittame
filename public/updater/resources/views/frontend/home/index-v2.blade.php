@@ -618,7 +618,7 @@
                                                                     {{ __('Unlimited') }}
                                                                 @elseif ($package->number_of_property > 1)
                                                                     {{ $package->number_of_projects }}
-                                                                    {{ __('Projects') }}
+                                                                    {{ __('Proyectos') }}
                                                                 @else
                                                                     {{ $package->number_of_projects }}
                                                                     {{ __('Proyecto') }}
@@ -790,7 +790,7 @@
                                                                     {{ __('Unlimited') }}
                                                                 @elseif ($package->number_of_property > 1)
                                                                     {{ $package->number_of_projects }}
-                                                                    {{ __('Projects') }}
+                                                                    {{ __('Proyectos') }}
                                                                 @else
                                                                     {{ $package->number_of_projects }}
                                                                     {{ __('Proyecto') }}
@@ -961,7 +961,7 @@
                                                                     {{ __('Unlimited') }}
                                                                 @elseif ($package->number_of_property > 1)
                                                                     {{ $package->number_of_projects }}
-                                                                    {{ __('Projects') }}
+                                                                    {{ __('Proyectos') }}
                                                                 @else
                                                                     {{ $package->number_of_projects }}
                                                                     {{ __('Proyecto') }}

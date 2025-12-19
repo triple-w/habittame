@@ -348,7 +348,7 @@
 
                                                         <span
                                                             class="color-primary font-sm">{{ count($agent->projects->where('approve_status', 1)) }}
-                                                            {{ __('Projects') }}</span>
+                                                            {{ __('Proyectos') }}</span>
                                                         <h4 class="agent-title"><a
                                                                 href="{{ route('frontend.agent.details', ['username' => $agent->username]) }}">{{ $agent->agent_info?->first_name . ' ' . $agent->agent_info?->last_name }}</a>
                                                         </h4>

@@ -148,7 +148,7 @@
 
                             <div class="col-7 col-stats">
                                 <div class="numbers">
-                                    <p class="card-category">{{ __('Projects') }}</p>
+                                    <p class="card-category">{{ __('Proyectos') }}</p>
                                     <h4 class="card-title">{{ $totalProjects }}</h4>
                                 </div>
                             </div>

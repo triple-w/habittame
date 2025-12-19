@@ -73,7 +73,7 @@
                                     <span class="color-primary font-sm">{{ $adminAgents }}
                                         {{ __('Agents') }}</span> |
                                     <span class="color-primary font-sm">{{ $adminProjects }}
-                                        {{ __('Projects') }}</span>
+                                        {{ __('Proyectos') }}</span>
 
 
                                     <h4 class="agent-title"><a
@@ -139,7 +139,7 @@
                                             {{ __('Agents') }}</span> |
                                         <span
                                             class="color-primary font-sm">{{ count($vendor->projects->where('approve_status', 1)) }}
-                                            {{ __('Projects') }}</span>
+                                            {{ __('Proyectos') }}</span>
 
 
                                         <h4 class="agent-title"><a

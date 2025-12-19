@@ -499,7 +499,7 @@
                                                 <span class="color-primary font-sm">{{ count($vendor->agents) }}
                                                     {{ __('Agents') }}</span> |
                                                 <span class="color-primary font-sm">{{ count($vendor->projects) }}
-                                                    {{ __('Projects') }}</span>
+                                                    {{ __('Proyectos') }}</span>
 
 
                                                 <h4 class="agent-title"><a

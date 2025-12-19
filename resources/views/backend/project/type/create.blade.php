@@ -82,7 +82,7 @@
                                             <div class="col-lg-6">
                                                 <div
                                                     class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                    <label>{{ __('Min Price') . ' (' . $settings->base_currency_text . ') ' . '*' }}</label>
+                                                    <label>{{ __('Precio MInimo') . ' (' . $settings->base_currency_text . ') ' . '*' }}</label>
                                                     <input type="text" name="{{ $language->code }}_min_price"
                                                         class="form-control" placeholder="Enter Minimum Price">
                                                 </div>
@@ -91,7 +91,7 @@
                                             <div class="col-lg-6">
                                                 <div
                                                     class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                    <label>{{ __('Max Price') . ' (' . $settings->base_currency_text . ')' }}</label>
+                                                    <label>{{ __('Precio Máximo') . ' (' . $settings->base_currency_text . ')' }}</label>
                                                     <input type="text" name="{{ $language->code }}_max_price"
                                                         class="form-control" placeholder="Enter Maximum Price">
                                                 </div>

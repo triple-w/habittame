@@ -61,7 +61,7 @@
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <label for="" class="mb-2"><strong>{{ __('Floor Plan Images') }}
+                                    <label for="" class="mb-2"><strong>{{ __('Imagenes de Planos') }}
                                             **</strong></label>
                                     <form action="#" id="my-dropzone2" enctype="multipart/form-data"
                                         class="dropzone create">
@@ -83,7 +83,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="">{{ __('Feature Image') . '*' }}</label>
+                                            <label for="">{{ __('Imgen Principal') . '*' }}</label>
                                             <br>
                                             <div class="thumb-preview">
                                                 <img src="{{ asset('assets/img/noimage.jpg') }}" alt="..."
@@ -105,7 +105,7 @@
                                 <div class="row">
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>{{ __('Min Price') . ' (' . $settings->base_currency_text . ') ' }}
+                                            <label>{{ __('Precio MInimo') . ' (' . $settings->base_currency_text . ') ' }}
                                                 *</label>
                                             <input type="number" class="form-control" name="min_price"
                                                 placeholder="Enter Minimum Price">
@@ -113,7 +113,7 @@
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>{{ __('Max Price') . ' (' . $settings->base_currency_text . ')' }}
+                                            <label>{{ __('Precio Máximo') . ' (' . $settings->base_currency_text . ')' }}
                                             </label>
                                             <input type="number" class="form-control" name="max_price"
                                                 placeholder="Enter Maximum Price">

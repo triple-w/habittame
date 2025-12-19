@@ -115,7 +115,7 @@
                             {{ $package->number_of_property_gallery_images }}</li>
                         <li>{{ __('Additional Feature (per property)') . ' : ' }}
                             {{ $package->number_of_property_adittionl_specifications }}</li>
-                        <li>{{ __('Projects') . ' : ' }} {{ $package->number_of_projects }}</li>
+                        <li>{{ __('Proyectos') . ' : ' }} {{ $package->number_of_projects }}</li>
                         <li>{{ __('Project Types (per project)') . ' : ' }} {{ $package->number_of_project_types }}</li>
                         <li>{{ __('Gallery Images (per project)') . ' : ' }}
                             {{ $package->number_of_project_gallery_images }}</li>

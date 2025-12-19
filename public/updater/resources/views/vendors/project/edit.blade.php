@@ -112,7 +112,7 @@
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <label for="" class="mb-2"><strong>{{ __('Floor Plan Images') }}
+                                    <label for="" class="mb-2"><strong>{{ __('Imagenes de Planos') }}
                                             **</strong></label>
                                     <table class="table table-striped" id="imgtable">
 
@@ -176,7 +176,7 @@
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>{{ __('Min Price') . ' (' . $settings->base_currency_text . ')' }}
+                                            <label>{{ __('Precio MInimo') . ' (' . $settings->base_currency_text . ')' }}
                                                 *</label>
                                             <input type="number" class="form-control" name="min_price"
                                                 placeholder="Enter Minimum Price" value="{{ $project->min_price }}">
@@ -185,7 +185,7 @@
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>{{ __('Max Price') . ' (' . $settings->base_currency_text . ')' }}
+                                            <label>{{ __('Precio Máximo') . ' (' . $settings->base_currency_text . ')' }}
                                             </label>
                                             <input type="number" class="form-control" name="max_price"
                                                 placeholder="Enter Maximum Price" value="{{ $project->max_price }}">

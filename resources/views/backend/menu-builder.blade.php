@@ -55,7 +55,7 @@
                                                 class="addToMenus btn btn-primary btn-sm float-right">{{ __('Add To Menus') }}</a>
                                         </li>
                                         <li class="list-group-item">
-                                            {{ __('Projects') }} <a href="" data-text="{{ __('Projects') }}"
+                                            {{ __('Proyectos') }} <a href="" data-text="{{ __('Proyectos') }}"
                                                 data-type="projects"
                                                 class="addToMenus btn btn-primary btn-sm float-right">{{ __('Add To Menus') }}</a>
                                         </li>

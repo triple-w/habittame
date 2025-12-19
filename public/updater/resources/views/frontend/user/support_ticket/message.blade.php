@@ -148,7 +148,7 @@
                                                 @endif
                                             @endforeach
                                         @else
-                                            <p>{{ __('No Message Found') }}</p>
+                                            <p>{{ __('No hay mensajes encontrados') }}</p>
                                         @endif
                                     </div>
                                     @if ($ticket->status == 2)

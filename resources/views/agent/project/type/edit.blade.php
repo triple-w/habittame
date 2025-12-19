@@ -86,7 +86,7 @@
                                             <div class="col-lg-6">
                                                 <div
                                                     class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                    <label>{{ __('Min Price') . '*' }}</label>
+                                                    <label>{{ __('Precio MInimo') . '*' }}</label>
                                                     <input type="text" name="{{ $language->code }}_min_price"
                                                         id="in_{{ $language->code }}_min_price" class="form-control"
                                                         placeholder="Enter Minimum Price">
@@ -96,7 +96,7 @@
                                             <div class="col-lg-6">
                                                 <div
                                                     class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                    <label>{{ __('Max Price') }}</label>
+                                                    <label>{{ __('Precio Máximo') }}</label>
                                                     <input type="text" name="{{ $language->code }}_max_price"
                                                         id="in_{{ $language->code }}_max_price" class="form-control"
                                                         placeholder="Enter Maximum Price">
