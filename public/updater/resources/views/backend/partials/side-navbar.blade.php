@@ -125,7 +125,7 @@
                                     class="{{ request()->routeIs('admin.property_specification.amenities') ? 'active' : '' }}">
                                     <a
                                         href="{{ route('admin.property_specification.amenities', ['language' => $defaultLang->code]) }}">
-                                        <span class="sub-item">{{ __('Amenities') }}</span>
+                                        <span class="sub-item">{{ __('Amenidades') }}</span>
                                     </a>
                                 </li>
                                 @if ($settings->property_country_status == 1)

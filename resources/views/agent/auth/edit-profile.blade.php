@@ -189,7 +189,7 @@
 
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{ __('Country') }}</label>
+                                                                        <label>{{ __('País') }}</label>
                                                                         <input type="text"
                                                                             value="{{ !empty($agent_info) ? $agent_info->country : '' }}"
                                                                             class="form-control"
@@ -201,7 +201,7 @@
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{ __('City') }}</label>
+                                                                        <label>{{ __('Ciudad') }}</label>
                                                                         <input type="text"
                                                                             value="{{ !empty($agent_info) ? $agent_info->city : '' }}"
                                                                             class="form-control"
@@ -213,7 +213,7 @@
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{ __('State') }}</label>
+                                                                        <label>{{ __('Estado') }}</label>
                                                                         <input type="text"
                                                                             value="{{ !empty($agent_info) ? $agent_info->state : '' }}"
                                                                             class="form-control"

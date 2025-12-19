@@ -151,7 +151,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="price">{{ __('Price') }} ({{ $settings->base_currency_text }})*</label>
+                            <label for="price">{{ __('Precio') }} ({{ $settings->base_currency_text }})*</label>
                             <input id="price" type="number" class="form-control" name="price"
                                 placeholder="{{ __('Enter featured price') }}" value="">
                             <p class="text-warning mb-0">

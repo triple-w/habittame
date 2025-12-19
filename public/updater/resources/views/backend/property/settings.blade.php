@@ -43,7 +43,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group mt-1">
-                                            <label for="">{{ __('Country') . '*' }}</label>
+                                            <label for="">{{ __('País') . '*' }}</label>
                                             <div class="selectgroup w-100">
                                                 <label class="selectgroup-item">
                                                     <input type="radio" name="property_country_status"
@@ -64,7 +64,7 @@
 
                                     <div class="col-lg-12">
                                         <div class="form-group mt-1">
-                                            <label for="">{{ __('State') . '*' }}</label>
+                                            <label for="">{{ __('Estado') . '*' }}</label>
                                             <div class="selectgroup w-100">
                                                 <label class="selectgroup-item">
                                                     <input type="radio" name="property_state_status"

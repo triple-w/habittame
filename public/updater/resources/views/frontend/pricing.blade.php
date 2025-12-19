@@ -117,11 +117,11 @@
                                                             @else
                                                                 {{ $package->number_of_property_gallery_images }}
                                                             @endif
-                                                            {{ __('Gallery Images') }} ({{ __('Per Property') }})
+                                                            {{ __('Galeria de Imagenes') }} ({{ __('Per Property') }})
                                                         </li>
                                                     @else
                                                         <li class="disabled"><i class="fal fa-times"></i>
-                                                            {{ __('Gallery Images') }} ({{ __('Per Property') }})
+                                                            {{ __('Galeria de Imagenes') }} ({{ __('Per Property') }})
                                                         </li>
                                                     @endif
 
@@ -182,11 +182,11 @@
                                                             @else
                                                                 {{ $package->number_of_project_gallery_images }}
                                                             @endif
-                                                            {{ __('Gallery Images') }} ({{ __('Per Project') }})
+                                                            {{ __('Galeria de Imagenes') }} ({{ __('Per Project') }})
                                                         </li>
                                                     @else
                                                         <li class="disabled"><i class="fal fa-times"></i>
-                                                            {{ __('Gallery Images') }} ({{ __('Per Project') }})
+                                                            {{ __('Galeria de Imagenes') }} ({{ __('Per Project') }})
                                                         </li>
                                                     @endif
 
@@ -289,11 +289,11 @@
                                                             @else
                                                                 {{ $package->number_of_property_gallery_images }}
                                                             @endif
-                                                            {{ __('Gallery Images') }} ({{ __('Per Property') }})
+                                                            {{ __('Galeria de Imagenes') }} ({{ __('Per Property') }})
                                                         </li>
                                                     @else
                                                         <li class="disabled"><i class="fal fa-times"></i>
-                                                            {{ __('Gallery Images') }} ({{ __('Per Property') }})
+                                                            {{ __('Galeria de Imagenes') }} ({{ __('Per Property') }})
                                                         </li>
                                                     @endif
 
@@ -353,11 +353,11 @@
                                                             @else
                                                                 {{ $package->number_of_project_gallery_images }}
                                                             @endif
-                                                            {{ __('Gallery Images') }} ({{ __('Per Project') }})
+                                                            {{ __('Galeria de Imagenes') }} ({{ __('Per Project') }})
                                                         </li>
                                                     @else
                                                         <li class="disabled"><i class="fal fa-times"></i>
-                                                            {{ __('Gallery Images') }} ({{ __('Per Project') }})
+                                                            {{ __('Galeria de Imagenes') }} ({{ __('Per Project') }})
                                                         </li>
                                                     @endif
 
@@ -458,11 +458,11 @@
                                                             @else
                                                                 {{ $package->number_of_property_gallery_images }}
                                                             @endif
-                                                            {{ __('Gallery Images') }} ({{ __('Per Property') }})
+                                                            {{ __('Galeria de Imagenes') }} ({{ __('Per Property') }})
                                                         </li>
                                                     @else
                                                         <li class="disabled"><i class="fal fa-times"></i>
-                                                            {{ __('Gallery Images') }} ({{ __('Per Property') }})
+                                                            {{ __('Galeria de Imagenes') }} ({{ __('Per Property') }})
                                                         </li>
                                                     @endif
 
@@ -523,11 +523,11 @@
                                                             @else
                                                                 {{ $package->number_of_project_gallery_images }}
                                                             @endif
-                                                            {{ __('Gallery Images') }} ({{ __('Per Project') }})
+                                                            {{ __('Galeria de Imagenes') }} ({{ __('Per Project') }})
                                                         </li>
                                                     @else
                                                         <li class="disabled"><i class="fal fa-times"></i>
-                                                            {{ __('Gallery Images') }} ({{ __('Per Project') }})
+                                                            {{ __('Galeria de Imagenes') }} ({{ __('Per Project') }})
                                                         </li>
                                                     @endif
 

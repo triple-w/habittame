@@ -263,7 +263,7 @@
                                 <p class="text-warning m-0">
                                     {{ __("Please remove some 'gallery images' from properties & make sure each property has maximum ") }}
                                     {{ abs($currentPackage->number_of_property_gallery_images) }}
-                                    {{ __('gallery images') }}
+                                    {{ __('Galeria de Imagenes') }}
                                 </p>
                             @endif
                         </li>
@@ -342,7 +342,7 @@
                                 <p class="text-warning m-0">
                                     {{ __("Please remove some 'gallery images' from projects & make sure each project has maximum ") }}
                                     {{ abs($currentPackage->number_of_project_gallery_images) }}
-                                    {{ __('gallery images') }}
+                                    {{ __('Galeria de Imagenes') }}
                                 </p>
                             @endif
                         </li>

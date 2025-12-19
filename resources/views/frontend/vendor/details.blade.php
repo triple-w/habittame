@@ -78,7 +78,7 @@
                                         <li class="icon-start">
                                             <div>
                                                 <i class="fal fa-map-marker-alt"></i>
-                                                <span>{{ __('City') }}:</span>
+                                                <span>{{ __('Ciudad') }}:</span>
                                             </div>
                                             <div>
                                                 {{ @$vendorInfo->city }}
@@ -90,7 +90,7 @@
                                         <li class="icon-start">
                                             <div>
                                                 <i class="fal fa-map-marker-alt"></i>
-                                                <span>{{ __('State') }}:</span>
+                                                <span>{{ __('Estado') }}:</span>
                                             </div>
                                             <div>
                                                 {{ @$vendorInfo->state }}
@@ -102,7 +102,7 @@
                                         <li class="icon-start">
                                             <div>
                                                 <i class="fal fa-map-marker-alt"></i>
-                                                <span>{{ __('Country') . ':' }}</span>
+                                                <span>{{ __('País') . ':' }}</span>
                                             </div>
                                             <div>
                                                 {{ @$vendorInfo->country }}

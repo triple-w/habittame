@@ -95,7 +95,7 @@
 
                                         <div class="grid-item city">
                                             <div class="form-group">
-                                                <label for="city" class="icon-end">{{ __('City') }}</label>
+                                                <label for="city" class="icon-end">{{ __('Ciudad') }}</label>
                                                 <select aria-label="#" name="city" class="form-control select2 city_id"
                                                     id="city">
                                                     <option selected disabled value="">{{ __('Select City') }}
@@ -112,7 +112,7 @@
                                             </div>
                                         </div>
                                         <div class="grid-item">
-                                            <label class="price-value">{{ __('Price') }}: <br>
+                                            <label class="price-value">{{ __('Precio') }}: <br>
                                                 <span data-range-value="filterPriceSliderValue">{{ symbolPrice($min) }}
                                                     -
                                                     {{ symbolPrice($max) }}</span>
@@ -175,7 +175,7 @@
 
                                         <div class="grid-item city">
                                             <div class="form-group">
-                                                <label for="city1" class="icon-end">{{ __('City') }}</label>
+                                                <label for="city1" class="icon-end">{{ __('Ciudad') }}</label>
                                                 <select aria-label="#" name="city"
                                                     class="form-control select2 city_id" id="city1">
                                                     <option selected disabled value="">{{ __('Select City') }}
@@ -192,7 +192,7 @@
                                             </div>
                                         </div>
                                         <div class="grid-item">
-                                            <label class="price-value">{{ __('Price') }}: <br>
+                                            <label class="price-value">{{ __('Precio') }}: <br>
                                                 <span data-range-value="filterPriceSlider2Value">{{ symbolPrice($min) }}
                                                     -
                                                     {{ symbolPrice($max) }}</span>

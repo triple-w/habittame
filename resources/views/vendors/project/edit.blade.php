@@ -76,7 +76,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <label for="" class="mb-2"><strong>{{ __('Gallery Images') }}
+                                    <label for="" class="mb-2"><strong>{{ __('Galeria de Imagenes') }}
                                             **</strong></label>
 
                                     <table class="table table-striped" id="imgtable">

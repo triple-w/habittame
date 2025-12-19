@@ -31,9 +31,9 @@
                                     <li><span>{{ __('Username') . ':' }}</span> <span>{{ $authUser->username }}</span></li>
                                     <li><span>{{ __('Email') . ':' }}</span> <span>{{ $authUser->email }}</span></li>
                                     <li><span>{{ __('Phone') . ':' }}</span> <span>{{ $authUser->phone }}</span></li>
-                                    <li><span>{{ __('City') . ':' }}</span> <span>{{ $authUser->city }}</span></li>
-                                    <li><span>{{ __('Country') . ':' }}</span> <span>{{ $authUser->country }}</span></li>
-                                    <li><span>{{ __('State') . ':' }}</span> <span>{{ $authUser->state }}</span></li>
+                                    <li><span>{{ __('Ciudad') . ':' }}</span> <span>{{ $authUser->city }}</span></li>
+                                    <li><span>{{ __('País') . ':' }}</span> <span>{{ $authUser->country }}</span></li>
+                                    <li><span>{{ __('Estado') . ':' }}</span> <span>{{ $authUser->state }}</span></li>
                                     <li><span>{{ __('Zip Code') . ':' }}</span> <span>{{ $authUser->zip_code }}</span>
                                     </li>
                                     <li><span>{{ __('Address') . ':' }}</span> <span>{{ $authUser->address }}</span></li>

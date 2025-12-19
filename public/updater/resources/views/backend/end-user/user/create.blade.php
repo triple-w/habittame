@@ -91,7 +91,7 @@
 
                   <div class="col-lg-4">
                     <div class="form-group">
-                      <label>{{ __('Country') }}</label>
+                      <label>{{ __('País') }}</label>
                       <input type="text" class="form-control" name="country">
                       <p id="editErr_country" class="mt-1 mb-0 text-danger em"></p>
                     </div>

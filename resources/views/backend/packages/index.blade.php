@@ -220,7 +220,7 @@
                             <p id="err_title" class="mb-0 text-danger em"></p>
                         </div>
                         <div class="form-group">
-                            <label for="price">{{ __('Price') }} ({{ $settings->base_currency_text }})*</label>
+                            <label for="price">{{ __('Precio') }} ({{ $settings->base_currency_text }})*</label>
                             <input id="price" type="number" class="form-control" name="price"
                                 placeholder="{{ __('Enter Package price') }}" value="">
                             <p class="text-warning mb-0">

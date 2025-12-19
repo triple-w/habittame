@@ -97,8 +97,8 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group mb-30">
-                                    <label for="" class="mb-1">{{ __('Country') }}</label>
-                                    <input type="text" class="form-control" placeholder="{{ __('Country') }}"
+                                    <label for="" class="mb-1">{{ __('País') }}</label>
+                                    <input type="text" class="form-control" placeholder="{{ __('País') }}"
                                         name="country" value="{{ Auth::guard('web')->user()->country }}">
                                     @error('country')
                                         <p class="text-danger mt-1">{{ $message }}</p>
@@ -108,8 +108,8 @@
 
                             <div class="col-lg-6">
                                 <div class="form-group mb-30">
-                                    <label for="" class="mb-1">{{ __('City') }}</label>
-                                    <input type="text" class="form-control" placeholder="{{ __('City') }}"
+                                    <label for="" class="mb-1">{{ __('Ciudad') }}</label>
+                                    <input type="text" class="form-control" placeholder="{{ __('Ciudad') }}"
                                         name="city" value="{{ Auth::guard('web')->user()->city }}">
                                     @error('city')
                                         <p class="text-danger mt-1">{{ $message }}</p>
@@ -119,8 +119,8 @@
 
                             <div class="col-lg-6">
                                 <div class="form-group mb-30">
-                                    <label for="" class="mb-1">{{ __('State') }}</label>
-                                    <input type="text" class="form-control" placeholder="{{ __('State') }}"
+                                    <label for="" class="mb-1">{{ __('Estado') }}</label>
+                                    <input type="text" class="form-control" placeholder="{{ __('Estado') }}"
                                         name="state" value="{{ Auth::guard('web')->user()->state }}">
                                     @error('state')
                                         <p class="text-danger mt-1">{{ $message }}</p>

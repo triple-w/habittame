@@ -17,7 +17,7 @@
 
                     @if ($settings->property_country_status == 1)
                         <div class="form-group">
-                            <label for="">{{ __('Country') . '*' }}</label>
+                            <label for="">{{ __('País') . '*' }}</label>
                             <select name="country" class="form-control" id="country">
                                 <option selected disabled>{{ __('Select a Country') }}</option>
                                 @foreach ($countries as $country)
@@ -29,7 +29,7 @@
                     @endif
                     @if ($settings->property_state_status == 1)
                         <div class="form-group" id="state">
-                            <label for="">{{ __('State') . '*' }}</label>
+                            <label for="">{{ __('Estado') . '*' }}</label>
                             <select name="state" class="form-control js-example-basic-single3">
                                 <option selected disabled value="">{{ __('Select a State') }}</option>
                                 @foreach ($states as $state)

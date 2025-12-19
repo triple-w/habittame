@@ -159,7 +159,7 @@
                                                         </span>
                                                     </li>
                                                     <li class="d-flex align-items-center">
-                                                        <span class="font-lg color-dark">{{ __('Price') }}</span>
+                                                        <span class="font-lg color-dark">{{ __('Precio') }}</span>
                                                         <span class="icon-start"><i
                                                                 class="ico-save-money"></i>{{ symbolPrice($typeContent?->min_price) }}
                                                             @if (!empty($typeContent->max_price))

@@ -243,7 +243,7 @@
                                                                 <div class="col-lg-4">
                                                                     <div
                                                                         class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                                        <label>{{ __('Country') }}</label>
+                                                                        <label>{{ __('País') }}</label>
                                                                         <input type="text"
                                                                             value="{{ !empty($vendor_info) ? $vendor_info->country : '' }}"
                                                                             class="form-control"
@@ -255,7 +255,7 @@
                                                                 <div class="col-lg-4">
                                                                     <div
                                                                         class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                                        <label>{{ __('City') }}</label>
+                                                                        <label>{{ __('Ciudad') }}</label>
                                                                         <input type="text"
                                                                             value="{{ !empty($vendor_info) ? $vendor_info->city : '' }}"
                                                                             class="form-control"
@@ -267,7 +267,7 @@
                                                                 <div class="col-lg-4">
                                                                     <div
                                                                         class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                                        <label>{{ __('State') }}</label>
+                                                                        <label>{{ __('Estado') }}</label>
                                                                         <input type="text"
                                                                             value="{{ !empty($vendor_info) ? $vendor_info->state : '' }}"
                                                                             class="form-control"

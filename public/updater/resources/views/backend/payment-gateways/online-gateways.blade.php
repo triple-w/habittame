@@ -1050,7 +1050,7 @@
                                     @php $paytabsInfo = json_decode($paytabs->information, true); @endphp
 
                                     <div class="form-group">
-                                        <label>{{ __('Country') }}</label>
+                                        <label>{{ __('País') }}</label>
                                         <select name="country" id="" class="form-control">
                                             <option value="global" @selected(!empty($paytabsInfo['country']) && $paytabsInfo['country'] == 'global')>{{ __('Global') }}
                                             </option>

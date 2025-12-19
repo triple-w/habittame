@@ -66,7 +66,7 @@
 
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <label for="" class="mb-2"><strong>{{ __('Gallery Images') }}
+                                    <label for="" class="mb-2"><strong>{{ __('Galeria de Imagenes') }}
                                             **</strong></label>
 
                                     <table class="table table-striped" id="imgtable">

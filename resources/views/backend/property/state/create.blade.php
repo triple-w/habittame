@@ -16,7 +16,7 @@
                     @csrf
                     @if ($settings->property_country_status == 1)
                         <div class="form-group">
-                            <label for="">{{ __('Country') . '*' }}</label>
+                            <label for="">{{ __('País') . '*' }}</label>
                             <select name="country" class="form-control">
                                 <option selected disabled>{{ __('Select a Country') }}</option>
                                 @foreach ($countries as $country)

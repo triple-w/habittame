@@ -170,7 +170,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                   <div class="form-group">
-                                    <label>{{ __('Country') }}</label>
+                                    <label>{{ __('País') }}</label>
                                     <input type="text"
                                       value="{{ !empty($vendor_info) ? $vendor_info->country : '' }}"
                                       class="form-control" name="{{ $language->code }}_country"
@@ -180,7 +180,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                   <div class="form-group">
-                                    <label>{{ __('City') }}</label>
+                                    <label>{{ __('Ciudad') }}</label>
                                     <input type="text" value="{{ !empty($vendor_info) ? $vendor_info->city : '' }}"
                                       class="form-control" name="{{ $language->code }}_city"
                                       placeholder="{{ __('Enter City') }}">
@@ -189,7 +189,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                   <div class="form-group">
-                                    <label>{{ __('State') }}</label>
+                                    <label>{{ __('Estado') }}</label>
                                     <input type="text" value="{{ !empty($vendor_info) ? $vendor_info->state : '' }}"
                                       class="form-control" name="{{ $language->code }}_state"
                                       placeholder="{{ __('Enter State') }}">

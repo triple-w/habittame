@@ -126,7 +126,7 @@
                                                                 class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
                                                                 @php $categories = $language->categories; @endphp
 
-                                                                <label for="">{{ __('Category') . '*' }}</label>
+                                                                <label for="">{{ __('Categoria') . '*' }}</label>
                                                                 <select name="{{ $language->code }}_category_id"
                                                                     class="form-control">
                                                                     <option selected disabled>{{ __('Select Category') }}

@@ -52,7 +52,7 @@
                                 <ul></ul>
                             </div>
                             <div class="col-lg-12">
-                                <label for="" class="mb-2"><strong>{{ __('Gallery Images') }} **</strong></label>
+                                <label for="" class="mb-2"><strong>{{ __('Galeria de Imagenes') }} **</strong></label>
                                 <form action="{{ route('agent.property.imagesstore') }}" id="my-dropzone"
                                     enctype="multipart/form-data" class="dropzone create">
                                     @csrf
@@ -73,7 +73,7 @@
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="">{{ __('Thumbnail Image') . '*' }}</label>
+                                            <label for="">{{ __('Imagen Principal') . '*' }}</label>
                                             <br>
                                             <div class="thumb-preview ">
                                                 <img src="{{ asset('assets/img/noimage.jpg') }}" alt="..."
@@ -91,7 +91,7 @@
 
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="">{{ __('Floor Planning Image') }}</label>
+                                            <label for="">{{ __('Imagen de Planos') }}</label>
                                             <br>
                                             <div class="thumb-preview remove">
                                                 <img src="{{ asset('assets/img/noimage.jpg') }}" alt="..."
@@ -108,7 +108,7 @@
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="">{{ __('Video Image') }}</label>
+                                            <label for="">{{ __('Imagen de Video') }}</label>
                                             <br>
                                             <div class="thumb-preview remove">
                                                 <img src="{{ asset('assets/img/noimage.jpg') }}" alt="..."
@@ -135,7 +135,7 @@
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>{{ __('Purpose') }}*</label>
+                                            <label>{{ __('Proposito') }}*</label>
 
                                             <select name="purpose" class="form-control">
                                                 <option selected disabled> {{ __('Select a Purpose') }} </option>
@@ -147,7 +147,7 @@
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="form-group ">
-                                            <label>{{ __('Category') }} *</label>
+                                            <label>{{ __('Categoria') }} *</label>
                                             <select name="category_id" class="form-control category">
                                                 <option disabled selected>
                                                     {{ __('Select a Category') }}
@@ -165,7 +165,7 @@
                                             <div class="form-group">
 
 
-                                                <label>{{ __('Country') }} *</label>
+                                                <label>{{ __('País') }} *</label>
                                                 <select name="country_id"
                                                     class="form-control country js-example-basic-single3">
                                                     <option disabled selected>{{ __('Select Country') }}
@@ -183,7 +183,7 @@
                                         <div class="col-lg-3 state">
                                             <div class="form-group  ">
 
-                                                <label>{{ __('State') }} *</label>
+                                                <label>{{ __('Estado') }} *</label>
                                                 <select onchange="getCities(event)" name="state_id"
                                                     class="form-control state_id states js-example-basic-single3">
                                                     <option selected disabled>{{ __('Select State') }}
@@ -201,7 +201,7 @@
                                         <div class="form-group ">
 
 
-                                            <label>{{ __('City') }} *</label>
+                                            <label>{{ __('Ciudad') }} *</label>
                                             <select name="city_id" class="form-control city_id js-example-basic-single3">
                                                 <option selected disabled>{{ __('Select City') }}
                                                 </option>
@@ -216,7 +216,7 @@
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label for="">{{ __('Amenities') }}*</label>
+                                            <label for="">{{ __('Amenidades') }}*</label>
                                             <select name="amenities[]" class="form-control js-example-basic-single2"
                                                 multiple="multiple">
                                                 <option value="" disabled>
@@ -233,7 +233,7 @@
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>{{ __('Price') . ' (' . $settings->base_currency_text . ')' }} </label>
+                                            <label>{{ __('Precio') . ' (' . $settings->base_currency_text . ')' }} </label>
                                             <input type="number" class="form-control" name="price"
                                                 placeholder="Enter Current Price">
 

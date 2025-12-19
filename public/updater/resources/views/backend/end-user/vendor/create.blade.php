@@ -161,7 +161,7 @@
                                                         </div>
                                                         <div class="col-lg-4">
                                                             <div class="form-group">
-                                                                <label>{{ __('Country') }}</label>
+                                                                <label>{{ __('País') }}</label>
                                                                 <input type="text" value="" class="form-control"
                                                                     name="{{ $language->code }}_country"
                                                                     placeholder="{{ __('Enter Country') }}">
@@ -171,7 +171,7 @@
                                                         </div>
                                                         <div class="col-lg-4">
                                                             <div class="form-group">
-                                                                <label>{{ __('City') }}</label>
+                                                                <label>{{ __('Ciudad') }}</label>
                                                                 <input type="text" value="" class="form-control"
                                                                     name="{{ $language->code }}_city"
                                                                     placeholder="{{ __('Enter City') }}">
@@ -181,7 +181,7 @@
                                                         </div>
                                                         <div class="col-lg-4">
                                                             <div class="form-group">
-                                                                <label>{{ __('State') }}</label>
+                                                                <label>{{ __('Estado') }}</label>
                                                                 <input type="text" value="" class="form-control"
                                                                     name="state" placeholder="{{ __('Enter State') }}">
                                                                 <p id="editErr_{{ $language->code }}_state"

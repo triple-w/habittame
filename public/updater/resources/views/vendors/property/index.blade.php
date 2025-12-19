@@ -86,7 +86,7 @@
                                                 <th scope="col">{{ __('Title') }}</th>
                                                 <th scope="col">{{ __('Post by') }}</th>
                                                 <th scope="col">{{ __('Type') }}</th>
-                                                <th scope="col">{{ __('City') }}</th>
+                                                <th scope="col">{{ __('Ciudad') }}</th>
                                                 <th scope="col">{{ __('Approval Status') }}</th>
                                                 <th scope="col">{{ __('Featured') }}</th>
                                                 <th scope="col">{{ __('Status') }}</th>

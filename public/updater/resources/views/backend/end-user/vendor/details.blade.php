@@ -219,7 +219,7 @@
 
                                 <div class="row mb-2">
                                     <div class="col-lg-4">
-                                        <strong>{{ __('Country') . ' :' }}</strong>
+                                        <strong>{{ __('País') . ' :' }}</strong>
                                     </div>
                                     <div class="col-lg-8">
                                         {{ @$vendor->vendor_info->country }}
@@ -227,7 +227,7 @@
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-lg-4">
-                                        <strong>{{ __('City') . ' :' }}</strong>
+                                        <strong>{{ __('Ciudad') . ' :' }}</strong>
                                     </div>
                                     <div class="col-lg-8">
                                         {{ @$vendor->vendor_info->city }}
@@ -235,7 +235,7 @@
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-lg-4">
-                                        <strong>{{ __('State') . ' :' }}</strong>
+                                        <strong>{{ __('Estado') . ' :' }}</strong>
                                     </div>
                                     <div class="col-lg-8">
                                         {{ @$vendor->vendor_info->state }}

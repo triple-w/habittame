@@ -112,7 +112,7 @@
                                         <h3 class="title">
                                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#purpose" aria-expanded="true" aria-controls="purpose">
-                                                {{ __('Purpose') }}
+                                                {{ __('Proposito') }}
                                         </h3>
                                         <div id="purpose" class="collapse show">
                                             <div class="accordion-body">
@@ -151,7 +151,7 @@
                                                 </div>
                                                 @if ($basicInfo->property_country_status == 1)
                                                     <div class="form-group mb-20">
-                                                        <label class="mb-10">{{ __('Country') }}</label>
+                                                        <label class="mb-10">{{ __('País') }}</label>
                                                         <select name="country" id=""
                                                             class="form-control country form-select "
                                                             onchange="updateURL('country='+$(this).val())">
@@ -168,7 +168,7 @@
                                                 @endif
                                                 @if ($basicInfo->property_state_status == 1)
                                                     <div class="form-group mb-20 state">
-                                                        <label class="mb-10">{{ __('State') }}</label>
+                                                        <label class="mb-10">{{ __('Estado') }}</label>
                                                         <select name="state_id" id=""
                                                             class="form-control form-select  state_id states"
                                                             onchange="updateURL('state='+$(this).val());getCities(this)">
@@ -184,7 +184,7 @@
                                                     </div>
                                                 @endif
                                                 <div class="form-group mb-20 city">
-                                                    <label class="mb-10">{{ __('City') }}</label>
+                                                    <label class="mb-10">{{ __('Ciudad') }}</label>
                                                     <select name="city_id" id=""
                                                         class="form-control form-select  city_id"
                                                         onchange="updateURL('city='+$(this).val())">
@@ -240,7 +240,7 @@
                                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#amenities" aria-expanded="true"
                                                 aria-controls="amenities">
-                                                {{ __('Amenities') }}
+                                                {{ __('Amenidades') }}
                                             </button>
                                         </h3>
                                         <div id="amenities" class="collapse show">

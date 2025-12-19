@@ -70,7 +70,7 @@
 
                             <div class="col-lg-12">
                                 <label for=""
-                                    class="mb-2"><strong>{{ __('Gallery Images') . '*' }}</strong></label>
+                                    class="mb-2"><strong>{{ __('Galeria de Imagenes') . '*' }}</strong></label>
                                 <div id="reload-slider-div">
                                     <div class="row">
                                         <div class="col-12">
@@ -118,7 +118,7 @@
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="">{{ __('Thumbnail Image') . '*' }}</label>
+                                            <label for="">{{ __('Imagen Principal') . '*' }}</label>
                                             <br>
                                             <div class="thumb-preview">
                                                 <img src="{{ $property->featured_image ? asset('assets/img/property/featureds/' . $property->featured_image) : asset('assets/admin/img/noimage.jpg') }}"
@@ -134,7 +134,7 @@
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="">{{ __('Floor Planning Image') }}</label>
+                                            <label for="">{{ __('Imagen de Planos') }}</label>
                                             <br>
                                             <div class="thumb-preview remove">
 
@@ -156,7 +156,7 @@
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="">{{ __('Video Image') }}</label>
+                                            <label for="">{{ __('Imagen de Video') }}</label>
                                             <br>
                                             <div class="thumb-preview remove">
 
@@ -189,7 +189,7 @@
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>{{ __('Purpose') }}*</label>
+                                            <label>{{ __('Proposito') }}*</label>
 
                                             <select name="purpose" class="form-control">
                                                 <option disabled> {{ __('Select a Purpose') }} </option>
@@ -206,7 +206,7 @@
 
                                     <div class="col-lg-3">
                                         <div class="form-group ">
-                                            <label>{{ __('Category') }} *</label>
+                                            <label>{{ __('Categoria') }} *</label>
                                             <select name="category_id" class="form-control category">
                                                 <option disabled selected>
                                                     {{ __('Select a Category') }}
@@ -224,7 +224,7 @@
                                         <div class="col-lg-3">
                                             <div class="form-group ">
 
-                                                <label>{{ __('Country') }} *</label>
+                                                <label>{{ __('País') }} *</label>
                                                 <select name="country_id"
                                                     class="form-control country js-example-basic-single3">
                                                     <option disabled selected>{{ __('Select Country') }}
@@ -244,7 +244,7 @@
                                             @if (empty($property->state_id)) style="display:none;"@else style="display:block !important;" @endif>
                                             <div class="form-group">
 
-                                                <label>{{ __('State') }} *</label>
+                                                <label>{{ __('Estado') }} *</label>
                                                 <select onchange="getCities(event)" name="state_id"
                                                     class="form-control  state_id states js-example-basic-single3">
                                                     <option disabled>{{ __('Select State') }}
@@ -266,7 +266,7 @@
                                         @if (empty($property->city_id)) style="display:none;"@else style="display:block;" @endif>
                                         <div class="form-group ">
 
-                                            <label>{{ __('City') }} *</label>
+                                            <label>{{ __('Ciudad') }} *</label>
                                             <select name="city_id" class="form-control city_id js-example-basic-single3">
                                                 <option value="" disabled>{{ __('Select City') }}
                                                 </option>
@@ -283,7 +283,7 @@
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label for="">{{ __('Amenities') }}*</label>
+                                            <label for="">{{ __('Amenidades') }}*</label>
                                             <select name="amenities[]" class="form-control js-example-basic-single2"
                                                 multiple="multiple">
                                                 <option value="" disabled>
@@ -302,7 +302,7 @@
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>{{ __('Price') . ' (' . $settings->base_currency_text . ')' }} </label>
+                                            <label>{{ __('Precio') . ' (' . $settings->base_currency_text . ')' }} </label>
                                             <input type="number" class="form-control" name="price"
                                                 placeholder="Enter Current Price" value="{{ $property->price }}">
                                             <p class="text-warning">

@@ -46,7 +46,7 @@
                             <div class="row">
 
                                 <div class="col-lg-6">
-                                    <label for="" class="mb-2"><strong>{{ __('Gallery Images') }}
+                                    <label for="" class="mb-2"><strong>{{ __('Galeria de Imagenes') }}
                                             **</strong></label>
                                     <form action="{{ route('vendor.project.gallery_image_store') }}" id="my-dropzone"
                                         enctype="multipart/form-data" class="dropzone create">

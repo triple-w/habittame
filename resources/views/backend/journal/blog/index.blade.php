@@ -64,7 +64,7 @@
                                                     <input type="checkbox" class="bulk-check" data-val="all">
                                                 </th>
                                                 <th scope="col">{{ __('Title') }}</th>
-                                                <th scope="col">{{ __('Category') }}</th>
+                                                <th scope="col">{{ __('Categoria') }}</th>
                                                 <th scope="col">{{ __('Publish Date') }}</th>
                                                 <th scope="col">{{ __('Status') }}</th>
                                                 <th scope="col">{{ __('Serial Number') }}</th>

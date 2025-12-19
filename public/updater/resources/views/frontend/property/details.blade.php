@@ -222,7 +222,7 @@
                     @endif
 
                     <div class="product-featured mb-40">
-                        <h3 class="mb-20">{{ __('Amenities') }}</h3>
+                        <h3 class="mb-20">{{ __('Amenidades') }}</h3>
                         <ul class="featured-list list-unstyled p-0 m-0">
                             @foreach ($amenities as $amenity)
                                 <li class="d-inline-block icon-start">
