@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="mt-2 mb-4">
-        <h2 class="pb-2">{{ __('Welcome back,') }} {{ Auth::guard('vendor')->user()->username . '!' }}</h2>
+        <h2 class="pb-2">{{ __('Bienvenido,') }} {{ Auth::guard('vendor')->user()->username . '!' }}</h2>
     </div>
     @if (Auth::guard('vendor')->user()->status == 0 && $admin_setting->vendor_admin_approval == 1)
         <div class="mt-2 mb-4">
@@ -211,7 +211,7 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title">{{ __('Monthly Property Posts') }} ({{ date('Y') }})</div>
+                    <div class="card-title">{{ __('Propiedades Publicadas al Mes') }} ({{ date('Y') }})</div>
                 </div>
 
                 <div class="card-body">
@@ -225,7 +225,7 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title">{{ __('Monthly Projects Post') }} ({{ date('Y') }})</div>
+                    <div class="card-title">{{ __('Projectos Publicados al Mes') }} ({{ date('Y') }})</div>
                 </div>
 
                 <div class="card-body">

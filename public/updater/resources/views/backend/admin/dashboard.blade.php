@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="mt-2 mb-4">
-        <h2 class="pb-2">{{ __('Welcome back,') }} {{ $authAdmin->first_name . ' ' . $authAdmin->last_name . '!' }}</h2>
+        <h2 class="pb-2">{{ __('Bienvenido,') }} {{ $authAdmin->first_name . ' ' . $authAdmin->last_name . '!' }}</h2>
     </div>
 
     {{-- dashboard information start --}}
