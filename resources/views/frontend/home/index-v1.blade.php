@@ -245,8 +245,8 @@
                     </div>
                 </div>
             </div>
-        </div> -->
-    @endif
+        </div> 
+    @endif -->
 
     @if ($secInfo->counter_section_status == 1)
         <div class="counter-area pt-100 pb-70">
