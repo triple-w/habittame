@@ -579,6 +579,6 @@
 
 
     <script type="text/javascript" src="{{ asset('assets/js/admin-dropzone.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVHSZ0rqp7Euat465O5bQ0uGMGBwOnRoE"></script>
     <script src="{{ asset('assets/js/property.js') }}"></script>
 @endsection
