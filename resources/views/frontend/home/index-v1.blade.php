@@ -216,6 +216,38 @@
         </div>
     </section>
 
+    @if ($secInfo->brand_section_status == 1)
+        <div class="sponsor ptb-100" data-aos="fade-up">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="swiper sponsor-slider">
+                            <div class="swiper-wrapper">
+                                @forelse ($brands as $brand)
+                                    <div class="swiper-slide">
+                                        <div class="item-single d-flex justify-content-center" data-aos="fade-up">
+                                            <div class="sponsor-img">
+                                                <a href="{{ $brand->url ?? '#' }}" target="_blank">
+                                                    <img src="{{ asset('assets/img/brands/' . $brand->image) }}"
+                                                        alt="Sponsor">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @empty
+                                    <div class="p-3 text-center w-100">
+                                        <h3 class="mb-0"> {{ __('No Brands Found') }}</h3>
+                                    </div>
+                                @endforelse
+                            </div>
+                            <div class="swiper-pagination position-static mt-30" id="sponsor-slider-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
     @if ($secInfo->counter_section_status == 1)
         <div class="counter-area pt-100 pb-70">
             <div class="container">
