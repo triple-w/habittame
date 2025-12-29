@@ -275,7 +275,7 @@
                                         <div class="form-group">
                                             <label>{{ __('Latitude') }} *</label>
                                             <input type="text" class="form-control" name="latitude"
-                                                placeholder="Enter Latitude">
+                                                placeholder="Enter Latitude" id="latitude">
                                         </div>
                                     </div>
 
@@ -283,9 +283,18 @@
                                         <div class="form-group">
                                             <label>{{ __('Longitude') }} *</label>
                                             <input type="text" class="form-control" name="longitude"
-                                                placeholder="Enter Longitude">
+                                                placeholder="Enter Longitude" id="longitude">
                                         </div>
                                     </div>
+
+                                    <div class="form-group mt-3">
+                                        <label>Ubicación de la propiedad</label>
+                                        <div id="map" style="width:100%; height:400px; border-radius:8px;"></div>
+                                        <small class="text-muted">
+                                            Da click en el mapa o mueve el pin para ajustar la ubicación.
+                                        </small>
+                                    </div>
+
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
@@ -524,6 +533,52 @@
         var galleryImages = {{ $currentPackage->number_of_property_gallery_images }};
     </script>
 
+    <script>
+        let map;
+        let marker;
+
+        function initMap() {
+            const defaultPosition = {
+                lat: 21.1226, // León Gto (puedes cambiarlo)
+                lng: -101.6866
+            };
+
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 14,
+                center: defaultPosition,
+            });
+
+            marker = new google.maps.Marker({
+                position: defaultPosition,
+                map: map,
+                draggable: true,
+            });
+
+            // Set initial values
+            setLatLng(defaultPosition.lat, defaultPosition.lng);
+
+            // Click on map
+            map.addListener("click", function (event) {
+                marker.setPosition(event.latLng);
+                setLatLng(event.latLng.lat(), event.latLng.lng());
+            });
+
+            // Drag marker
+            marker.addListener("dragend", function (event) {
+                setLatLng(event.latLng.lat(), event.latLng.lng());
+            });
+        }
+
+        function setLatLng(lat, lng) {
+            document.getElementById("latitude").value = lat;
+            document.getElementById("longitude").value = lng;
+        }
+
+        document.addEventListener("DOMContentLoaded", initMap);
+    </script>
+
+
     <script type="text/javascript" src="{{ asset('assets/js/admin-dropzone.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY"></script>
     <script src="{{ asset('assets/js/property.js') }}"></script>
 @endsection
