@@ -216,7 +216,7 @@
         </div>
     </section>
 
-    @if ($secInfo->brand_section_status == 1)
+    <!-- @if ($secInfo->brand_section_status == 1)
         <div class="sponsor ptb-100" data-aos="fade-up">
             <div class="container">
                 <div class="row">
@@ -245,7 +245,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     @endif
 
     @if ($secInfo->counter_section_status == 1)
