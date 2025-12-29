@@ -247,6 +247,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
+                        <div class="section-title title-inline mb-40" data-aos="fade-up">
+                            <h2 class="title">Socios Comerciales</h2>
+                        </div>
                         <div class="swiper sponsor-slider">
                             <div class="swiper-wrapper">
                                 @forelse ($brands as $brand)
