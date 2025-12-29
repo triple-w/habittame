@@ -351,11 +351,11 @@
 
                                         <option value="residential"
                                             {{ request()->input('type') == 'residential' ? 'selected' : '' }}>
-                                            {{ __('Residential') }} </option>
+                                            {{ __('Residencial') }} </option>
 
                                         <option value="commercial"
                                             {{ request()->input('type') == 'commercial' ? 'selected' : '' }}>
-                                            {{ __('Commercial') }} </option>
+                                            {{ __('Comercial') }} </option>
 
 
                                     </select>

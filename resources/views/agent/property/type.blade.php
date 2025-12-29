@@ -47,7 +47,7 @@
                                             </div>
                                             <div class="col col-stats ml-3 ml-sm-0">
                                                 <div class="numbers mx-auto text-center">
-                                                    <h2 class="card-title mt-2 mb-4 text-uppercase">{{ __('Commercial') }}
+                                                    <h2 class="card-title mt-2 mb-4 text-uppercase">{{ __('Comercial') }}
                                                     </h2>
                                                     <p class="card-category"><strong>{{ __('Total') }}:</strong>
                                                         {{ $commertialCount }}
@@ -75,7 +75,7 @@
                                             </div>
                                             <div class="col col-stats ml-3 ml-sm-0">
                                                 <div class="numbers mx-auto text-center">
-                                                    <h2 class="card-title mt-2 mb-4 text-uppercase">{{ __('Residential') }}
+                                                    <h2 class="card-title mt-2 mb-4 text-uppercase">{{ __('Residencial') }}
                                                     </h2>
                                                     <p class="card-category"><strong>{{ __('Total') }}:</strong>
                                                         {{ $residentialCount }}

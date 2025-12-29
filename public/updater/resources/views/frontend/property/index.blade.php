@@ -65,10 +65,10 @@
                                                     {{ __('All') }}</option>
                                                 <option value="residential"
                                                     {{ request()->filled('type') && request()->input('type') == 'residential' ? 'selected' : '' }}>
-                                                    {{ __('Residential') }}</option>
+                                                    {{ __('Residencial') }}</option>
                                                 <option value="commercial"
                                                     {{ request()->filled('type') && request()->input('type') == 'commercial' ? 'selected' : '' }}>
-                                                    {{ __('Commercial') }}</option>
+                                                    {{ __('Comercial') }}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -125,10 +125,10 @@
                                                         {{ __('All') }}</option>
                                                     <option value="rent"
                                                         {{ request()->filled('purpose') && request()->input('purpose') == 'rent' ? 'selected' : '' }}>
-                                                        {{ __('Rent') }}</option>
+                                                        {{ __('Rentar') }}</option>
                                                     <option value="sale"
                                                         {{ request()->filled('purpose') && request()->input('purpose') == 'sale' ? 'selected' : '' }}>
-                                                        {{ __('Sale') }}</option>
+                                                        {{ __('Vender') }}</option>
                                                 </select>
                                             </div>
                                         </div>

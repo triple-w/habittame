@@ -80,7 +80,7 @@
                                 </div>
                                 <div class="col-7 col-stats">
                                     <div class="numbers">
-                                        <p class="card-category">{{ __('Vendors') }}</p>
+                                        <p class="card-category">{{ __('Agencias') }}</p>
                                         <h4 class="card-title">
                                             {{ $vendors }}
                                         </h4>

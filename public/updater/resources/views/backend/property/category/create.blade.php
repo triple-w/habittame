@@ -37,7 +37,7 @@
 
                         <select name="type" class="form-control">
                             <option selected disabled>{{ __('Select a Type') }}</option>
-                            <option value="residential">{{ __('Residential') }}</option>
+                            <option value="residential">{{ __('Residencial') }}</option>
                             <option value="commercial">{{ __("Commercial") }}</option>
 
                         </select>

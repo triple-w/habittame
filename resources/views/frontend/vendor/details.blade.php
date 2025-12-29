@@ -17,8 +17,8 @@
 @section('content')
     @includeIf('frontend.partials.breadcrumb', [
         'breadcrumb' => $bgImg->breadcrumb,
-        'title' => !empty($pageHeading) ? $pageHeading->vendor_page_title : __('Vendors'),
-        'subtitle' => !empty($pageHeading) ? $pageHeading->vendor_page_title : __('Vendors'),
+        'title' => !empty($pageHeading) ? $pageHeading->vendor_page_title : __('Agencias'),
+        'subtitle' => !empty($pageHeading) ? $pageHeading->vendor_page_title : __('Agencias'),
     ])
     <div class="agent-single pt-100 pb-60">
         <div class="container">

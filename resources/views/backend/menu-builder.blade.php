@@ -72,7 +72,7 @@
 
 
                                         <li class="list-group-item">
-                                            {{ __('Vendors') }} <a href="" data-text="{{ __('Vendors') }}"
+                                            {{ __('Agencias') }} <a href="" data-text="{{ __('Agencias') }}"
                                                 data-type="vendors"
                                                 class="addToMenus btn btn-primary btn-sm float-right">{{ __('Add To Menus') }}</a>
                                         </li>

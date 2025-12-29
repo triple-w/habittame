@@ -132,8 +132,8 @@
                                             <select name="purpose" class="form-control">
                                                 <option selected disabled value=""> {{ __('Select a Purpose') }}
                                                 </option>
-                                                <option value="rent">{{ __('Rent') }}</option>
-                                                <option value="sale">{{ __('Sale') }}</option>
+                                                <option value="rent">{{ __('Rentar') }}</option>
+                                                <option value="sale">{{ __('Vender') }}</option>
                                             </select>
                                         </div>
 

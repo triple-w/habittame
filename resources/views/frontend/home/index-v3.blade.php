@@ -38,11 +38,11 @@
                             <ul class="nav nav-tabs">
                                 <li class="nav-item">
                                     <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#rent"
-                                        type="button">{{ __('Rent') }}</button>
+                                        type="button">{{ __('Rentar') }}</button>
                                 </li>
                                 <li class="nav-item">
                                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#sale"
-                                        type="button">{{ __('Sale') }}</button>
+                                        type="button">{{ __('Vender') }}</button>
                                 </li>
                             </ul>
                         </div>
@@ -72,8 +72,8 @@
                                                     id="type">
                                                     <option selected disabled>{{ __('Select Property') }}</option>
                                                     <option value="all">{{ __('All') }}</option>
-                                                    <option value="residential">{{ __('Residential') }}</option>
-                                                    <option value="commercial">{{ __('Commercial') }}</option>
+                                                    <option value="residential">{{ __('Residencial') }}</option>
+                                                    <option value="commercial">{{ __('Comercial') }}</option>
 
                                                 </select>
                                             </div>
@@ -148,8 +148,8 @@
                                                     id="type1">
                                                     <option selected disabled>{{ __('Select Property') }}</option>
                                                     <option selected value="all">{{ __('All') }}</option>
-                                                    <option value="residential">{{ __('Residential') }}</option>
-                                                    <option value="commercial">{{ __('Commercial') }}</option>
+                                                    <option value="residential">{{ __('Residencial') }}</option>
+                                                    <option value="commercial">{{ __('Comercial') }}</option>
 
                                                 </select>
                                             </div>

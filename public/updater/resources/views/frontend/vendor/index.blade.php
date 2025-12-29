@@ -4,7 +4,7 @@
 @extends("frontend.layouts.layout-v$version")
 
 @section('pageHeading')
-    {{ !empty($pageHeading) ? $pageHeading->vendor_page_title : __('Vendors') }}
+    {{ !empty($pageHeading) ? $pageHeading->vendor_page_title : __('Agencias') }}
 @endsection
 
 @section('metaKeywords')
@@ -22,8 +22,8 @@
 @section('content')
     @includeIf('frontend.partials.breadcrumb', [
         'breadcrumb' => $bgImg->breadcrumb,
-        'title' => !empty($pageHeading) ? $pageHeading->vendor_page_title : __('Vendors'),
-        'subtitle' => __('Vendors'),
+        'title' => !empty($pageHeading) ? $pageHeading->vendor_page_title : __('Agencias'),
+        'subtitle' => __('Agencias'),
     ])
 
     <div class="agent-grid pt-100 pb-70">
@@ -196,11 +196,11 @@
 
                                         <option value="residential"
                                             {{ request()->input('type') == 'residential' ? 'selected' : '' }}>
-                                            {{ __('Residential') }} </option>
+                                            {{ __('Residencial') }} </option>
 
                                         <option value="commercial"
                                             {{ request()->input('type') == 'commercial' ? 'selected' : '' }}>
-                                            {{ __('Commercial') }} </option>
+                                            {{ __('Comercial') }} </option>
 
 
                                     </select>

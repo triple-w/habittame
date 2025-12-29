@@ -194,10 +194,10 @@
                                             <select name="purpose" class="form-control">
                                                 <option disabled> {{ __('Select a Purpose') }} </option>
                                                 <option value="rent" @if ($property->purpose == 'rent') 'selected' @endif>
-                                                    {{ __('Rent') }}
+                                                    {{ __('Rentar') }}
                                                 </option>
                                                 <option value="sale" @if ($property->purpose == 'sale') 'selected' @endif>
-                                                    {{ __('Sale') }}
+                                                    {{ __('Vender') }}
                                                 </option>
                                             </select>
                                         </div>
