@@ -258,7 +258,7 @@ class HomeController extends Controller
       $queryResult['cities'] =  $cities;
     }
 
-    if (($themeVersion == 2 || $themeVersion == 3) && $secInfo->brand_section_status == 1) {
+    if (($themeVersion == 2 || $themeVersion == 3 || $themeVersion == 1) && $secInfo->brand_section_status == 1) {
       $queryResult['brands'] = BrandSection::get();
     }
     $min =  Property::where([['status', 1], ['approve_status', 1]])->min('price');
