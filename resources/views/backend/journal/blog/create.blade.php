@@ -114,7 +114,7 @@
                                                         <div class="col-lg-6">
                                                             <div
                                                                 class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                                <label>{{ __('Title') . '*' }}</label>
+                                                                <label>{{ __('Titulo') . '*' }}</label>
                                                                 <input type="text" class="form-control"
                                                                     name="{{ $language->code }}_title"
                                                                     placeholder="Enter Title">

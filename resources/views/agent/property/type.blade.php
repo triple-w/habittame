@@ -1,7 +1,7 @@
 @extends('agent.layout')
 @section('content')
     <div class="page-header">
-        <h4 class="page-title">{{ __('Choose Property Type') }}</h4>
+        <h4 class="page-title">{{ __('Elige tipo de Propiedad') }}</h4>
         <ul class="breadcrumbs">
             <li class="nav-home">
                 <a href="#">
@@ -18,7 +18,7 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="#">{{ __('Property Type') }}</a>
+                <a href="#">{{ __('Tipo de Propiedad') }}</a>
             </li>
         </ul>
     </div>
@@ -28,7 +28,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h3>{{ __('Choose Property Type') }}</h3>
+                    <h3>{{ __('Elige tipo de Propiedad') }}</h3>
                 </div>
                 <div class="card-body">
                     <div class="row">

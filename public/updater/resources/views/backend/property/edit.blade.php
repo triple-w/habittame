@@ -467,7 +467,7 @@
                                                         <div class="col-lg-12">
                                                             <div
                                                                 class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                                <label>{{ __('Description') }} *</label>
+                                                                <label>{{ __('Descripción') }} *</label>
                                                                 <textarea class="form-control summernote " id="{{ $language->code }}_description"
                                                                     name="{{ $language->code }}_description" data-height="300">{{ @$peopertyContent->description }}</textarea>
                                                             </div>

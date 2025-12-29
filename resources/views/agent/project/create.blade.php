@@ -172,7 +172,7 @@
                                                         <div class="col-lg-8">
                                                             <div
                                                                 class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                                <label>{{ __('Title') }} *</label>
+                                                                <label>{{ __('Titulo') }} *</label>
                                                                 <input type="text" class="form-control"
                                                                     name="{{ $language->code }}_title"
                                                                     placeholder="Enter Title">
@@ -195,7 +195,7 @@
                                                         <div class="col-lg-12">
                                                             <div
                                                                 class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                                <label>{{ __('Description') }} *</label>
+                                                                <label>{{ __('Descripción') }} *</label>
                                                                 <textarea id="{{ $language->code }}_description" class="form-control summernote"
                                                                     name="{{ $language->code }}_description" data-height="300"></textarea>
                                                             </div>

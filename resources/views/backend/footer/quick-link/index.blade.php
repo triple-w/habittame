@@ -58,7 +58,7 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">{{ __('Title') }}</th>
+                                                <th scope="col">{{ __('Titulo') }}</th>
                                                 <th scope="col">{{ __('URL') }}</th>
                                                 <th scope="col">{{ __('Serial Number') }}</th>
                                                 <th scope="col">{{ __('Actions') }}</th>

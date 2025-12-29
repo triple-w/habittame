@@ -33,7 +33,7 @@
           </div>
 
           <div class="form-group">
-            <label for="">{{ __('Title') }}</label>
+            <label for="">{{ __('Titulo') }}</label>
             <input type="text" class="form-control" name="title" placeholder="Enter Title" id="in_title">
           </div> 
             <div class="form-group">

@@ -65,7 +65,7 @@
 
                   <div class="col-lg-12">
                     <div class="form-group">
-                      <label>{{ __('Description') }}</label>
+                      <label>{{ __('Descripción') }}</label>
                       <textarea name="description" rows="4" class="form-control summernote"></textarea>
                     </div>
                   </div>

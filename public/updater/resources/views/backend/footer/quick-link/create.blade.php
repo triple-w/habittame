@@ -24,7 +24,7 @@
           </div>
 
           <div class="form-group">
-            <label for="">{{ __('Title') . '*' }}</label>
+            <label for="">{{ __('Titulo') . '*' }}</label>
             <input type="text" class="form-control" name="title" placeholder="Enter Quick Link Title">
             <p id="err_title" class="mt-2 mb-0 text-danger em"></p>
           </div>

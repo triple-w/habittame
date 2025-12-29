@@ -58,7 +58,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group mb-20">
-                                                <label for="" class="mb-1">{{ __('Description') }}</label>
+                                                <label for="" class="mb-1">{{ __('Descripción') }}</label>
                                                 <textarea name="description" class="form-control tinyMce"></textarea>
                                                 @error('description')
                                                     <p class="text-danger mt-1">{{ $message }}</p>

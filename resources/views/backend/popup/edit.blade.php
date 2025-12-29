@@ -108,7 +108,7 @@
                   <div class="row">
                     <div class="col">
                       <div class="form-group">
-                        <label>{{ __('Title') . '*' }}</label>
+                        <label>{{ __('Titulo') . '*' }}</label>
                         <input type="text" class="form-control" name="title" placeholder="Enter Popup Title" value="{{ $popup->title }}">
                         <p id="editErr_title" class="mt-2 mb-0 text-danger em"></p>
                       </div>

@@ -52,7 +52,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="">{{ __('Title') }}</label>
+                                            <label for="">{{ __('Titulo') }}</label>
                                             <input type="text" class="form-control" name="title"
                                                 value="{{ empty($data->title) ? '' : $data->title }}"
                                                 placeholder="Enter Title">
@@ -122,7 +122,7 @@
                                                     <input type="checkbox" class="bulk-check" data-val="all">
                                                 </th>
                                                 <th scope="col">{{ __('Icon') }}</th>
-                                                <th scope="col">{{ __('Title') }}</th>
+                                                <th scope="col">{{ __('Titulo') }}</th>
                                                 <th scope="col">{{ __('Serial Number') }}</th>
                                                 <th scope="col">{{ __('Actions') }}</th>
                                             </tr>

@@ -107,7 +107,7 @@
                                 method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="">{{ __('Title') }}</label>
+                                    <label for="">{{ __('Titulo') }}</label>
                                     <input type="text" class="form-control" name="title" placeholder="Enter Title"
                                         value="@if (!empty($heroInfo)) {{ $heroInfo->title }} @endif">
                                 </div>

@@ -83,7 +83,7 @@
                                                 <th scope="col">
                                                     <input type="checkbox" class="bulk-check" data-val="all">
                                                 </th>
-                                                <th scope="col">{{ __('Title') }}</th>
+                                                <th scope="col">{{ __('Titulo') }}</th>
                                                 <th scope="col">{{ __('Post by') }}</th>
                                                 <th scope="col">{{ __('Type') }}</th>
                                                 <th scope="col">{{ __('Ciudad') }}</th>
@@ -461,7 +461,7 @@
 
                                 @if (!is_null($offlineGateway->short_description))
                                     <div class="form-group mb-4">
-                                        <label>{{ __('Description') }}</label>
+                                        <label>{{ __('Descripción') }}</label>
                                         <p>{{ $offlineGateway->short_description }}</p>
                                     </div>
                                 @endif

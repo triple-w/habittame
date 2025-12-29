@@ -78,7 +78,7 @@
                                                 <th scope="col">
                                                     <input type="checkbox" class="bulk-check" data-val="all">
                                                 </th>
-                                                <th scope="col">{{ __('Title') }}</th>
+                                                <th scope="col">{{ __('Titulo') }}</th>
                                                 <th scope="col">{{ __('Type') }}</th>
                                                 <th scope="col">{{ __('Status') }}</th>
                                                 <th scope="col">{{ __('Actions') }}</th>

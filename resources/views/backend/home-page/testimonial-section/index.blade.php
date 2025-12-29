@@ -119,7 +119,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="">{{ __('Title') }}</label>
+                                                    <label for="">{{ __('Titulo') }}</label>
                                                     <input type="text" class="form-control" name="title"
                                                         value="{{ empty($data->title) ? '' : $data->title }}"
                                                         placeholder="Enter Title">

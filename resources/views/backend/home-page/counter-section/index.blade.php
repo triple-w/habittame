@@ -66,7 +66,7 @@
                                                 </th>
                                                 <th scope="col">{{ __('Icon') }}</th>
                                                 <th scope="col">{{ __('Amount') }}</th>
-                                                <th scope="col">{{ __('Title') }}</th>
+                                                <th scope="col">{{ __('Titulo') }}</th>
                                                 <th scope="col">{{ __('Actions') }}</th>
                                             </tr>
                                         </thead>

@@ -52,7 +52,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="">{{ __('Title') }}</label>
+                                            <label for="">{{ __('Titulo') }}</label>
                                             <input type="text" class="form-control" name="title"
                                                 value="{{ empty($data->title) ? '' : $data->title }}"
                                                 placeholder="Enter Title">
@@ -69,7 +69,7 @@
 
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="">{{ __('Description') }}</label>
+                                            <label for="">{{ __('Descripción') }}</label>
                                             <input type="text" class="form-control" name="description"
                                                 value="{{ empty($data->description) ? '' : $data->description }}"
                                                 placeholder="Enter Subtitle">

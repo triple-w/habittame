@@ -52,7 +52,7 @@
                                     <h3 class="title">
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                             data-bs-target="#type" aria-expanded="true" aria-controls="type">
-                                            {{ __('Property Type') }}
+                                            {{ __('Tipo de Propiedad') }}
                                         </button>
                                     </h3>
                                     <div id="type" class="collapse show">
@@ -144,7 +144,7 @@
                                         <div id="select" class="collapse show">
                                             <div class="accordion-body">
                                                 <div class="form-group mb-20">
-                                                    <label class="mb-10">{{ __('Title') }}</label>
+                                                    <label class="mb-10">{{ __('Titulo') }}</label>
                                                     <input type="text" class="form-control" name="title"
                                                         placeholder="{{ __('Enter title') }}"
                                                         onkeydown="if (event.keyCode == 13) updateURL('title='+$(this).val())">

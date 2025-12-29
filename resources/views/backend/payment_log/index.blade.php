@@ -202,7 +202,7 @@
                                 <p><strong>{{ __('Method') }}: </strong> {{ $membership->payment_method }}
                                 </p>
                                 <h3 class="text-warning">{{ __('Package Details') }}</h3>
-                                <p><strong>{{ __('Title') }}:
+                                <p><strong>{{ __('Titulo') }}:
                                   </strong>{{ !empty($membership->package) ? $membership->package->title : '' }}
                                 </p>
                                 <p><strong>{{ __('Term') }}: </strong>
