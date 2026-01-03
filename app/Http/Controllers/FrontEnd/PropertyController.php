@@ -32,6 +32,8 @@ use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 use PhpOffice\PhpSpreadsheet\Calculation\Category;
+use App\Services\TwilioWhatsappService;
+
 use View;
 
 class PropertyController extends Controller
@@ -414,22 +416,55 @@ class PropertyController extends Controller
             $admin = Admin::where('role_id', null)->first();
             $request['to_mail'] = $admin->email;
         }
-
+        
         try {
-            PropertyContact::create([
-                'vendor_id' => $request->vendor_id,
-                'agent_id' => $request->agent_id,
-                'property_id' => $request->property_id,
-                'name' => $request->name,
-                'email' => $request->email,
-                'phone' => $request->phone,
-                'message' => $request->message,
+                    PropertyContact::create([
+                        'vendor_id' => $request->vendor_id,
+                        'agent_id' => $request->agent_id,
+                        'property_id' => $request->property_id,
+                        'name' => $request->name,
+                        'email' => $request->email,
+                        'phone' => $request->phone,
+                        'message' => $request->message,
 
-            ]);
-            $this->sendMail($request);
+                    ]);
+                    $this->sendMail($request);
+                } catch (\Exception $e) {
+                    return back()->with('error', 'Something went wrong!');
+                }
+
+            ////Aqui empieza el envio de whatsapp
+
+                try {
+            $whatsapp = new TwilioWhatsappService();
+
+            $leadData = [
+                'name'    => $request->name,
+                'email'   => $request->email,
+                'phone'   => $request->phone,
+                'message' => $request->message,
+            ];
+
+            // Enviar a AGENTE
+            if (!empty($request->agent_id)) {
+                $agent = Agent::find($request->agent_id);
+                if (!empty($agent) && !empty($agent->phone)) {
+                    $whatsapp->sendLeadToSeller($agent->phone, $leadData);
+                }
+            }
+
+            // Enviar a VENDEDOR
+            elseif (!empty($request->vendor_id) && $request->vendor_id != 0) {
+                $vendor = Vendor::find($request->vendor_id);
+                if (!empty($vendor) && !empty($vendor->phone)) {
+                    $whatsapp->sendLeadToSeller($vendor->phone, $leadData);
+                }
+            }
+
         } catch (\Exception $e) {
-            return back()->with('error', 'Something went wrong!');
+            // Opcional: loggear error, pero NO romper el flujo
         }
+
 
 
 
