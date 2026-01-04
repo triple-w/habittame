@@ -366,77 +366,70 @@ class PropertyController extends Controller
     public function contact(Request $request)
     {
         $rules = [
-            'name' => 'required',
-            'email' => 'required|email:rfc,dns',
-            'phone' => 'required|numeric',
+            'name'    => 'required',
+            'email'   => 'required|email:rfc,dns',
+            'phone'   => 'required',
             'message' => 'required'
         ];
+
         $info = Basic::select('google_recaptcha_status')->first();
         if ($info->google_recaptcha_status == 1) {
             $rules['g-recaptcha-response'] = 'required|captcha';
         }
 
-        $messages = [];
-
-        if ($info->google_recaptcha_status == 1) {
-            $messages['g-recaptcha-response.required'] = 'Please verify that you are not a robot.';
-            $messages['g-recaptcha-response.captcha'] = 'Captcha error! try again later or contact site admin.';
-        }
-
-        $validator = Validator::make($request->all(), $rules, $messages);
+        $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator->errors())->withInput();
+            return redirect()->back()->withErrors($validator)->withInput();
         }
-        if ($request->vendor_id != 0) {
 
-            if ($request->vendor_id) {
-                $vendor = Vendor::find($request->vendor_id);
+        // =================================================
+        // 1️⃣ GUARDAR CONTACTO
+        // =================================================
+        PropertyContact::create([
+            'vendor_id'   => $request->vendor_id,
+            'agent_id'    => $request->agent_id,
+            'property_id' => $request->property_id,
+            'name'        => $request->name,
+            'email'       => $request->email,
+            'phone'       => $request->phone,
+            'message'     => $request->message,
+        ]);
 
-                if (empty($vendor)) {
-
-                    return back()->with('error', 'Something went wrong!');
-                }
-                $request['to_mail'] = $vendor->email;
-            }
-            if ($request->agent_id) {
-                $agent = Agent::find($request->agent_id);
-                if (empty($agent)) {
-                    return back()->with('error', 'Something went wrong!');
-                }
-                $request['to_mail'] = $agent->email;
-            }
-        } elseif ($request->vendor_id == 0 && !empty($request->agent_id)) {
+        // =================================================
+        // 2️⃣ DETERMINAR AGENTE (SIEMPRE)
+        // =================================================
+        $agent = null;
+        if (!empty($request->agent_id)) {
             $agent = Agent::find($request->agent_id);
-            if (empty($agent)) {
-                return back()->with('error', 'Something went wrong!');
-            }
-            $request['to_mail'] = $agent->email;
-        } else {
-
-            $admin = Admin::where('role_id', null)->first();
-            $request['to_mail'] = $admin->email;
         }
-        
+
+        if (!$agent) {
+            return back()->with('error', 'No agent found to receive the message.');
+        }
+
+        $request['to_mail'] = $agent->email;
+
+        // =================================================
+        // 3️⃣ ENVÍO DE CORREO
+        // =================================================
+        $mailStatus = false;
+
         try {
-                    PropertyContact::create([
-                        'vendor_id' => $request->vendor_id,
-                        'agent_id' => $request->agent_id,
-                        'property_id' => $request->property_id,
-                        'name' => $request->name,
-                        'email' => $request->email,
-                        'phone' => $request->phone,
-                        'message' => $request->message,
+            $this->sendMail($request);
+            $mailStatus = true;
+        } catch (\Exception $e) {
+            \Log::error('MAIL ERROR', [
+                'error' => $e->getMessage()
+            ]);
+        }
 
-                    ]);
-                    $this->sendMail($request);
-                } catch (\Exception $e) {
-                    return back()->with('error', 'Something went wrong!');
-                }
+        // =================================================
+        // 4️⃣ ENVÍO DE WHATSAPP (AGENTE)
+        // =================================================
+        $whatsappStatus = false;
 
-            ////Aqui empieza el envio de whatsapp
-
-                try {
-            $whatsapp = new TwilioWhatsappService();
+        try {
+            $cleanPhone = preg_replace('/[^0-9]/', '', $agent->phone);
 
             $leadData = [
                 'name'    => $request->name,
@@ -445,31 +438,32 @@ class PropertyController extends Controller
                 'message' => $request->message,
             ];
 
-            // Enviar a AGENTE
-            if (!empty($request->agent_id)) {
-                $agent = Agent::find($request->agent_id);
-                if (!empty($agent) && !empty($agent->phone)) {
-                    $whatsapp->sendLeadToSeller($agent->phone, $leadData);
-                }
-            }
+            $whatsapp = new \App\Services\TwilioWhatsappService();
+            $whatsapp->sendLeadToSeller($cleanPhone, $leadData);
 
-            // Enviar a VENDEDOR
-            elseif (!empty($request->vendor_id) && $request->vendor_id != 0) {
-                $vendor = Vendor::find($request->vendor_id);
-                if (!empty($vendor) && !empty($vendor->phone)) {
-                    $whatsapp->sendLeadToSeller($vendor->phone, $leadData);
-                }
-            }
-
+            $whatsappStatus = true;
         } catch (\Exception $e) {
-            // Opcional: loggear error, pero NO romper el flujo
+            \Log::error('WHATSAPP ERROR', [
+                'error' => $e->getMessage()
+            ]);
         }
 
+        // =================================================
+        // 5️⃣ MENSAJES DE RESPUESTA
+        // =================================================
+        $responseMessage = [];
 
+        $responseMessage[] = $mailStatus
+            ? '✅ Email sent successfully.'
+            : '❌ Email could not be sent.';
 
+        $responseMessage[] = $whatsappStatus
+            ? '✅ WhatsApp sent successfully.'
+            : '❌ WhatsApp could not be sent.';
 
-        return back()->with('success', 'Message sent successfully');
+        return back()->with('success', implode(' ', $responseMessage));
     }
+
     public function contactUser(Request $request)
     {
 

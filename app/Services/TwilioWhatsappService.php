@@ -25,7 +25,7 @@ class TwilioWhatsappService
         $message .= "💬 Mensaje:\n{$leadData['message']}";
 
         return $this->client->messages->create(
-            "whatsapp:+52{$sellerPhone}",
+            "whatsapp:+521{$sellerPhone}",
             [
                 "from" => "whatsapp:+14155238886", // Sandbox number
                 "body" => $message
