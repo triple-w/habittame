@@ -33,7 +33,7 @@ use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 use PhpOffice\PhpSpreadsheet\Calculation\Category;
 use App\Services\TwilioWhatsappService;
-//test de cambio
+
 use View;
 
 class PropertyController extends Controller
@@ -401,35 +401,36 @@ class PropertyController extends Controller
         $agent = null;
         if (!empty($request->agent_id)) {
             $agent = Agent::find($request->agent_id);
+            if (empty($agent)) {
+                return back()->with('error', 'Something went wrong!');
+            }
+            $request['to_mail'] = $agent->email;
+        } else {
+
+            $admin = Admin::where('role_id', null)->first();
+            $request['to_mail'] = $admin->email;
         }
-
-        if (!$agent) {
-            return back()->with('error', 'No agent found to receive the message.');
-        }
-
-        $request['to_mail'] = $agent->email;
-
-        // =================================================
-        // 3️⃣ ENVÍO DE CORREO
-        // =================================================
-        $mailStatus = false;
-
+        
         try {
-            $this->sendMail($request);
-            $mailStatus = true;
-        } catch (\Exception $e) {
-            \Log::error('MAIL ERROR', [
-                'error' => $e->getMessage()
-            ]);
-        }
+                    PropertyContact::create([
+                        'vendor_id' => $request->vendor_id,
+                        'agent_id' => $request->agent_id,
+                        'property_id' => $request->property_id,
+                        'name' => $request->name,
+                        'email' => $request->email,
+                        'phone' => $request->phone,
+                        'message' => $request->message,
 
-        // =================================================
-        // 4️⃣ ENVÍO DE WHATSAPP (AGENTE)
-        // =================================================
-        $whatsappStatus = false;
+                    ]);
+                    $this->sendMail($request);
+                } catch (\Exception $e) {
+                    return back()->with('error', 'Something went wrong!');
+                }
 
-        try {
-            $cleanPhone = preg_replace('/[^0-9]/', '', $agent->phone);
+            ////Aqui empieza el envio de whatsapp
+
+                try {
+            $whatsapp = new TwilioWhatsappService();
 
             $leadData = [
                 'name'    => $request->name,
@@ -438,24 +439,27 @@ class PropertyController extends Controller
                 'message' => $request->message,
             ];
 
-            $whatsapp = new \App\Services\TwilioWhatsappService();
-            $whatsapp->sendLeadToSeller($cleanPhone, $leadData);
+            // Enviar a AGENTE
+            if (!empty($request->agent_id)) {
+                $agent = Agent::find($request->agent_id);
+                if (!empty($agent) && !empty($agent->phone)) {
+                    $whatsapp->sendLeadToSeller($agent->phone, $leadData);
+                }
+            }
 
-            $whatsappStatus = true;
+            // Enviar a VENDEDOR
+            elseif (!empty($request->vendor_id) && $request->vendor_id != 0) {
+                $vendor = Vendor::find($request->vendor_id);
+                if (!empty($vendor) && !empty($vendor->phone)) {
+                    $whatsapp->sendLeadToSeller($vendor->phone, $leadData);
+                }
+            }
+
         } catch (\Exception $e) {
-            \Log::error('WHATSAPP ERROR', [
-                'error' => $e->getMessage()
-            ]);
+            // Opcional: loggear error, pero NO romper el flujo
         }
 
-        // =================================================
-        // 5️⃣ MENSAJES DE RESPUESTA
-        // =================================================
-        $responseMessage = [];
 
-        $responseMessage[] = $mailStatus
-            ? '✅ Email sent successfully.'
-            : '❌ Email could not be sent.';
 
         $responseMessage[] = $whatsappStatus
             ? '✅ WhatsApp sent successfully.'
