@@ -274,7 +274,7 @@
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>{{ __('Latitude') }} * </label>
-                                            <input type="text" class="form-control" name="latitude"
+                                            <input type="text" class="form-control" name="latitude" id="latitude"
                                                 placeholder="Enter Latitude">
                                         </div>
                                     </div>
@@ -282,8 +282,21 @@
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>{{ __('Longitude') }} * </label>
-                                            <input type="text" class="form-control" name="longitude"
+                                            <input type="text" class="form-control" name="longitude" id="longitude"
                                                 placeholder="Enter Longitude">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="form-group mt-3">
+                                            <label>{{ __('Ubicacion de la propiedad') }}</label>
+                                            <input type="text" class="form-control mb-2"
+                                                id="property_address_autocomplete"
+                                                placeholder="Busca una direccion, colonia o punto de referencia">
+                                            <div id="map" style="width:100%; height:400px; border-radius:8px;"></div>
+                                            <small class="text-muted">
+                                                Da click en el mapa o mueve el pin para ajustar la ubicacion.
+                                            </small>
                                         </div>
                                     </div>
 
@@ -360,7 +373,8 @@
                                                                 <label>{{ __('Address') . '*' }}</label>
                                                                 <input type="text"
                                                                     name="{{ $language->code }}_address"
-                                                                    class="form-control" placeholder="Enter Address">
+                                                                    class="form-control" placeholder="Enter Address"
+                                                                    @if ($language->is_default == 1) data-default-address="1" @endif>
                                                             </div>
                                                         </div>
 
@@ -529,7 +543,87 @@
         let galleryImages = 999999;
     </script>
 
+    <script>
+        let map;
+        let marker;
+        let autocomplete;
+
+        function initMap() {
+            const latInput = document.getElementById("latitude");
+            const lngInput = document.getElementById("longitude");
+            const defaultPosition = {
+                lat: 21.1226, // Leon, GTO
+                lng: -101.6866
+            };
+
+            let startLat = parseFloat(latInput.value);
+            let startLng = parseFloat(lngInput.value);
+            if (Number.isNaN(startLat) || Number.isNaN(startLng)) {
+                startLat = defaultPosition.lat;
+                startLng = defaultPosition.lng;
+            }
+
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 14,
+                center: { lat: startLat, lng: startLng },
+            });
+
+            marker = new google.maps.Marker({
+                position: { lat: startLat, lng: startLng },
+                map: map,
+                draggable: true,
+            });
+
+            setLatLng(startLat, startLng);
+
+            map.addListener("click", function (event) {
+                marker.setPosition(event.latLng);
+                setLatLng(event.latLng.lat(), event.latLng.lng());
+            });
+
+            marker.addListener("dragend", function (event) {
+                setLatLng(event.latLng.lat(), event.latLng.lng());
+            });
+
+            const addressInput = document.getElementById("property_address_autocomplete");
+            if (addressInput) {
+                autocomplete = new google.maps.places.Autocomplete(addressInput, {
+                    fields: ["geometry", "formatted_address"],
+                });
+
+                autocomplete.addListener("place_changed", function () {
+                    const place = autocomplete.getPlace();
+                    if (!place.geometry || !place.geometry.location) {
+                        return;
+                    }
+
+                    const location = place.geometry.location;
+                    marker.setPosition(location);
+                    map.panTo(location);
+                    map.setZoom(16);
+                    setLatLng(location.lat(), location.lng());
+
+                    const defaultAddress = document.querySelector('[data-default-address="1"]');
+                    if (defaultAddress && place.formatted_address) {
+                        defaultAddress.value = place.formatted_address;
+                    }
+                });
+            }
+        }
+
+        function setLatLng(lat, lng) {
+            if (document.getElementById("latitude")) {
+                document.getElementById("latitude").value = lat;
+            }
+            if (document.getElementById("longitude")) {
+                document.getElementById("longitude").value = lng;
+            }
+        }
+    </script>
+
     <script type="text/javascript" src="{{ asset('assets/js/admin-partial.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/admin-dropzone.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/property.js') }}"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVHSZ0rqp7Euat465O5bQ0uGMGBwOnRoE&libraries=places&callback=initMap"></script>
 @endsection
