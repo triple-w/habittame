@@ -41,69 +41,69 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-
-        $img = $request->file('image');
-
-
         $rules = [
-            'type' => "required",
-            'image' => "required",
-            'status' => 'required|numeric',
+            'type'          => 'required',
+            'image'         => 'nullable|image|mimes:jpg,jpeg,png,webp,svg|max:2048',
+            'status'        => 'required|numeric',
             'serial_number' => 'required|numeric'
         ];
-
+    
         $message = [
             'language_id.required' => 'The language field is required.'
         ];
-
+    
         $languages = Language::all();
         foreach ($languages as $lan) {
             $rules[$lan->code . '_name'] = 'required|unique:property_category_contents,name';
             $message[$lan->code . '_name.required'] = 'The name field is required for ' . $lan->name . ' language.';
             $message[$lan->code . '_name.unique'] = 'The name field must be unique for ' . $lan->name . ' language.';
         }
+    
         $validator = Validator::make($request->all(), $rules, $message);
-
-
+    
         if ($validator->fails()) {
             return Response::json([
                 'errors' => $validator->getMessageBag()
             ], 400);
         }
-
+    
+        // âœ… Imagen opcional
+        $filename = null;
         if ($request->hasFile('image')) {
+            $img = $request->file('image');
             $filename = UploadFile::store(public_path('assets/img/property-category/'), $img);
         }
-
+    
         DB::beginTransaction();
-
+    
         try {
             $category = PropertyCategory::create([
-                'type' => $request->type,
-                'image' => $filename,
-                'status' => $request->status,
+                'type'          => $request->type,
+                'image'         => $filename, // puede ser null
+                'status'        => $request->status,
                 'serial_number' => $request->serial_number
             ]);
+    
             foreach ($languages as $lan) {
-
                 PropertyCategoryContent::create([
                     'language_id' => $lan->id,
                     'category_id' => $category->id,
-                    'name' => $request[$lan->code . '_name'],
-                    'slug' => $request[$lan->code . '_name'],
+                    'name'        => $request[$lan->code . '_name'],
+                    'slug'        => $request[$lan->code . '_name'],
                 ]);
             }
+    
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
             Session::flash('warning', 'Something went wrong!');
-
-            return Response::json(['status' => 'success'], 200);
+            return Response::json(['status' => 'error'], 500); // ðŸ‘ˆ ojo: antes regresabas success
         }
+    
         Session::flash('success', 'New Property category added successfully!');
-
         return Response::json(['status' => 'success'], 200);
     }
+
     public function updateFeatured(Request $request)
     {
         $category = PropertyCategory::findOrFail($request->categoryId);
