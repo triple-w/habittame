@@ -240,14 +240,14 @@
                                     @if (request('type') == 'residential')
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label>{{ __('Beds') }} *</label>
+                                                <label>{{ __('Habitaciones') }} *</label>
                                                 <input type="text" class="form-control" name="beds"
                                                     placeholder="Enter number of bed">
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label>{{ __('Baths') }} *</label>
+                                                <label>{{ __('Baños') }} *</label>
                                                 <input type="text" class="form-control" name="bath"
                                                     placeholder="Enter number of bath">
                                             </div>
@@ -255,7 +255,7 @@
                                     @endif
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>{{ __('Area (sqft)') }} *</label>
+                                            <label>{{ __('Metros (terreno)') }} *</label>
                                             <input type="text" class="form-control" name="area"
                                                 placeholder="Enter area (sqft) ">
                                         </div>
@@ -395,10 +395,10 @@
                                                         <div class="col-lg-12">
                                                             <div
                                                                 class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                                <label>{{ __('Meta Keywords') }}</label>
+                                                                <label>{{ __('Palabras Clave Meta *Esto mejora tu busqueda en Google(despues de escibir cada palabra da ENTER)') }}</label>
                                                                 <input class="form-control"
                                                                     name="{{ $language->code }}_meta_keyword"
-                                                                    placeholder="Enter Meta Keywords"
+                                                                    placeholder="Ej. Casa Renta Leon Gran Jardin "
                                                                     data-role="tagsinput">
                                                             </div>
                                                         </div>
@@ -408,9 +408,9 @@
                                                         <div class="col-lg-12">
                                                             <div
                                                                 class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                                <label>{{ __('Meta Description') }}</label>
+                                                                <label>{{ __('Descripcion Meta') }}</label>
                                                                 <textarea class="form-control" name="{{ $language->code }}_meta_description" rows="5"
-                                                                    placeholder="Enter Meta Description"></textarea>
+                                                                    placeholder="Escribe una Descripcion como crees que tu cliente buscaria esta casa, Esto ayuda a los buscadores para que te encuentren mas facil"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -427,10 +427,10 @@
                                                                         <input class="form-check-input" type="checkbox"
                                                                             onchange="cloneInput('collapse{{ $currLang->id }}', 'collapse{{ $language->id }}', event)">
                                                                         <span
-                                                                            class="form-check-sign">{{ __('Clone for') }}
+                                                                            class="form-check-sign">{{ __('Clonar para') }}
                                                                             <strong
                                                                                 class="text-capitalize text-secondary">{{ $language->name }}</strong>
-                                                                            {{ __('language') }}</span>
+                                                                            {{ __('*En caso de no necesitar textos en otro idioma') }}</span>
                                                                     </label>
                                                                 </div>
                                                             @endforeach
@@ -444,12 +444,12 @@
 
                                 <div class="row">
                                     <div class="col-lg-12" id="variation_pricing">
-                                        <h4 for="">{{ __('Additional Features (Optional)') }}</h4>
+                                        <h4 for="">{{ __('Caracteristicas Especiales (Optional)') }}</h4>
                                         <table class="table table-bordered table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>{{ __('Label') }}</th>
-                                                    <th>{{ __('Value') }}</th>
+                                                    <th>{{ __('Nombre (ej. Mascotas)') }}</th>
+                                                    <th>{{ __('Valor (ej. Si o NO)') }}</th>
                                                     <th><a href="" class="btn btn-sm btn-success addRow"><i
                                                                 class="fas fa-plus-circle"></i></a></th>
                                                 </tr>
