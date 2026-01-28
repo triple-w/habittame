@@ -133,7 +133,7 @@
                                             <label>{{ __('Proposito') }}*</label>
 
                                             <select name="purpose" class="form-control">
-                                                <option selected disabled> {{ __('Select a Purpose') }} </option>
+                                                <option selected disabled value=""> {{ __('Select a Purpose') }} </option>
                                                 <option value="rent">{{ __('Rentar') }}</option>
                                                 <option value="sale">{{ __('Vender') }}</option>
                                             </select>
@@ -240,14 +240,14 @@
                                     @if (request('type') == 'residential')
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label>{{ __('Beds') }} *</label>
+                                                <label>{{ __('Habitaciones') }} *</label>
                                                 <input type="text" class="form-control" name="beds"
                                                     placeholder="Enter number of bed">
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
-                                                <label>{{ __('Baths') }} *</label>
+                                                <label>{{ __('Baños') }} *</label>
                                                 <input type="text" class="form-control" name="bath"
                                                     placeholder="Enter number of bath">
                                             </div>
@@ -255,7 +255,7 @@
                                     @endif
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>{{ __('Area (sqft)') }} *</label>
+                                            <label>{{ __('Metros (terreno)') }} *</label>
                                             <input type="text" class="form-control" name="area"
                                                 placeholder="Enter area (sqft) ">
                                         </div>
@@ -287,12 +287,17 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group mt-3">
-                                        <label>Ubicación de la propiedad</label>
-                                        <div id="map" style="width:100%; height:400px; border-radius:8px;"></div>
-                                        <small class="text-muted">
-                                            Da click en el mapa o mueve el pin para ajustar la ubicación.
-                                        </small>
+                                    <div class="col-lg-12">
+                                        <div class="form-group mt-3">
+                                            <label>{{ __('Ubicacion de la propiedad') }}</label>
+                                            <input type="text" class="form-control mb-2"
+                                                id="property_address_autocomplete"
+                                                placeholder="Busca una direccion, colonia o punto de referencia">
+                                            <div id="map" style="width:100%; height:400px; border-radius:8px;"></div>
+                                            <small class="text-muted">
+                                                Da click en el mapa o mueve el pin para ajustar la ubicacion.
+                                            </small>
+                                        </div>
                                     </div>
 
 
@@ -355,7 +360,8 @@
                                                                 <label>{{ __('Address') . '*' }}</label>
                                                                 <input type="text"
                                                                     name="{{ $language->code }}_address"
-                                                                    class="form-control" placeholder="Enter Address">
+                                                                    class="form-control" placeholder="Enter Address"
+                                                                    @if ($language->is_default == 1) data-default-address="1" @endif>
                                                             </div>
                                                         </div>
 
@@ -376,10 +382,10 @@
                                                         <div class="col-lg-12">
                                                             <div
                                                                 class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                                <label>{{ __('Meta Keywords') }} </label>
+                                                                <label>{{ __('Palabras Clave Meta *Esto mejora tu busqueda en Google(despues de escibir cada palabra da ENTER)') }}</label>
                                                                 <input class="form-control"
                                                                     name="{{ $language->code }}_meta_keyword"
-                                                                    placeholder="Enter Meta Keywords"
+                                                                    placeholder="Ej. Casa Renta Leon Gran Jardin "
                                                                     data-role="tagsinput">
                                                             </div>
                                                         </div>
@@ -389,9 +395,9 @@
                                                         <div class="col-lg-12">
                                                             <div
                                                                 class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                                <label>{{ __('Meta Description') }} </label>
+                                                                <label>{{ __('Descripcion Meta') }}</label>
                                                                 <textarea class="form-control" name="{{ $language->code }}_meta_description" rows="5"
-                                                                    placeholder="Enter Meta Description"></textarea>
+                                                                    placeholder="Escribe una Descripcion como crees que tu cliente buscaria esta casa, Esto ayuda a los buscadores para que te encuentren mas facil"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -408,10 +414,10 @@
                                                                         <input class="form-check-input" type="checkbox"
                                                                             onchange="cloneInput('collapse{{ $currLang->id }}', 'collapse{{ $language->id }}', event)">
                                                                         <span
-                                                                            class="form-check-sign">{{ __('Clone for') }}
+                                                                            class="form-check-sign">{{ __('Clonar para') }}
                                                                             <strong
                                                                                 class="text-capitalize text-secondary">{{ $language->name }}</strong>
-                                                                            {{ __('language') }}</span>
+                                                                            {{ __('*En caso de no necesitar textos en otro idioma') }}</span>
                                                                     </label>
                                                                 </div>
                                                             @endforeach
@@ -427,7 +433,7 @@
 
                                     <div class="col-lg-12" id="variation_pricing">
 
-                                        <h4 for="">{{ __('Additional Features (Optional)') }}</h4>
+                                        <h4 for="">{{ __('Caracteristicas Especiales (Optional)') }}</h4>
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="alert alert-warning">
@@ -438,8 +444,8 @@
                                         <table class="table table-bordered table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>{{ __('Label') }}</th>
-                                                    <th>{{ __('Value') }}</th>
+                                                    <th>{{ __('Nombre (ej. Mascotas)') }}</th>
+                                                    <th>{{ __('Valor (ej. Si o NO)') }}</th>
                                                     <th><a href="" class="btn btn-sm btn-success addRow"><i
                                                                 class="fas fa-plus-circle"></i></a></th>
                                                 </tr>
@@ -536,49 +542,84 @@
     <script>
         let map;
         let marker;
+        let autocomplete;
 
         function initMap() {
+            const latInput = document.getElementById("latitude");
+            const lngInput = document.getElementById("longitude");
             const defaultPosition = {
-                lat: 21.1226, // León Gto (puedes cambiarlo)
+                lat: 21.1226, // Leon, GTO
                 lng: -101.6866
             };
 
+            let startLat = parseFloat(latInput.value);
+            let startLng = parseFloat(lngInput.value);
+            if (Number.isNaN(startLat) || Number.isNaN(startLng)) {
+                startLat = defaultPosition.lat;
+                startLng = defaultPosition.lng;
+            }
+
             map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 14,
-                center: defaultPosition,
+                center: { lat: startLat, lng: startLng },
             });
 
             marker = new google.maps.Marker({
-                position: defaultPosition,
+                position: { lat: startLat, lng: startLng },
                 map: map,
                 draggable: true,
             });
 
-            // Set initial values
-            setLatLng(defaultPosition.lat, defaultPosition.lng);
+            setLatLng(startLat, startLng);
 
-            // Click on map
             map.addListener("click", function (event) {
                 marker.setPosition(event.latLng);
                 setLatLng(event.latLng.lat(), event.latLng.lng());
             });
 
-            // Drag marker
             marker.addListener("dragend", function (event) {
                 setLatLng(event.latLng.lat(), event.latLng.lng());
             });
+
+            const addressInput = document.getElementById("property_address_autocomplete");
+            if (addressInput) {
+                autocomplete = new google.maps.places.Autocomplete(addressInput, {
+                    fields: ["geometry", "formatted_address"],
+                });
+
+                autocomplete.addListener("place_changed", function () {
+                    const place = autocomplete.getPlace();
+                    if (!place.geometry || !place.geometry.location) {
+                        return;
+                    }
+
+                    const location = place.geometry.location;
+                    marker.setPosition(location);
+                    map.panTo(location);
+                    map.setZoom(16);
+                    setLatLng(location.lat(), location.lng());
+
+                    const defaultAddress = document.querySelector('[data-default-address="1"]');
+                    if (defaultAddress && place.formatted_address) {
+                        defaultAddress.value = place.formatted_address;
+                    }
+                });
+            }
         }
 
         function setLatLng(lat, lng) {
-            document.getElementById("latitude").value = lat;
-            document.getElementById("longitude").value = lng;
+            if (document.getElementById("latitude")) {
+                document.getElementById("latitude").value = lat;
+            }
+            if (document.getElementById("longitude")) {
+                document.getElementById("longitude").value = lng;
+            }
         }
-
-        document.addEventListener("DOMContentLoaded", initMap);
     </script>
 
 
     <script type="text/javascript" src="{{ asset('assets/js/admin-dropzone.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVHSZ0rqp7Euat465O5bQ0uGMGBwOnRoE"></script>
     <script src="{{ asset('assets/js/property.js') }}"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVHSZ0rqp7Euat465O5bQ0uGMGBwOnRoE&libraries=places&callback=initMap"></script>
 @endsection
