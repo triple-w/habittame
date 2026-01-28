@@ -19,11 +19,10 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="#">{{ __('Agregar Propiedad') }}
-                    @if (request('type') == 'residential')
-                        {{ '(Residential)' }}
+                <a href="#">{{ __('Agregar Propiedad') }}@if (request('type') == 'residential')
+                       {{"(Residential)"}}
                     @else
-                        {{ '(Commercial)' }}
+                        {{ "(Commercial)" }}
                     @endif
                 </a>
             </li>
@@ -40,18 +39,13 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-10 offset-lg-1">
-                            <div class="alert alert-warning">
-                                {{ __('You can upload maximum ' . $currentPackage->number_of_property_gallery_images . ' gallery images under one property') }}
-                            </div>
-                        </div>
-                        <div class="col-lg-10 offset-lg-1">
                             <div class="alert alert-danger pb-1 dis-none" id="carErrors">
                                 <button type="button" class="close" data-dismiss="alert">×</button>
                                 <ul></ul>
                             </div>
                             <div class="col-lg-12">
                                 <label for="" class="mb-2"><strong>{{ __('Galeria de Imagenes') }} **</strong></label>
-                                <form action="{{ route('vendor.property.imagesstore') }}" id="my-dropzone"
+                                <form action="{{ route('admin.property.imagesstore') }}" id="my-dropzone"
                                     enctype="multipart/form-data" class="dropzone create">
                                     @csrf
                                     <div class="fallback">
@@ -60,7 +54,7 @@
                                 </form>
                                 <p class="em text-danger mb-0" id="errslider_images"></p>
                             </div>
-                            <form id="carForm" action="{{ route('vendor.property_management.store_property') }}"
+                            <form id="carForm" action="{{ route('admin.property_management.store_property') }}"
                                 method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="type" value="{{ request()->type }}">
@@ -70,9 +64,10 @@
                                         <div class="form-group">
                                             <label for="">{{ __('Imagen Principal') . '*' }}</label>
                                             <br>
-                                            <div class="thumb-preview">
+                                            <div class="thumb-preview ">
                                                 <img src="{{ asset('assets/img/noimage.jpg') }}" alt="..."
                                                     class="uploaded-img">
+
                                             </div>
 
                                             <div class="mt-3">
@@ -91,6 +86,7 @@
                                             <div class="thumb-preview remove">
                                                 <img src="{{ asset('assets/img/noimage.jpg') }}" alt="..."
                                                     class="uploaded-img2">
+
                                             </div>
 
                                             <div class="mt-3">
@@ -108,6 +104,7 @@
                                             <div class="thumb-preview remove">
                                                 <img src="{{ asset('assets/img/noimage.jpg') }}" alt="..."
                                                     class="uploaded-img3">
+
                                             </div>
 
                                             <div class="mt-3">
@@ -133,14 +130,14 @@
                                             <label>{{ __('Proposito') }}*</label>
 
                                             <select name="purpose" class="form-control">
-                                                <option selected disabled value=""> {{ __('Select a Purpose') }} </option>
+                                                <option selected disabled value=""> {{ __('Select a Purpose') }}
+                                                </option>
                                                 <option value="rent">{{ __('Rentar') }}</option>
                                                 <option value="sale">{{ __('Vender') }}</option>
                                             </select>
                                         </div>
 
                                     </div>
-
                                     <div class="col-lg-3">
                                         <div class="form-group ">
                                             <label>{{ __('Categoria') }} *</label>
@@ -156,7 +153,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    @if ($settings->property_country_status == 1)
+                                    @if ($propertySettings->property_country_status == 1)
                                         <div class="col-lg-3">
                                             <div class="form-group">
 
@@ -175,7 +172,7 @@
                                             </div>
                                         </div>
                                     @endif
-                                    @if ($settings->property_state_status == 1)
+                                    @if ($propertySettings->property_state_status == 1)
                                         <div class="col-lg-3 state">
                                             <div class="form-group  ">
 
@@ -195,11 +192,13 @@
                                     @endif
                                     <div class="col-lg-3 city">
                                         <div class="form-group ">
+
+
                                             <label>{{ __('Ciudad') }} *</label>
                                             <select name="city_id" class="form-control city_id js-example-basic-single3">
-                                                <option disabled selected>{{ __('Select City') }}
+                                                <option selected disabled>{{ __('Select City') }}
                                                 </option>
-                                                @if ($settings->property_state_status == 0 && $settings->property_country_status == 0)
+                                                @if ($propertySettings->property_state_status == 0 && $propertySettings->property_country_status == 0)
                                                     @foreach ($cities as $city)
                                                         <option value="{{ $city->id }}">
                                                             {{ $city->cityContent->name }}</option>
@@ -208,12 +207,13 @@
                                             </select>
                                         </div>
                                     </div>
+
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label for="">{{ __('Amenidades') }}*</label>
                                             <select name="amenities[]" class="form-control js-example-basic-single2"
                                                 multiple="multiple">
-                                                <option disabled value="">
+                                                <option value="" disabled>
                                                     {{ __('Please Select Amenities') }}
                                                 </option>
                                                 @foreach ($amenities as $amenity)
@@ -273,17 +273,17 @@
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>{{ __('Latitude') }} *</label>
-                                            <input type="text" class="form-control" name="latitude"
-                                                placeholder="Enter Latitude" id="latitude">
+                                            <label>{{ __('Latitude') }} * </label>
+                                            <input type="text" class="form-control" name="latitude" id="latitude"
+                                                placeholder="Enter Latitude">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>{{ __('Longitude') }} *</label>
-                                            <input type="text" class="form-control" name="longitude"
-                                                placeholder="Enter Longitude" id="longitude">
+                                            <label>{{ __('Longitude') }} * </label>
+                                            <input type="text" class="form-control" name="longitude" id="longitude"
+                                                placeholder="Enter Longitude">
                                         </div>
                                     </div>
 
@@ -300,19 +300,32 @@
                                         </div>
                                     </div>
 
-
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label for="">{{ __('Agent') }}</label>
-                                            <select name="agent_id" class="form-control js-example-basic-single3">
-                                                <option value="" selected>{{ __('Select Agent') }}
+                                            <label for="">{{ __('Agencia') }}</label>
+                                            <select name="vendor_id" class="form-control vendor js-example-basic-single1">
+                                                <option value="0" selected>{{ __('Please Select') }}
                                                 </option>
-                                                @foreach ($agents as $agent)
-                                                    <option value="{{ $agent->id }}">{{ $agent->username }}</option>
+                                                @foreach ($vendors as $vendor)
+                                                    <option value="{{ $vendor->id }}">{{ $vendor->username }}</option>
                                                 @endforeach
                                             </select>
                                             <p class="text-warning">
-                                                {{ __('if you do not select any agent, then this property will be listed under you') }}
+                                                {{ __('if you do not select any vendor, then this property will be listed under you') }}
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3">
+                                        <div class="form-group agent d-none">
+                                            <label for="">{{ __('Agent') }}</label>
+                                            <select name="agent_id"
+                                                class="form-control agent_id js-example-basic-single1">
+                                                <option value="" selected>{{ __('Please Select') }}
+                                                </option>
+                                            </select>
+                                            <p class="text-warning">
+                                                {{ __('if you do not select any agent, then this property will be listed under Vendor') }}
                                             </p>
                                         </div>
                                     </div>
@@ -430,17 +443,8 @@
                                 </div>
 
                                 <div class="row">
-
                                     <div class="col-lg-12" id="variation_pricing">
-
                                         <h4 for="">{{ __('Caracteristicas Especiales (Optional)') }}</h4>
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="alert alert-warning">
-                                                    {{ __('You can add maximum ' . $currentPackage->number_of_property_adittionl_specifications . ' additional features under one property') }}
-                                                </div>
-                                            </div>
-                                        </div>
                                         <table class="table table-bordered table-striped">
                                             <thead>
                                                 <tr>
@@ -485,7 +489,7 @@
                                     </div>
                                 </div>
 
-
+                                <div id="sliders"></div>
                             </form>
                         </div>
                     </div>
@@ -617,9 +621,9 @@
         }
     </script>
 
-
+    <script type="text/javascript" src="{{ asset('assets/js/admin-partial.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/admin-dropzone.js') }}"></script>
-    <script src="{{ asset('assets/js/property.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/property.js') }}"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVHSZ0rqp7Euat465O5bQ0uGMGBwOnRoE&libraries=places&callback=initMap"></script>
 @endsection
