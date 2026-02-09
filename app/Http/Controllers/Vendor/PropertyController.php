@@ -105,12 +105,14 @@ class PropertyController extends Controller
         $language = Language::where('is_default', 1)->first();
         $languages = Language::get();
         $information['languages'] = $languages;
+        $information['vendors'] = Vendor::where('id', '!=', 0)->where('status', 1)->get();
         $information['propertyCategories'] = PropertyCategory::where([['type', $request->type], ['status', 1]])->with(['categoryContent' => function ($q) use ($language) {
             $q->where('language_id', $language->id);
         }])->get();
         $information['propertyCountries'] = Country::with(['countryContent' => function ($q) use ($language) {
             $q->where('language_id', $language->id);
         }])->get();
+        $information['propertySettings'] = Basic::select('property_state_status', 'property_country_status')->first();
         $information['states'] = State::with(['stateContent' => function ($q) use ($language) {
             $q->where('language_id', $language->id);
         }])->get();
