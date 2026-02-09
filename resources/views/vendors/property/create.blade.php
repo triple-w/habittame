@@ -1,11 +1,11 @@
-@extends('vendors.layout')
+@extends('backend.layout')
 
 @section('content')
     <div class="page-header">
         <h4 class="page-title">{{ __('Agregar Propiedad') }}</h4>
         <ul class="breadcrumbs">
             <li class="nav-home">
-                <a href="{{ route('admin.dashboard') }}">
+                <a href="{{ route('vendor.dashboard') }}">
                     <i class="flaticon-home"></i>
                 </a>
             </li>
@@ -45,7 +45,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <label for="" class="mb-2"><strong>{{ __('Galeria de Imagenes') }} **</strong></label>
-                                <form action="{{ route('admin.property.imagesstore') }}" id="my-dropzone"
+                                <form action="{{ route('vendor.property.imagesstore') }}" id="my-dropzone"
                                     enctype="multipart/form-data" class="dropzone create">
                                     @csrf
                                     <div class="fallback">
@@ -54,7 +54,7 @@
                                 </form>
                                 <p class="em text-danger mb-0" id="errslider_images"></p>
                             </div>
-                            <form id="carForm" action="{{ route('admin.property_management.store_property') }}"
+                            <form id="carForm" action="{{ route('vendor.property_management.store_property') }}"
                                 method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="type" value="{{ request()->type }}">
@@ -533,14 +533,17 @@
 @section('script')
     <script>
         'use strict';
-
         var labels = "{!! $labels !!}";
         var values = "{!! $values !!}";
-        var storeUrl = "{{ route('vendor.property.imagesstore') }}";
+
+        // ✅ Idealmente vendor (si existen esas rutas). Si NO existen, te digo abajo el fallback.
+        var storeUrl  = "{{ route('vendor.property.imagesstore', ['vendor_id' => 0]) }}";
         var removeUrl = "{{ route('vendor.property.imagermv') }}";
-        var stateUrl = "{{ route('vendor.property_specification.get_state_cities') }}";
-        var cityUrl = "{{ route('vendor.property_specification.get_cities') }}";
-        var galleryImages = {{ $currentPackage->number_of_property_gallery_images }};
+        var stateUrl  = "{{ route('vendor.property_specification.get_state_cities') }}";
+        let cityUrl   = "{{ route('vendor.property_specification.get_cities') }}";
+        let agentUrl  = "{{ route('vendor.property_management.get_agent') }}";
+
+        let galleryImages = 999999;
     </script>
 
     <script>
@@ -551,10 +554,7 @@
         function initMap() {
             const latInput = document.getElementById("latitude");
             const lngInput = document.getElementById("longitude");
-            const defaultPosition = {
-                lat: 21.1226, // Leon, GTO
-                lng: -101.6866
-            };
+            const defaultPosition = { lat: 21.1226, lng: -101.6866 };
 
             let startLat = parseFloat(latInput.value);
             let startLng = parseFloat(lngInput.value);
@@ -593,9 +593,7 @@
 
                 autocomplete.addListener("place_changed", function () {
                     const place = autocomplete.getPlace();
-                    if (!place.geometry || !place.geometry.location) {
-                        return;
-                    }
+                    if (!place.geometry || !place.geometry.location) return;
 
                     const location = place.geometry.location;
                     marker.setPosition(location);
@@ -612,12 +610,10 @@
         }
 
         function setLatLng(lat, lng) {
-            if (document.getElementById("latitude")) {
-                document.getElementById("latitude").value = lat;
-            }
-            if (document.getElementById("longitude")) {
-                document.getElementById("longitude").value = lng;
-            }
+            const latEl = document.getElementById("latitude");
+            const lngEl = document.getElementById("longitude");
+            if (latEl) latEl.value = lat;
+            if (lngEl) lngEl.value = lng;
         }
     </script>
 
