@@ -274,15 +274,15 @@
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>{{ __('Latitude') }} * </label>
-                                            <input type="text" class="form-control" name="latitude" id="latitude"
-                                                placeholder="Enter Latitude">
+                                            <input type="hidden" class="form-control" name="latitude" id="latitude"
+                                                placeholder="Enter Latitude" >
                                         </div>
                                     </div>
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>{{ __('Longitude') }} * </label>
-                                            <input type="text" class="form-control" name="longitude" id="longitude"
+                                            <input type="hidden" class="form-control" name="longitude" id="longitude"
                                                 placeholder="Enter Longitude">
                                         </div>
                                     </div>
