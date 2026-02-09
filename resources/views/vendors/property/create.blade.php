@@ -1,4 +1,4 @@
-@extends('vendors.layout')
+@extends('backend.layout')
 
 @section('content')
     <div class="page-header">
@@ -45,7 +45,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <label for="" class="mb-2"><strong>{{ __('Galeria de Imagenes') }} **</strong></label>
-                                <form action="{{ route('admin.property.imagesstore') }}" id="my-dropzone"
+                                <form action="{{ route('vendor.property.imagesstore') }}" id="my-dropzone"
                                     enctype="multipart/form-data" class="dropzone create">
                                     @csrf
                                     <div class="fallback">
@@ -54,7 +54,7 @@
                                 </form>
                                 <p class="em text-danger mb-0" id="errslider_images"></p>
                             </div>
-                            <form id="carForm" action="{{ route('admin.property_management.store_property') }}"
+                            <form id="carForm" action="{{ route('vendor.property_management.store_property') }}"
                                 method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="type" value="{{ request()->type }}">
@@ -533,14 +533,14 @@
 @section('script')
     <script>
         'use strict';
-
         var labels = "{!! $labels !!}";
         var values = "{!! $values !!}";
-        var storeUrl = "{{ route('vendor.property.imagesstore') }}";
+        var storeUrl = "{{ route('vendor.property.imagesstore', ['vendor_id' => 0]) }}";
         var removeUrl = "{{ route('vendor.property.imagermv') }}";
         var stateUrl = "{{ route('vendor.property_specification.get_state_cities') }}";
-        var cityUrl = "{{ route('vendor.property_specification.get_cities') }}";
-        var galleryImages = {{ $currentPackage->number_of_property_gallery_images }};
+        let cityUrl = "{{ route('vendor.property_specification.get_cities') }}";
+        let agentUrl = "{{ route('vendor.property_management.get_agent') }}";
+        let galleryImages = 999999;
     </script>
 
     <script>
@@ -621,7 +621,7 @@
         }
     </script>
 
-    <script type="text/javascript" src="{{ asset('assets/js/admin-partial.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/vendor-partial.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/admin-dropzone.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/property.js') }}"></script>
     <script async defer
