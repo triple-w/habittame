@@ -1,4 +1,4 @@
-@extends('backend.layout')
+@extends('vendors.layout')
 
 @section('content')
     <div class="page-header">
