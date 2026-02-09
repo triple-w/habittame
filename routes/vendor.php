@@ -110,6 +110,7 @@ Route::prefix('vendor')
                 Route::post('/img-db-remove', 'Vendor\PropertyController@imagedbrmv')->name('vendor.property.imgdbrmv');
                 //#==========property slider image end
 
+                Route::get('/get-agent', 'Vendor\PropertyController@getAgent')->name('vendor.property_management.get_agent');
                 Route::get('/get-states-cities', 'Vendor\PropertyController@getStateCities')->name('vendor.property_specification.get_state_cities');
                 Route::get('/get-cities', 'Vendor\PropertyController@getCities')->name('vendor.property_specification.get_cities');
 

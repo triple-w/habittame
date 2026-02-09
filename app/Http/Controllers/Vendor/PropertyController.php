@@ -37,6 +37,21 @@ use Session;
 
 class PropertyController extends Controller
 {
+    public function getAgent(Request $request)
+    {
+        $vendor = Auth::guard('vendor')->user();
+        if (!$vendor) {
+            return Response::json('error', 403);
+        }
+
+        $agents = Agent::where('vendor_id', $vendor->id)->where('status', 1)->get();
+        if ($agents->isNotEmpty()) {
+            return Response::json(['agents' => $agents], 200);
+        }
+
+        return Response::json('error', 404);
+    }
+
     public function type(Request $request)
     {
         $data['commertialCount'] = Property::where([['type', 'commercial'], ['vendor_id', Auth::guard('vendor')->user()->id]])->count();
