@@ -309,8 +309,16 @@
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>{{ __('Precio') . ' (' . $settings->base_currency_text . ')' }} </label>
-                                            <input type="number" class="form-control" name="price"
-                                                placeholder="Enter Current Price" value="{{ $property->price }}">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">$</span>
+                                                </div>
+                                                <input type="text" class="form-control js-price-display"
+                                                    inputmode="decimal" autocomplete="off"
+                                                    placeholder="Enter Current Price">
+                                            </div>
+                                            <input type="hidden" name="price" class="js-price-value"
+                                                value="{{ $property->price }}">
                                             <p class="text-warning">
                                                 {{ __('If you leave it blank, price will be negotiable.') }}
                                             </p>
@@ -697,6 +705,80 @@
         var rmvdbUrl = "{{ route('vendor.property.imgdbrmv') }}";
         var specificationRmvUrl = "{{ route('vendor.property_management.specification_delete') }}"
         var galleryImages = {{ $currentPackage->number_of_property_gallery_images - count($galleryImages) }};
+    </script>
+    <script>
+        (function () {
+            function parsePrice(rawValue) {
+                let cleaned = (rawValue || '').toString().replace(/,/g, '').replace(/[^\d.]/g, '');
+                const firstDotIndex = cleaned.indexOf('.');
+
+                if (firstDotIndex !== -1) {
+                    cleaned = cleaned.slice(0, firstDotIndex + 1) + cleaned.slice(firstDotIndex + 1).replace(/\./g, '');
+                }
+
+                if (cleaned === '') {
+                    return {
+                        numeric: '',
+                        formatted: ''
+                    };
+                }
+
+                const hasTrailingDot = cleaned.endsWith('.');
+                let [intPart, decPart] = cleaned.split('.');
+
+                intPart = (intPart || '').replace(/^0+(?=\d)/, '');
+                if (intPart === '') {
+                    intPart = '0';
+                }
+
+                decPart = typeof decPart === 'string' ? decPart.slice(0, 2) : undefined;
+
+                const formattedInt = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                const numeric = decPart !== undefined && decPart !== '' ? intPart + '.' + decPart : intPart;
+                let formatted = decPart !== undefined && decPart !== '' ? formattedInt + '.' + decPart : formattedInt;
+
+                if (hasTrailingDot && (decPart === undefined || decPart === '')) {
+                    formatted += '.';
+                }
+
+                return {
+                    numeric: numeric,
+                    formatted: formatted
+                };
+            }
+
+            function bindPriceInput(form) {
+                if (!form) return;
+
+                const displayInput = form.querySelector('.js-price-display');
+                const numericInput = form.querySelector('.js-price-value');
+
+                if (!displayInput || !numericInput) return;
+
+                const sync = function () {
+                    const parsed = parsePrice(displayInput.value);
+                    displayInput.value = parsed.formatted;
+                    numericInput.value = parsed.numeric;
+                };
+
+                const initial = parsePrice(numericInput.value);
+                displayInput.value = initial.formatted;
+                numericInput.value = initial.numeric;
+
+                displayInput.addEventListener('input', sync);
+                displayInput.addEventListener('blur', sync);
+
+                form.addEventListener('submit', function () {
+                    const parsed = parsePrice(displayInput.value);
+                    numericInput.value = parsed.numeric;
+                    displayInput.value = parsed.formatted;
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                bindPriceInput(document.getElementById('carForm'));
+            });
+        })();
     </script>
     <script type="text/javascript" src="{{ asset('assets/js/admin-dropzone.js') }}"></script>
     <script src="{{ asset('assets/js/property.js') }}"></script>
