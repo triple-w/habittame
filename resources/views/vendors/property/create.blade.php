@@ -263,6 +263,22 @@
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
+                                            <label>{{ __('Metros cuadrados construidos') }}</label>
+                                            <input type="number" class="form-control" name="built_area" min="0"
+                                                step="0.01" placeholder="Ej. 180">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <label>{{ __('Lugares de estacionamiento') }}</label>
+                                            <input type="number" class="form-control" name="parking_spaces"
+                                                min="0" step="1" placeholder="Ej. 2">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
                                             <label>{{ __('Status') }} *</label>
                                             <select name="status" id="" class="form-control">
                                                 <option value="1">{{ __('Active') }}</option>
@@ -273,7 +289,7 @@
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>{{ __('Latitude') }} * </label>
+                                            <!-- <label>{{ __('Latitude') }} * </label> -->
                                             <input type="hidden" class="form-control" name="latitude" id="latitude"
                                                 placeholder="Enter Latitude" >
                                         </div>
@@ -281,7 +297,7 @@
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label>{{ __('Longitude') }} * </label>
+                                            <!-- <label>{{ __('Longitude') }} * </label> -->
                                             <input type="hidden" class="form-control" name="longitude" id="longitude"
                                                 placeholder="Enter Longitude">
                                         </div>
@@ -421,16 +437,25 @@
 
                                                             @foreach ($languages as $language)
                                                                 @continue($language->id == $currLang->id)
+                                                                @php
+                                                                    $isEnglishClone = strtolower($language->code) === 'en';
+                                                                @endphp
 
                                                                 <div class="form-check py-0">
                                                                     <label class="form-check-label">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            onchange="cloneInput('collapse{{ $currLang->id }}', 'collapse{{ $language->id }}', event)">
+                                                                            onchange="cloneInput('collapse{{ $currLang->id }}', 'collapse{{ $language->id }}', event)"
+                                                                            @if ($isEnglishClone) checked disabled @endif>
                                                                         <span
                                                                             class="form-check-sign">{{ __('Clonar para') }}
                                                                             <strong
                                                                                 class="text-capitalize text-secondary">{{ $language->name }}</strong>
-                                                                            {{ __('*En caso de no necesitar textos en otro idioma') }}</span>
+                                                                            @if ($isEnglishClone)
+                                                                                {{ __('(siempre activo)') }}
+                                                                            @else
+                                                                                {{ __('*En caso de no necesitar textos en otro idioma') }}
+                                                                            @endif
+                                                                        </span>
                                                                     </label>
                                                                 </div>
                                                             @endforeach

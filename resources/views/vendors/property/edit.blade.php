@@ -343,6 +343,23 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <label>{{ __('Metros cuadrados construidos') }}</label>
+                                            <input type="number" class="form-control" name="built_area" min="0"
+                                                step="0.01" value="{{ $property->built_area }}" placeholder="Ej. 180">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <label>{{ __('Lugares de estacionamiento') }}</label>
+                                            <input type="number" class="form-control" name="parking_spaces"
+                                                min="0" step="1" value="{{ $property->parking_spaces }}"
+                                                placeholder="Ej. 2">
+                                        </div>
+                                    </div>
+
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
@@ -487,16 +504,25 @@
 
                                                             @foreach ($languages as $language)
                                                                 @continue($language->id == $currLang->id)
+                                                                @php
+                                                                    $isEnglishClone = strtolower($language->code) === 'en';
+                                                                @endphp
 
                                                                 <div class="form-check py-0">
                                                                     <label class="form-check-label">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            onchange="cloneInput('collapse{{ $currLang->id }}', 'collapse{{ $language->id }}', event)">
+                                                                            onchange="cloneInput('collapse{{ $currLang->id }}', 'collapse{{ $language->id }}', event)"
+                                                                            @if ($isEnglishClone) checked disabled @endif>
                                                                         <span
                                                                             class="form-check-sign">{{ __('Clone for') }}
                                                                             <strong
                                                                                 class="text-capitalize text-secondary">{{ $language->name }}</strong>
-                                                                            {{ __('language') }}</span>
+                                                                            @if ($isEnglishClone)
+                                                                                {{ __('(always active)') }}
+                                                                            @else
+                                                                                {{ __('language') }}
+                                                                            @endif
+                                                                        </span>
                                                                     </label>
                                                                 </div>
                                                             @endforeach
@@ -675,4 +701,3 @@
     <script type="text/javascript" src="{{ asset('assets/js/admin-dropzone.js') }}"></script>
     <script src="{{ asset('assets/js/property.js') }}"></script>
 @endsection
-

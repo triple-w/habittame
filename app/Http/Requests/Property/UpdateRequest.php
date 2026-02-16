@@ -11,6 +11,43 @@ use Illuminate\Support\Facades\Auth;
 
 class UpdateRequest extends FormRequest
 {
+    protected function prepareForValidation()
+    {
+        $defaultLanguage = Language::where('is_default', 1)->first();
+        $englishLanguage = Language::where('code', 'en')->first();
+
+        if (is_null($defaultLanguage) || is_null($englishLanguage) || $defaultLanguage->id === $englishLanguage->id) {
+            return;
+        }
+
+        $fromPrefix = $defaultLanguage->code . '_';
+        $toPrefix = $englishLanguage->code . '_';
+
+        $fieldsToClone = [
+            'title',
+            'address',
+            'description',
+            'meta_keyword',
+            'meta_description',
+            'label',
+            'value'
+        ];
+
+        $clonedInputs = [];
+
+        foreach ($fieldsToClone as $field) {
+            $sourceKey = $fromPrefix . $field;
+
+            if ($this->has($sourceKey)) {
+                $clonedInputs[$toPrefix . $field] = $this->input($sourceKey);
+            }
+        }
+
+        if (!empty($clonedInputs)) {
+            $this->merge($clonedInputs);
+        }
+    }
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -48,6 +85,8 @@ class UpdateRequest extends FormRequest
             'bath' => 'required_if:type,residential',
             'purpose' => 'required',
             'area' => 'required',
+            'built_area' => 'nullable|numeric|min:0',
+            'parking_spaces' => 'nullable|integer|min:0',
             'status' => 'required',
             'amenities' => 'required',
             'category_id' => 'required',
