@@ -802,6 +802,14 @@ body[data-background-color="white2"] .bootstrap-tagsinput {
   border-color: #ebedf2 !important;
 }
 
+body[data-background-color="white2"] .bootstrap-tagsinput input {
+  color: #495057 !important;
+}
+
+body[data-background-color="white2"] .bootstrap-tagsinput input::placeholder {
+  color: #6c757d !important;
+}
+
 .table-title {
   min-width: 250px;
   max-width: 300px;
