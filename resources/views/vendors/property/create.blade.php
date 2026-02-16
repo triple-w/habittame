@@ -122,7 +122,7 @@
                                         <div class="form-group">
                                             <label>{{ __('Video Url') }} </label>
                                             <input type="text" class="form-control" name="video_url"
-                                                placeholder="Enter video url">
+                                                placeholder="Inserta URl del video">
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
@@ -130,7 +130,7 @@
                                             <label>{{ __('Proposito') }}*</label>
 
                                             <select name="purpose" class="form-control">
-                                                <option selected disabled value=""> {{ __('Select a Purpose') }}
+                                                <option selected disabled value=""> {{ __('Selecciona un Proposito') }}
                                                 </option>
                                                 <option value="rent">{{ __('Rentar') }}</option>
                                                 <option value="sale">{{ __('Vender') }}</option>
@@ -143,7 +143,7 @@
                                             <label>{{ __('Categoria') }} *</label>
                                             <select name="category_id" class="form-control category">
                                                 <option disabled selected>
-                                                    {{ __('Select a Category') }}
+                                                    {{ __('Selecciona Categoria') }}
                                                 </option>
 
                                                 @foreach ($propertyCategories as $category)
@@ -161,7 +161,7 @@
                                                 <label>{{ __('País') }} *</label>
                                                 <select name="country_id"
                                                     class="form-control country js-example-basic-single3">
-                                                    <option disabled selected>{{ __('Select Country') }}
+                                                    <option disabled selected>{{ __('Selecciona un Pais') }}
                                                     </option>
 
                                                     @foreach ($propertyCountries as $country)
@@ -179,7 +179,7 @@
                                                 <label>{{ __('Estado') }} *</label>
                                                 <select onchange="getCities(event)" name="state_id"
                                                     class="form-control state_id states js-example-basic-single3">
-                                                    <option selected disabled>{{ __('Select State') }}
+                                                    <option selected disabled>{{ __('Selecciona Estado') }}
                                                     </option>
                                                     @foreach ($states as $state)
                                                         <option value="{{ $state->id }}">
@@ -196,7 +196,7 @@
 
                                             <label>{{ __('Ciudad') }} *</label>
                                             <select name="city_id" class="form-control city_id js-example-basic-single3">
-                                                <option selected disabled>{{ __('Select City') }}
+                                                <option selected disabled>{{ __('Selecciona Ciudad') }}
                                                 </option>
                                                 @if ($propertySettings->property_state_status == 0 && $propertySettings->property_country_status == 0)
                                                     @foreach ($cities as $city)
@@ -214,7 +214,7 @@
                                             <select name="amenities[]" class="form-control js-example-basic-single2"
                                                 multiple="multiple">
                                                 <option value="" disabled>
-                                                    {{ __('Please Select Amenities') }}
+                                                    {{ __('Selecciona Amenidades') }}
                                                 </option>
                                                 @foreach ($amenities as $amenity)
                                                     <option value="{{ $amenity->id }}">
@@ -234,12 +234,12 @@
                                                 </div>
                                                 <input type="text" class="form-control js-price-display"
                                                     inputmode="decimal" autocomplete="off"
-                                                    placeholder="Enter Current Price">
+                                                    placeholder="Inserta un Precio">
                                             </div>
                                             <input type="hidden" name="price" class="js-price-value" value="">
 
                                             <p class="text-warning">
-                                                {{ __('If you leave it blank, price will be negotiable.') }}
+                                                {{ __('Si lo dejas en blanco se vera como negociable.') }}
                                             </p>
                                         </div>
                                     </div>
@@ -249,14 +249,14 @@
                                             <div class="form-group">
                                                 <label>{{ __('Habitaciones') }} *</label>
                                                 <input type="text" class="form-control" name="beds"
-                                                    placeholder="Enter number of bed">
+                                                    placeholder="Numero de Cuartos">
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <label>{{ __('Baños') }} *</label>
                                                 <input type="text" class="form-control" name="bath"
-                                                    placeholder="Enter number of bath">
+                                                    placeholder="Numero de Baños">
                                             </div>
                                         </div>
                                     @endif
@@ -264,7 +264,7 @@
                                         <div class="form-group">
                                             <label>{{ __('Metros (terreno)') }} *</label>
                                             <input type="text" class="form-control" name="area"
-                                                placeholder="Enter area (sqft) ">
+                                                placeholder="Area en M2">
                                         </div>
                                     </div>
 
@@ -288,8 +288,8 @@
                                         <div class="form-group">
                                             <label>{{ __('Status') }} *</label>
                                             <select name="status" id="" class="form-control">
-                                                <option value="1">{{ __('Active') }}</option>
-                                                <option value="0">{{ __('Inactive') }}</option>
+                                                <option value="1">{{ __('Activo') }}</option>
+                                                <option value="0">{{ __('Inactivo') }}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -348,7 +348,7 @@
                                                 </option>
                                             </select>
                                             <p class="text-warning">
-                                                {{ __('if you do not select any agent, then this property will be listed under Vendor') }}
+                                                {{ __('Si no seleccionar un Agente Aparecera como Venedor la Agencia.') }}
                                             </p>
                                         </div>
                                     </div>
