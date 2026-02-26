@@ -30,6 +30,7 @@ use App\Models\Vendor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 use Purifier;
@@ -215,111 +216,133 @@ class PropertyController extends Controller
     }
     public function store(StoreRequest $request)
     {
+        try {
+            DB::transaction(function () use ($request) {
 
-        DB::transaction(function () use ($request) {
-
-            $featuredImgURL = $request->featured_image;
-            if (request()->hasFile('featured_image')) {
-                $featuredImgName = UploadFile::store(public_path('assets/img/property/featureds'), $featuredImgURL);
-            }
-
-            $languages = Language::all(); 
-            $floorPlanningImage = null;
-            $videoImage = null;
-            if (request()->hasFile('floor_planning_image')) {
-                $floorPlanningImage = UploadFile::store(public_path('assets/img/property/plannings'), $request->floor_planning_image);
-            }
-            if ($request->hasFile('video_image')) {
-                $videoImage = UploadFile::store(public_path('assets/img/property/video/'), $request->video_image);
-            }
-            $bs = Basic::select('property_approval_status')->first();
-            if ($bs->property_approval_status == 1) {
-                $approveStatus = 0;
-            } else {
-                $approveStatus = 1;
-            }
-            $property = Property::create([
-                'vendor_id' => Auth::guard('vendor')->user()->id,
-                'agent_id' => $request->agent_id,
-                'category_id' => $request->category_id,
-                'country_id' => $request->country_id,
-                'state_id' => $request->state_id,
-                'city_id' => $request->city_id,
-                'featured_image' => $featuredImgName,
-                'floor_planning_image' => $floorPlanningImage,
-                'video_image' => $videoImage,
-                'price' => $request->price,
-                'purpose' => $request->purpose,
-                'type' => $request->type,
-                'beds' => $request->beds,
-                'bath' => $request->bath,
-                'area' => $request->area,
-                'built_area' => $request->built_area,
-                'parking_spaces' => $request->parking_spaces,
-                'video_url' => $request->video_url,
-                'status' => $request->status,
-                'latitude' => $request->latitude,
-                'longitude' => $request->longitude,
-                'approve_status' => $approveStatus,
-
-            ]);
-
-            $slders = $request->slider_images;
-            if ($slders) {
-                $pis = PropertySliderImage::findOrFail($slders);
-                foreach ($pis as $key => $pi) {
-                    $pi->property_id = $property->id;
-                    $pi->save();
+                $featuredImgURL = $request->featured_image;
+                if (request()->hasFile('featured_image')) {
+                    $featuredImgName = UploadFile::store(public_path('assets/img/property/featureds'), $featuredImgURL);
                 }
-            }
-            if ($request->has('amenities')) {
-                foreach ($request->amenities as $amenity) {
-                    PropertyAmenity::create([
-                        'property_id' => $property->id,
-                        'amenity_id' => $amenity
-                    ]);
+
+                $languages = Language::all();
+                $floorPlanningImage = null;
+                $videoImage = null;
+                if (request()->hasFile('floor_planning_image')) {
+                    $floorPlanningImage = UploadFile::store(public_path('assets/img/property/plannings'), $request->floor_planning_image);
                 }
-            }
+                if ($request->hasFile('video_image')) {
+                    $videoImage = UploadFile::store(public_path('assets/img/property/video/'), $request->video_image);
+                }
+                $bs = Basic::select('property_approval_status')->first();
+                if ($bs->property_approval_status == 1) {
+                    $approveStatus = 0;
+                } else {
+                    $approveStatus = 1;
+                }
+                $property = Property::create([
+                    'vendor_id' => Auth::guard('vendor')->user()->id,
+                    'agent_id' => $request->agent_id,
+                    'category_id' => $request->category_id,
+                    'country_id' => $request->country_id,
+                    'state_id' => $request->state_id,
+                    'city_id' => $request->city_id,
+                    'featured_image' => $featuredImgName,
+                    'floor_planning_image' => $floorPlanningImage,
+                    'video_image' => $videoImage,
+                    'price' => $request->price,
+                    'purpose' => $request->purpose,
+                    'type' => $request->type,
+                    'beds' => $request->beds,
+                    'bath' => $request->bath,
+                    'area' => $request->area,
+                    'built_area' => $request->built_area,
+                    'parking_spaces' => $request->parking_spaces,
+                    'video_url' => $request->video_url,
+                    'status' => $request->status,
+                    'latitude' => $request->latitude,
+                    'longitude' => $request->longitude,
+                    'approve_status' => $approveStatus,
 
-            foreach ($languages as $language) {
-                $propertyContent = new Content();
-                $propertyContent->language_id = $language->id;
-                $propertyContent->property_id = $property->id;
-                $propertyContent->title = $request[$language->code . '_title'];
-                $propertyContent->slug = createSlug($request[$language->code . '_title']);
+                ]);
 
-                $propertyContent->address = $request[$language->code . '_address'];
-                $propertyContent->description = Purifier::clean($request[$language->code . '_description'], 'youtube');
-                $propertyContent->meta_keyword = $request[$language->code . '_meta_keyword'];
-                $propertyContent->meta_description = $request[$language->code . '_meta_description'];
-                $propertyContent->save();
-
-                $label_datas = $request[$language->code . '_label'];
-                foreach ($label_datas as $key => $data) {
-                    if (!empty($request[$language->code . '_value'][$key])) {
-                        $property_specification = Spacification::where([['property_id', $property->id], ['key', $key]])->first();
-                        if (is_null($property_specification)) {
-                            $property_specification = new Spacification();
-                            $property_specification->property_id = $property->id;
-                            $property_specification->key  = $key;
-                            $property_specification->save();
-                        }
-                        $property_specification_content = new SpacificationCotent();
-                        $property_specification_content->language_id = $language->id;
-                        $property_specification_content->property_spacification_id = $property_specification->id;
-                        $property_specification_content->label = $data;
-                        $property_specification_content->value = $request[$language->code . '_value'][$key];
-                        $property_specification_content->save();
+                $slders = $request->slider_images;
+                if ($slders) {
+                    $pis = PropertySliderImage::findOrFail($slders);
+                    foreach ($pis as $key => $pi) {
+                        $pi->property_id = $property->id;
+                        $pi->save();
                     }
                 }
+                if ($request->has('amenities')) {
+                    foreach ($request->amenities as $amenity) {
+                        PropertyAmenity::create([
+                            'property_id' => $property->id,
+                            'amenity_id' => $amenity
+                        ]);
+                    }
+                }
+
+                foreach ($languages as $language) {
+                    $propertyContent = new Content();
+                    $propertyContent->language_id = $language->id;
+                    $propertyContent->property_id = $property->id;
+                    $propertyContent->title = $request[$language->code . '_title'];
+                    $propertyContent->slug = createSlug($request[$language->code . '_title']);
+
+                    $propertyContent->address = $request[$language->code . '_address'];
+                    $propertyContent->description = Purifier::clean($request[$language->code . '_description'], 'youtube');
+                    $propertyContent->meta_keyword = $request[$language->code . '_meta_keyword'];
+                    $propertyContent->meta_description = $request[$language->code . '_meta_description'];
+                    $propertyContent->save();
+
+                    $label_datas = $request[$language->code . '_label'];
+                    foreach ($label_datas as $key => $data) {
+                        if (!empty($request[$language->code . '_value'][$key])) {
+                            $property_specification = Spacification::where([['property_id', $property->id], ['key', $key]])->first();
+                            if (is_null($property_specification)) {
+                                $property_specification = new Spacification();
+                                $property_specification->property_id = $property->id;
+                                $property_specification->key  = $key;
+                                $property_specification->save();
+                            }
+                            $property_specification_content = new SpacificationCotent();
+                            $property_specification_content->language_id = $language->id;
+                            $property_specification_content->property_spacification_id = $property_specification->id;
+                            $property_specification_content->label = $data;
+                            $property_specification_content->value = $request[$language->code . '_value'][$key];
+                            $property_specification_content->save();
+                        }
+                    }
+                }
+                $propertyContent = Content::where('property_id', $property->id)->select('title')->first();
+
+                $this->mailToAdminForCreateProperty($propertyContent->title, Auth::guard('vendor')->user());
+            });
+
+            Session::flash('success', 'New Property added successfully!');
+
+            return Response::json(['status' => 'success'], 200);
+        } catch (\Throwable $exception) {
+            Log::error('Vendor property store failed.', [
+                'vendor_id' => optional(Auth::guard('vendor')->user())->id,
+                'message' => $exception->getMessage(),
+                'file' => $exception->getFile(),
+                'line' => $exception->getLine(),
+            ]);
+
+            $response = [
+                'status' => 'error',
+                'message' => 'No se pudo guardar la propiedad. Revisa el detalle del error.',
+                'exception' => $exception->getMessage(),
+                'line' => $exception->getFile() . ':' . $exception->getLine(),
+            ];
+
+            if (!app()->environment('production')) {
+                $response['trace'] = $exception->getTraceAsString();
             }
-            $propertyContent = Content::where('property_id', $property->id)->select('title')->first();
 
-            $this->mailToAdminForCreateProperty($propertyContent->title, Auth::guard('vendor')->user());
-        });
-        Session::flash('success', 'New Property added successfully!');
-
-        return Response::json(['status' => 'success'], 200);
+            return Response::json($response, 500);
+        }
     }
 
     public function updateStatus(Request $request)

@@ -246,6 +246,36 @@ $(document).ready(function () {
     });
   }
 
+  function getAjaxErrorMessage(error) {
+    if (error && error.responseJSON) {
+      if (error.responseJSON.message) {
+        return error.responseJSON.message;
+      }
+      if (error.responseJSON.exception) {
+        return error.responseJSON.exception;
+      }
+    }
+
+    if (error && typeof error.responseText === 'string' && error.responseText.length > 0) {
+      const isHtml = error.responseText.trim().startsWith('<');
+      if (isHtml) {
+        return `Server error ${error.status || ''}. Revisa storage/logs/laravel.log para ver la excepcion.`;
+      }
+
+      try {
+        const parsed = JSON.parse(error.responseText);
+        if (parsed.message) {
+          return parsed.message;
+        }
+      } catch (e) {
+      }
+
+      return error.responseText.slice(0, 500);
+    }
+
+    return 'Unexpected server error.';
+  }
+
 
   // Form Submit with AJAX Request Start
   $("#PropertySubmit").on('click', function (e) {
@@ -321,7 +351,7 @@ $(document).ready(function () {
       },
       error: function (error) {
 
-        if (error.responseJSON.deactive) {
+        if (error.responseJSON && error.responseJSON.deactive) {
 
           deactive(error)
           $('.request-loader').removeClass('show');
@@ -329,9 +359,15 @@ $(document).ready(function () {
         }
         let errors = ``;
 
-        for (let x in error.responseJSON.errors) {
+        if (error.responseJSON && error.responseJSON.errors) {
+          for (let x in error.responseJSON.errors) {
+            errors += `<li>
+                  <p class="text-danger mb-0">${error.responseJSON.errors[x][0]}</p>
+                </li>`;
+          }
+        } else {
           errors += `<li>
-                <p class="text-danger mb-0">${error.responseJSON.errors[x][0]}</p>
+                <p class="text-danger mb-0">${getAjaxErrorMessage(error)}</p>
               </li>`;
         }
 
@@ -418,7 +454,7 @@ $(document).ready(function () {
         }
       },
       error: function (error) {
-        if (error.responseJSON.deactive) {
+        if (error.responseJSON && error.responseJSON.deactive) {
 
           deactive(error)
           $('.request-loader').removeClass('show');
@@ -426,9 +462,15 @@ $(document).ready(function () {
         }
         let errors = ``;
 
-        for (let x in error.responseJSON.errors) {
+        if (error.responseJSON && error.responseJSON.errors) {
+          for (let x in error.responseJSON.errors) {
+            errors += `<li>
+                  <p class="text-danger mb-0">${error.responseJSON.errors[x][0]}</p>
+                </li>`;
+          }
+        } else {
           errors += `<li>
-                <p class="text-danger mb-0">${error.responseJSON.errors[x][0]}</p>
+                <p class="text-danger mb-0">${getAjaxErrorMessage(error)}</p>
               </li>`;
         }
 
