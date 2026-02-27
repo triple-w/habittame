@@ -32,6 +32,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Validator;
 use Purifier;
 use Session;
@@ -239,7 +240,7 @@ class PropertyController extends Controller
                 } else {
                     $approveStatus = 1;
                 }
-                $property = Property::create([
+                $propertyData = [
                     'vendor_id' => Auth::guard('vendor')->user()->id,
                     'agent_id' => $request->agent_id,
                     'category_id' => $request->category_id,
@@ -255,15 +256,22 @@ class PropertyController extends Controller
                     'beds' => $request->beds,
                     'bath' => $request->bath,
                     'area' => $request->area,
-                    'built_area' => $request->built_area,
-                    'parking_spaces' => $request->parking_spaces,
                     'video_url' => $request->video_url,
                     'status' => $request->status,
                     'latitude' => $request->latitude,
                     'longitude' => $request->longitude,
                     'approve_status' => $approveStatus,
+                ];
 
-                ]);
+                // Compatibility for environments where migration has not been applied yet.
+                if (Schema::hasColumn('properties', 'built_area')) {
+                    $propertyData['built_area'] = $request->built_area;
+                }
+                if (Schema::hasColumn('properties', 'parking_spaces')) {
+                    $propertyData['parking_spaces'] = $request->parking_spaces;
+                }
+
+                $property = Property::create($propertyData);
 
                 $slders = $request->slider_images;
                 if ($slders) {
@@ -416,7 +424,7 @@ class PropertyController extends Controller
                 }
 
 
-                $property->update([
+                $propertyData = [
                     'agent_id' => $request->agent_id,
                     'category_id' => $request->category_id,
                     'country_id' => $request->country_id,
@@ -431,13 +439,20 @@ class PropertyController extends Controller
                     'beds' => $request->beds,
                     'bath' => $request->bath,
                     'area' => $request->area,
-                    'built_area' => $request->built_area,
-                    'parking_spaces' => $request->parking_spaces,
                     'video_url' => $request->video_url,
                     'status' => $request->status,
                     'latitude' => $request->latitude,
                     'longitude' => $request->longitude
-                ]);
+                ];
+
+                if (Schema::hasColumn('properties', 'built_area')) {
+                    $propertyData['built_area'] = $request->built_area;
+                }
+                if (Schema::hasColumn('properties', 'parking_spaces')) {
+                    $propertyData['parking_spaces'] = $request->parking_spaces;
+                }
+
+                $property->update($propertyData);
 
                 $d_property_specifications = Spacification::where('property_id', $request->property_id)->get();
                 foreach ($d_property_specifications as $d_property_specification) {
