@@ -248,11 +248,22 @@ $(document).ready(function () {
 
   function getAjaxErrorMessage(error) {
     if (error && error.responseJSON) {
-      if (error.responseJSON.message) {
-        return error.responseJSON.message;
-      }
+      const details = [];
+
       if (error.responseJSON.exception) {
-        return error.responseJSON.exception;
+        details.push(`Detalle: ${error.responseJSON.exception}`);
+      }
+
+      if (error.responseJSON.line) {
+        details.push(`Ubicacion: ${error.responseJSON.line}`);
+      }
+
+      if (details.length > 0) {
+        return details.join(' | ');
+      }
+
+      if (error.responseJSON.message) {
+        return `Mensaje: ${error.responseJSON.message}`;
       }
     }
 
