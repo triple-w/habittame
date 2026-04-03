@@ -359,7 +359,7 @@
                             <option value="" disabled>{{ __('No hay agentes disponibles') }}</option>
                         @else
                             @foreach ($agents as $agent)
-                                <option value="{{ $agent->id }}" {{ optional($selectedAgentId) == $agent->id ? 'selected' : '' }}>
+                                <option value="{{ $agent->id }}" {{ ($selectedAgentId !== null && $selectedAgentId == $agent->id) ? 'selected' : '' }}>
                                     {{ $agent->username }}
                                 </option>
                             @endforeach
