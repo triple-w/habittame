@@ -329,7 +329,7 @@
                                             <select name="agent_id" class="form-control js-example-basic-single1">
                                                 <option value="">{{ __('Please Select') }}</option>
                                                 @foreach ($agents as $agent)
-                                                    <option value="{{ $agent->id }}" {{ $loop->first ? 'selected' : '' }}>{{ $agent->name }}</option>
+                                                    <option value="{{ $agent->id }}" {{ $loop->first ? 'selected' : '' }}>{{ $agent->agent_info->name }}</option>
                                                 @endforeach
                                             </select>
                                             <p class="text-warning">

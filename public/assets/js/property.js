@@ -7,6 +7,8 @@ $(document).ready(function() {
         placeholder: "Select Amenities",
     });
 
+    $('[data-role="tagsinput"]').tagsinput();
+
 
     $(".country").on('change', function(e) {
         $('.request-loader').addClass('show');
