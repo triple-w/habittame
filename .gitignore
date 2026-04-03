@@ -11,5 +11,6 @@ npm-debug.log
 yarn-error.log
 .env
 .env.*
-
+/public/assets/img/property/slider-images/
+/public/assets/img/property/video/
 tatus
