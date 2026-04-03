@@ -325,27 +325,12 @@
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label for="">{{ __('Agencia') }}</label>
-                                            <select name="vendor_id" class="form-control vendor js-example-basic-single1">
-                                                <option value="0" selected>{{ __('Please Select') }}
-                                                </option>
-                                                @foreach ($vendors as $vendor)
-                                                    <option value="{{ $vendor->id }}">{{ $vendor->username }}</option>
+                                            <label for="">{{ __('Agentes') }}</label>
+                                            <select name="agent_id" class="form-control js-example-basic-single1">
+                                                <option value="">{{ __('Please Select') }}</option>
+                                                @foreach ($agents as $agent)
+                                                    <option value="{{ $agent->id }}" {{ $loop->first ? 'selected' : '' }}>{{ $agent->name }}</option>
                                                 @endforeach
-                                            </select>
-                                            <p class="text-warning">
-                                                {{ __('if you do not select any vendor, then this property will be listed under you') }}
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3">
-                                        <div class="form-group agent d-none">
-                                            <label for="">{{ __('Agent') }}</label>
-                                            <select name="agent_id"
-                                                class="form-control agent_id js-example-basic-single1">
-                                                <option value="" selected>{{ __('Please Select') }}
-                                                </option>
                                             </select>
                                             <p class="text-warning">
                                                 {{ __('Si no seleccionar un Agente Aparecera como Venedor la Agencia.') }}
@@ -418,11 +403,8 @@
                                                         <div class="col-lg-12">
                                                             <div
                                                                 class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                                <label>{{ __('Palabras Clave Meta *Esto mejora tu busqueda en Google(despues de escibir cada palabra da ENTER)') }}</label>
-                                                                <input class="form-control"
-                                                                    name="{{ $language->code }}_meta_keyword"
-                                                                    placeholder="Ej. Casa Renta Leon Gran Jardin "
-                                                                    data-role="tagsinput">
+                                                                <label>{{ __('Palabras Clave Meta') }} <small>*Esto mejora tu busqueda en Google(despues de escibir cada palabra da ENTER)</small></label>
+                                                                <textarea class="form-control" name="{{ $language->code }}_meta_keyword" placeholder="Ej. Casa Renta Leon Gran Jardin " data-role="tagsinput" rows="3"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
