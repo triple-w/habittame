@@ -364,6 +364,7 @@
                                 </option>
                             @endforeach
                         @endif
+                                            </select>
                                         </div>
                                     </div>
 
