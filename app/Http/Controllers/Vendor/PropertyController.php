@@ -139,7 +139,10 @@ class PropertyController extends Controller
         $information['amenities'] = Amenity::with(['amenityContent' => function ($q) use ($language) {
             $q->where('language_id', $language->id);
         }])->where('status', 1)->get();
-        $information['agents'] = Agent::where('vendor_id', Auth::guard('vendor')->user()->id)->get();
+        $agents = Agent::where('vendor_id', Auth::guard('vendor')->user()->id)->where('status', 1)->get();
+        $information['agents'] = $agents;
+        $information['selectedAgentId'] = $agents->first() ? $agents->first()->id : null;
+
         return view('vendors.property.create', $information);
     }
 

@@ -1,6 +1,34 @@
 @extends('vendors.layout')
 
 @section('content')
+    <style>
+        .bootstrap-tagsinput {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            width: 100% !important;
+            min-height: 60px;
+            max-width: 100%;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            white-space: normal !important;
+        }
+        .bootstrap-tagsinput .tag {
+            white-space: normal;
+            margin-bottom: 6px;
+        }
+        .bootstrap-tagsinput input {
+            width: 8rem !important;
+            min-width: 100px;
+            flex: 1 1 auto;
+        }
+
+        .meta-keyword-label {
+            display: block;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+    </style>
+
     <div class="page-header">
         <h4 class="page-title">{{ __('Agregar Propiedad') }}</h4>
         <ul class="breadcrumbs">
@@ -327,14 +355,15 @@
                                         <div class="form-group">
                                             <label for="">{{ __('Agentes') }}</label>
                                             <select name="agent_id" class="form-control js-example-basic-single1">
-                                                <option value="">{{ __('Please Select') }}</option>
-                                                @foreach ($agents as $agent)
-                                                    <option value="{{ $agent->id }}" {{ $loop->first ? 'selected' : '' }}>{{ $agent->agent_info->name }}</option>
-                                                @endforeach
-                                            </select>
-                                            <p class="text-warning">
-                                                {{ __('Si no seleccionar un Agente Aparecera como Venedor la Agencia.') }}
-                                            </p>
+                        @if(!$agents->count())
+                            <option value="" disabled>{{ __('No hay agentes disponibles') }}</option>
+                        @else
+                            @foreach ($agents as $agent)
+                                <option value="{{ $agent->id }}" {{ optional($selectedAgentId) == $agent->id ? 'selected' : '' }}>
+                                    {{ $agent->username }}
+                                </option>
+                            @endforeach
+                        @endif
                                         </div>
                                     </div>
 
@@ -403,7 +432,7 @@
                                                         <div class="col-lg-12">
                                                             <div
                                                                 class="form-group {{ $language->direction == 1 ? 'rtl text-right' : '' }}">
-                                                                <label>{{ __('Palabras Clave Meta') }} <small>*Esto mejora tu busqueda en Google(despues de escibir cada palabra da ENTER)</small></label>
+                                                                <label class="meta-keyword-label">{{ __('Palabras Clave Meta') }} <small>*Esto mejora tu busqueda en Google(despues de escibir cada palabra da ENTER)</small></label>
                                                                 <textarea class="form-control" name="{{ $language->code }}_meta_keyword" placeholder="Ej. Casa Renta Leon Gran Jardin " data-role="tagsinput" rows="3"></textarea>
                                                             </div>
                                                         </div>
