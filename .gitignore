@@ -13,4 +13,4 @@ yarn-error.log
 .env.*
 /public/assets/img/property/slider-images/
 /public/assets/img/property/video/
-tatus
+/public/assets/img/property/thumbnail-images/
