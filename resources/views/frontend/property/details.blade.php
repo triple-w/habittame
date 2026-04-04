@@ -345,7 +345,7 @@
                                 @endif
                             </div>
                         </div>
-@if ($agent->show_contact_form == 1)
+@if ( !$agent || $agent->show_contact_form == 1 )
                         <form action="{{ route('property_contact') }}" method="POST">
                             @csrf
                             @if (!empty($agent))
