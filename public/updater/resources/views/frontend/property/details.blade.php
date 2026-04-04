@@ -307,7 +307,7 @@
                                               href="{{ route('frontend.vendor.details', ['username' => $admin->username, 'admin' => 'true']) }}">   {{ $admin->first_name . ' ' . $admin->last_name }} @endif
                                         </a>
                                 </h4>
-                                @if ($agent->show_phone_number == 1 && !is_null($agent->phone))
+                                @if ( ($agent && $agent->show_phone_number == 1 && $agent->phone) || ($vendor && $vendor->phone) || ($admin && $admin->show_contact_form && $admin->phone) )
                                 <a class="d-block"
                                     href="tel:@if (!empty($agent)) {{ $agent->phone }}
                                         @elseif(!empty($vendor))
@@ -327,7 +327,7 @@
                                     @endif
                                 </a>
                                 @endif
-                                @if ($agent->show_email_addresss == 1 && !is_null($agent->email))
+                                @if ( ($agent && $agent->show_email_addresss == 1 && $agent->email) || (!$agent && $vendor && $vendor->email) || (!$agent && !$vendor && $admin && $admin->show_email_addresss && $admin->email) )
                                 <a
                                     href="mailto:@if (!empty($agent)) {{ $agent->email }}
                                         @elseif(!empty($vendor))
